@@ -4,6 +4,8 @@ import { runMission } from './sim/runMission.js'
 import Dashboard from './ui/Dashboard.jsx'
 import PhaseNav from './ui/PhaseNav.jsx'
 import Landing from './ui/Landing.jsx'
+import ShareButton from './ui/ShareButton.jsx'
+import { readHash } from './share/encode.js'
 import SourcesPanel from './ui/SourcesPanel.jsx'
 import ObjectiveScreen from './ui/ObjectiveScreen.jsx'
 import PayloadScreen from './ui/PayloadScreen.jsx'
@@ -27,9 +29,9 @@ const INITIAL = {
 
 
 export default function App() {
-  const [config, setConfig] = useState(INITIAL)
+  const [config, setConfig] = useState(() => readHash() || INITIAL)
   const [phase, setPhase] = useState('objective')
-  const [started, setStarted] = useState(false)
+  const [started, setStarted] = useState(() => Boolean(readHash()))
   const result = useMemo(() => runMission(config), [config])
   const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
   const props = { config, setConfig, result }
@@ -42,6 +44,7 @@ export default function App() {
       <header>
         <h1>Mission Architect</h1>
         <p>{objective.name} &mdash; {objective.brief}</p>
+        <ShareButton config={config} />
       </header>
 
 
