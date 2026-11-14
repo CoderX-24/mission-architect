@@ -5,6 +5,8 @@ import Dashboard from './ui/Dashboard.jsx'
 import PhaseNav from './ui/PhaseNav.jsx'
 import Landing from './ui/Landing.jsx'
 import ShareButton from './ui/ShareButton.jsx'
+import RoleBar from './ui/RoleBar.jsx'
+import SpaceWeatherPanel from './ui/SpaceWeatherPanel.jsx'
 import { readHash } from './share/encode.js'
 import SourcesPanel from './ui/SourcesPanel.jsx'
 import ObjectiveScreen from './ui/ObjectiveScreen.jsx'
@@ -32,6 +34,7 @@ export default function App() {
   const [config, setConfig] = useState(() => readHash() || INITIAL)
   const [phase, setPhase] = useState('objective')
   const [started, setStarted] = useState(() => Boolean(readHash()))
+  const [role, setRole] = useState(null)
   const result = useMemo(() => runMission(config), [config])
   const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
   const props = { config, setConfig, result }
@@ -45,6 +48,7 @@ export default function App() {
         <h1>Mission Architect</h1>
         <p>{objective.name} &mdash; {objective.brief}</p>
         <ShareButton config={config} />
+        <RoleBar role={role} setRole={setRole} result={result} />
       </header>
 
 
@@ -58,6 +62,7 @@ export default function App() {
           {phase === 'spacecraft' && <SpacecraftScreen {...props} />}
           {phase === 'orbit' && <OrbitScreen {...props} />}
           {phase === 'simulate' && <ResultScreen {...props} />}
+          {phase === 'weather' && <SpaceWeatherPanel {...props} />}
           {phase === 'sources' && <SourcesPanel />}
 
 

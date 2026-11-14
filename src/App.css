@@ -121,3 +121,35 @@ main { display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:star
 .share-url { display:block; margin-top:7px; width:100%; background:#070910;
   border:1px solid var(--line); border-radius:5px; padding:7px 9px;
   color:var(--muted); font-size:11.5px; font-family:ui-monospace,monospace }
+.rolebar { margin:0 0 18px }
+.role-pick { display:flex; gap:6px; flex-wrap:wrap; align-items:center }
+.role-label { font-size:11px; text-transform:uppercase; letter-spacing:.08em;
+  color:var(--muted); margin-right:4px }
+.role { background:transparent; border:1px solid var(--line); border-radius:5px;
+  padding:6px 11px; color:var(--muted); font:inherit; font-size:12px; cursor:pointer }
+.role:hover { color:var(--fg); border-color:var(--accent) }
+.role.on { color:var(--fg); border-color:var(--accent); background:rgba(240,145,74,.10) }
+.role-brief { margin-top:10px; border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:0 6px 6px 0; padding:12px 14px; background:var(--panel) }
+.role-brief p { margin:0 0 6px; font-size:13px; line-height:1.55 }
+.role-brief p:last-child { margin-bottom:0 }
+.role-tension { color:var(--muted); font-style:italic }
+.role-metric b { color:var(--accent) }
+.role-hand { font-size:12px !important; color:var(--muted) }
+.feed { display:inline-block; margin-left:8px; font-size:10px; text-transform:uppercase;
+  letter-spacing:.06em; padding:2px 7px; border-radius:3px }
+.feed.live { background:rgba(61,214,140,.15); color:#3dd68c }
+.feed.bundled { background:rgba(139,149,168,.15); color:var(--muted) }
+.wx-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:14px; margin:16px 0 18px; padding:16px; background:#070910;
+  border:1px solid var(--line); border-radius:6px }
+.wx-stats div { display:flex; flex-direction:column; gap:3px; min-width:0 }
+.wx-stats b { font-size:26px; font-variant-numeric:tabular-nums; color:var(--accent) }
+.wx-stats b.bad { color:#e5484d } .wx-stats b.ok { color:#3dd68c }
+.wx-stats span { font-size:11.5px; color:var(--muted); line-height:1.4 }
+.wx-event { display:flex; flex-direction:column; gap:4px; padding:10px 0;
+  border-bottom:1px solid var(--line) }
+.wx-event:last-of-type { border-bottom:none }
+.wx-event .event-head strong { font-size:10px; letter-spacing:.07em; padding:2px 6px; border-radius:3px }
+.wx-event.pass .event-head strong { background:rgba(61,214,140,.15); color:#3dd68c }
+.wx-event.fail .event-head strong { background:rgba(229,72,77,.15); color:#e5484d }

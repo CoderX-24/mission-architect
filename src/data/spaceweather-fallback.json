@@ -1,0 +1,5119 @@
+[
+ {
+  "id": "2026-07-16T06:36:00-CME-001",
+  "start": "2026-07-16T06:36Z",
+  "speed": 255,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-07-16T10:36:00-CME-001",
+  "start": "2026-07-16T10:36Z",
+  "speed": 490,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-17T00:12:00-CME-001",
+  "start": "2026-07-17T00:12Z",
+  "speed": 520,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-17T10:24:00-CME-001",
+  "start": "2026-07-17T10:24Z",
+  "speed": 414,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-07-17T18:00:00-CME-001",
+  "start": "2026-07-17T18:00Z",
+  "speed": 833,
+  "type": "C",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-17T18:12:00-CME-001",
+  "start": "2026-07-17T18:12Z",
+  "speed": 464,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-18T18:12:00-CME-001",
+  "start": "2026-07-18T18:12Z",
+  "speed": 386,
+  "type": "S",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-07-18T19:36:00-CME-001",
+  "start": "2026-07-18T19:36Z",
+  "speed": 336,
+  "type": "S",
+  "halfAngle": 34,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-18T20:12:00-CME-001",
+  "start": "2026-07-18T20:12Z",
+  "speed": 479,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-19T08:48:00-CME-001",
+  "start": "2026-07-19T08:48Z",
+  "speed": 326,
+  "type": "S",
+  "halfAngle": 36,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-19T15:48:00-CME-001",
+  "start": "2026-07-19T15:48Z",
+  "speed": 592,
+  "type": "C",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-19T21:24:00-CME-001",
+  "start": "2026-07-19T21:24Z",
+  "speed": 321,
+  "type": "S",
+  "halfAngle": 40,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-19T23:00:00-CME-001",
+  "start": "2026-07-19T23:00Z",
+  "speed": 684,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T02:24:00-CME-001",
+  "start": "2026-07-20T02:24Z",
+  "speed": 587,
+  "type": "C",
+  "halfAngle": 39,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T05:48:00-CME-001",
+  "start": "2026-07-20T05:48Z",
+  "speed": 585,
+  "type": "C",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T10:23:00-CME-001",
+  "start": "2026-07-20T10:23Z",
+  "speed": 545,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T12:36:00-CME-001",
+  "start": "2026-07-20T12:36Z",
+  "speed": 505,
+  "type": "C",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T13:26:00-CME-001",
+  "start": "2026-07-20T13:26Z",
+  "speed": 616,
+  "type": "C",
+  "halfAngle": 37,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T16:48:00-CME-001",
+  "start": "2026-07-20T16:48Z",
+  "speed": 631,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T19:36:00-CME-001",
+  "start": "2026-07-20T19:36Z",
+  "speed": 331,
+  "type": "S",
+  "halfAngle": 29,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-20T19:53:00-CME-001",
+  "start": "2026-07-20T19:53Z",
+  "speed": 579,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-20T20:12:00-CME-001",
+  "start": "2026-07-20T20:12Z",
+  "speed": 570,
+  "type": "C",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T21:12:00-CME-001",
+  "start": "2026-07-20T21:12Z",
+  "speed": 728,
+  "type": "C",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-20T22:12:00-CME-001",
+  "start": "2026-07-20T22:12Z",
+  "speed": 388,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-21T02:48:00-CME-001",
+  "start": "2026-07-21T02:48Z",
+  "speed": 352,
+  "type": "S",
+  "halfAngle": 23,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-07-21T06:23:00-CME-001",
+  "start": "2026-07-21T06:23Z",
+  "speed": 658,
+  "type": "C",
+  "halfAngle": 25,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-21T07:48:00-CME-001",
+  "start": "2026-07-21T07:48Z",
+  "speed": 601,
+  "type": "C",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-21T15:12:00-CME-001",
+  "start": "2026-07-21T15:12Z",
+  "speed": 977,
+  "type": "C",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-21T23:00:00-CME-001",
+  "start": "2026-07-21T23:00Z",
+  "speed": 333,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-23T06:36:00-CME-001",
+  "start": "2026-07-23T06:36Z",
+  "speed": 382,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-23T10:36:00-CME-001",
+  "start": "2026-07-23T10:36Z",
+  "speed": 482,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-23T15:38:00-CME-001",
+  "start": "2026-07-23T15:38Z",
+  "speed": 402,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-07-23T19:00:00-CME-001",
+  "start": "2026-07-23T19:00Z",
+  "speed": 522,
+  "type": "C",
+  "halfAngle": 34,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-24T04:38:00-CME-001",
+  "start": "2026-07-24T04:38Z",
+  "speed": 794,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-24T12:48:00-CME-001",
+  "start": "2026-07-24T12:48Z",
+  "speed": 714,
+  "type": "C",
+  "halfAngle": 41,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-24T21:12:00-CME-001",
+  "start": "2026-07-24T21:12Z",
+  "speed": 308,
+  "type": "S",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-24T23:24:00-CME-001",
+  "start": "2026-07-24T23:24Z",
+  "speed": 315,
+  "type": "S",
+  "halfAngle": 30,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-25T02:00:00-CME-001",
+  "start": "2026-07-25T02:00Z",
+  "speed": 531,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-25T04:00:00-CME-001",
+  "start": "2026-07-25T04:00Z",
+  "speed": 358,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-25T04:12:00-CME-001",
+  "start": "2026-07-25T04:12Z",
+  "speed": 463,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-25T07:23:00-CME-001",
+  "start": "2026-07-25T07:23Z",
+  "speed": 695,
+  "type": "C",
+  "halfAngle": 15,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-25T07:45:00-CME-001",
+  "start": "2026-07-25T07:45Z",
+  "speed": 298,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-25T11:15:00-CME-001",
+  "start": "2026-07-25T11:15Z",
+  "speed": 325,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-26T16:00:00-CME-001",
+  "start": "2026-07-26T16:00Z",
+  "speed": 407,
+  "type": "S",
+  "halfAngle": 37,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-26T16:23:00-CME-001",
+  "start": "2026-07-26T16:23Z",
+  "speed": 315,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-26T20:26:00-CME-001",
+  "start": "2026-07-26T20:26Z",
+  "speed": 463,
+  "type": "S",
+  "halfAngle": 37,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T07:09:00-CME-001",
+  "start": "2026-07-27T07:09Z",
+  "speed": 578,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T07:38:00-CME-001",
+  "start": "2026-07-27T07:38Z",
+  "speed": 489,
+  "type": "S",
+  "halfAngle": 37,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T13:00:00-CME-001",
+  "start": "2026-07-27T13:00Z",
+  "speed": 471,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-27T13:23:00-CME-001",
+  "start": "2026-07-27T13:23Z",
+  "speed": 449,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-27T14:30:00-CME-001",
+  "start": "2026-07-27T14:30Z",
+  "speed": 927,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T14:48:00-CME-001",
+  "start": "2026-07-27T14:48Z",
+  "speed": 545,
+  "type": "C",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T15:12:00-CME-001",
+  "start": "2026-07-27T15:12Z",
+  "speed": 775,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T17:24:00-CME-001",
+  "start": "2026-07-27T17:24Z",
+  "speed": 518,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-27T23:48:00-CME-001",
+  "start": "2026-07-27T23:48Z",
+  "speed": 844,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-28T00:12:00-CME-001",
+  "start": "2026-07-28T00:12Z",
+  "speed": 363,
+  "type": "S",
+  "halfAngle": 31,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-28T01:26:00-CME-001",
+  "start": "2026-07-28T01:26Z",
+  "speed": 546,
+  "type": "C",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-28T03:00:00-CME-001",
+  "start": "2026-07-28T03:00Z",
+  "speed": 490,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-07-28T04:36:00-CME-001",
+  "start": "2026-07-28T04:36Z",
+  "speed": 452,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-28T14:45:00-CME-001",
+  "start": "2026-07-28T14:45Z",
+  "speed": 313,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-29T00:36:00-CME-001",
+  "start": "2026-07-29T00:36Z",
+  "speed": 465,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-29T03:24:00-CME-001",
+  "start": "2026-07-29T03:24Z",
+  "speed": 483,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-30T02:48:00-CME-001",
+  "start": "2026-07-30T02:48Z",
+  "speed": 272,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-30T16:53:00-CME-001",
+  "start": "2026-07-30T16:53Z",
+  "speed": 1580,
+  "type": "O",
+  "halfAngle": 37,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-30T23:37:00-CME-001",
+  "start": "2026-07-30T23:37Z",
+  "speed": 705,
+  "type": "C",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-31T02:24:00-CME-001",
+  "start": "2026-07-31T02:24Z",
+  "speed": 564,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-31T03:08:00-CME-001",
+  "start": "2026-07-31T03:08Z",
+  "speed": 656,
+  "type": "C",
+  "halfAngle": 19,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-07-31T03:24:00-CME-001",
+  "start": "2026-07-31T03:24Z",
+  "speed": 382,
+  "type": "S",
+  "halfAngle": 42,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-07-31T08:08:00-CME-001",
+  "start": "2026-07-31T08:08Z",
+  "speed": 497,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-07-31T15:23:00-CME-001",
+  "start": "2026-07-31T15:23Z",
+  "speed": 387,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-07-31T21:24:00-CME-001",
+  "start": "2026-07-31T21:24Z",
+  "speed": 356,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-07-31T23:00:00-CME-001",
+  "start": "2026-07-31T23:00Z",
+  "speed": 435,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-02T10:45:00-CME-001",
+  "start": "2026-08-02T10:45Z",
+  "speed": 263,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-03T03:38:00-CME-001",
+  "start": "2026-08-03T03:38Z",
+  "speed": 335,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-03T08:38:00-CME-001",
+  "start": "2026-08-03T08:38Z",
+  "speed": 368,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-03T12:23:00-CME-001",
+  "start": "2026-08-03T12:23Z",
+  "speed": 347,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-04T10:09:00-CME-001",
+  "start": "2026-08-04T10:09Z",
+  "speed": 298,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-04T11:23:00-CME-001",
+  "start": "2026-08-04T11:23Z",
+  "speed": 527,
+  "type": "C",
+  "halfAngle": 18,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-04T13:23:00-CME-001",
+  "start": "2026-08-04T13:23Z",
+  "speed": 475,
+  "type": "S",
+  "halfAngle": 34,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-04T20:15:00-CME-001",
+  "start": "2026-08-04T20:15Z",
+  "speed": 347,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-04T22:00:00-CME-001",
+  "start": "2026-08-04T22:00Z",
+  "speed": 359,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-04T23:48:00-CME-001",
+  "start": "2026-08-04T23:48Z",
+  "speed": 251,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-05T01:26:00-CME-001",
+  "start": "2026-08-05T01:26Z",
+  "speed": 380,
+  "type": "S",
+  "halfAngle": 29,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-05T08:15:00-CME-001",
+  "start": "2026-08-05T08:15Z",
+  "speed": 309,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-05T14:53:00-CME-001",
+  "start": "2026-08-05T14:53Z",
+  "speed": 452,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-06T00:53:00-CME-001",
+  "start": "2026-08-06T00:53Z",
+  "speed": 375,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-06T03:00:00-CME-001",
+  "start": "2026-08-06T03:00Z",
+  "speed": 357,
+  "type": "S",
+  "halfAngle": 22,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-06T08:45:00-CME-001",
+  "start": "2026-08-06T08:45Z",
+  "speed": 333,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-06T17:38:00-CME-001",
+  "start": "2026-08-06T17:38Z",
+  "speed": 779,
+  "type": "C",
+  "halfAngle": 21,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-07T06:36:00-CME-001",
+  "start": "2026-08-07T06:36Z",
+  "speed": 785,
+  "type": "C",
+  "halfAngle": 35,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-07T17:48:00-CME-001",
+  "start": "2026-08-07T17:48Z",
+  "speed": 306,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-07T21:00:00-CME-001",
+  "start": "2026-08-07T21:00Z",
+  "speed": 424,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-07T23:00:00-CME-001",
+  "start": "2026-08-07T23:00Z",
+  "speed": 569,
+  "type": "C",
+  "halfAngle": 21,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-08T00:36:00-CME-001",
+  "start": "2026-08-08T00:36Z",
+  "speed": 774,
+  "type": "C",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-08T03:23:00-CME-001",
+  "start": "2026-08-08T03:23Z",
+  "speed": 574,
+  "type": "C",
+  "halfAngle": 33,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-08T08:15:00-CME-001",
+  "start": "2026-08-08T08:15Z",
+  "speed": 734,
+  "type": "C",
+  "halfAngle": 41,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-08T16:48:00-CME-001",
+  "start": "2026-08-08T16:48Z",
+  "speed": 274,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-09T02:36:00-CME-001",
+  "start": "2026-08-09T02:36Z",
+  "speed": 297,
+  "type": "S",
+  "halfAngle": 34,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-09T04:24:00-CME-001",
+  "start": "2026-08-09T04:24Z",
+  "speed": 781,
+  "type": "C",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-10T01:48:00-CME-001",
+  "start": "2026-08-10T01:48Z",
+  "speed": 601,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-10T05:24:00-CME-001",
+  "start": "2026-08-10T05:24Z",
+  "speed": 264,
+  "type": "S",
+  "halfAngle": 38,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-10T13:25:00-CME-001",
+  "start": "2026-08-10T13:25Z",
+  "speed": 417,
+  "type": "S",
+  "halfAngle": 26,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-11T14:48:00-CME-001",
+  "start": "2026-08-11T14:48Z",
+  "speed": 315,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-11T19:00:00-CME-001",
+  "start": "2026-08-11T19:00Z",
+  "speed": 357,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-12T08:23:00-CME-001",
+  "start": "2026-08-12T08:23Z",
+  "speed": 337,
+  "type": "S",
+  "halfAngle": 40,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-14T05:09:00-CME-001",
+  "start": "2026-08-14T05:09Z",
+  "speed": 496,
+  "type": "S",
+  "halfAngle": 36,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-14T07:38:00-CME-001",
+  "start": "2026-08-14T07:38Z",
+  "speed": 636,
+  "type": "C",
+  "halfAngle": 29,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-14T12:23:00-CME-001",
+  "start": "2026-08-14T12:23Z",
+  "speed": 950,
+  "type": "C",
+  "halfAngle": 43,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-14T18:23:00-CME-001",
+  "start": "2026-08-14T18:23Z",
+  "speed": 607,
+  "type": "C",
+  "halfAngle": 40,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-14T22:24:00-CME-001",
+  "start": "2026-08-14T22:24Z",
+  "speed": 530,
+  "type": "C",
+  "halfAngle": 35,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-15T03:09:00-CME-001",
+  "start": "2026-08-15T03:09Z",
+  "speed": 511,
+  "type": "C",
+  "halfAngle": 28,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-15T06:48:00-CME-001",
+  "start": "2026-08-15T06:48Z",
+  "speed": 316,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-15T07:24:00-CME-001",
+  "start": "2026-08-15T07:24Z",
+  "speed": 232,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-15T11:36:00-CME-001",
+  "start": "2026-08-15T11:36Z",
+  "speed": 402,
+  "type": "S",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-15T13:48:00-CME-001",
+  "start": "2026-08-15T13:48Z",
+  "speed": 253,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-16T19:48:00-CME-001",
+  "start": "2026-08-16T19:48Z",
+  "speed": 362,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-17T07:15:00-CME-001",
+  "start": "2026-08-17T07:15Z",
+  "speed": 431,
+  "type": "S",
+  "halfAngle": 39,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-17T11:15:00-CME-001",
+  "start": "2026-08-17T11:15Z",
+  "speed": 278,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-17T18:45:00-CME-001",
+  "start": "2026-08-17T18:45Z",
+  "speed": 605,
+  "type": "C",
+  "halfAngle": 15,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-18T14:45:00-CME-001",
+  "start": "2026-08-18T14:45Z",
+  "speed": 341,
+  "type": "S",
+  "halfAngle": 33,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-19T01:36:00-CME-001",
+  "start": "2026-08-19T01:36Z",
+  "speed": 502,
+  "type": "C",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-19T06:30:00-CME-001",
+  "start": "2026-08-19T06:30Z",
+  "speed": 505,
+  "type": "C",
+  "halfAngle": 24,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-19T08:45:00-CME-001",
+  "start": "2026-08-19T08:45Z",
+  "speed": 455,
+  "type": "S",
+  "halfAngle": 26,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-19T11:30:00-CME-001",
+  "start": "2026-08-19T11:30Z",
+  "speed": 517,
+  "type": "C",
+  "halfAngle": 19,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-20T04:36:00-CME-001",
+  "start": "2026-08-20T04:36Z",
+  "speed": 459,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-20T12:15:00-CME-001",
+  "start": "2026-08-20T12:15Z",
+  "speed": 694,
+  "type": "C",
+  "halfAngle": 38,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-20T18:48:00-CME-001",
+  "start": "2026-08-20T18:48Z",
+  "speed": 1105,
+  "type": "O",
+  "halfAngle": 39,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-21T08:00:00-CME-001",
+  "start": "2026-08-21T08:00Z",
+  "speed": 239,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-21T09:36:00-CME-001",
+  "start": "2026-08-21T09:36Z",
+  "speed": 1329,
+  "type": "O",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-21T17:00:00-CME-001",
+  "start": "2026-08-21T17:00Z",
+  "speed": 423,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-22T06:30:00-CME-001",
+  "start": "2026-08-22T06:30Z",
+  "speed": 727,
+  "type": "C",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-23T00:12:00-CME-001",
+  "start": "2026-08-23T00:12Z",
+  "speed": 1148,
+  "type": "O",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-23T20:38:00-CME-001",
+  "start": "2026-08-23T20:38Z",
+  "speed": 278,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-24T00:24:00-CME-001",
+  "start": "2026-08-24T00:24Z",
+  "speed": 315,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-24T01:25:00-CME-001",
+  "start": "2026-08-24T01:25Z",
+  "speed": 406,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-24T10:23:00-CME-001",
+  "start": "2026-08-24T10:23Z",
+  "speed": 439,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-24T14:09:00-CME-001",
+  "start": "2026-08-24T14:09Z",
+  "speed": 327,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-24T20:36:00-CME-001",
+  "start": "2026-08-24T20:36Z",
+  "speed": 365,
+  "type": "S",
+  "halfAngle": 26,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-24T22:36:00-CME-001",
+  "start": "2026-08-24T22:36Z",
+  "speed": 242,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-25T07:53:00-CME-001",
+  "start": "2026-08-25T07:53Z",
+  "speed": 708,
+  "type": "C",
+  "halfAngle": 19,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T08:09:00-CME-001",
+  "start": "2026-08-25T08:09Z",
+  "speed": 542,
+  "type": "C",
+  "halfAngle": 25,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T09:09:00-CME-001",
+  "start": "2026-08-25T09:09Z",
+  "speed": 627,
+  "type": "C",
+  "halfAngle": 16,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T10:36:00-CME-001",
+  "start": "2026-08-25T10:36Z",
+  "speed": 454,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T10:38:00-CME-001",
+  "start": "2026-08-25T10:38Z",
+  "speed": 510,
+  "type": "C",
+  "halfAngle": 35,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T12:53:00-CME-001",
+  "start": "2026-08-25T12:53Z",
+  "speed": 770,
+  "type": "C",
+  "halfAngle": 28,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T14:53:00-CME-001",
+  "start": "2026-08-25T14:53Z",
+  "speed": 413,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-25T15:09:00-CME-001",
+  "start": "2026-08-25T15:09Z",
+  "speed": 737,
+  "type": "C",
+  "halfAngle": 32,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T19:12:00-CME-001",
+  "start": "2026-08-25T19:12Z",
+  "speed": 358,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T20:00:00-CME-001",
+  "start": "2026-08-25T20:00Z",
+  "speed": 627,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-25T22:24:00-CME-001",
+  "start": "2026-08-25T22:24Z",
+  "speed": 448,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-26T07:38:00-CME-001",
+  "start": "2026-08-26T07:38Z",
+  "speed": 278,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-26T22:24:00-CME-001",
+  "start": "2026-08-26T22:24Z",
+  "speed": 537,
+  "type": "C",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-27T01:09:00-CME-001",
+  "start": "2026-08-27T01:09Z",
+  "speed": 827,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-27T04:23:00-CME-001",
+  "start": "2026-08-27T04:23Z",
+  "speed": 461,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-27T18:00:00-CME-001",
+  "start": "2026-08-27T18:00Z",
+  "speed": 1095,
+  "type": "O",
+  "halfAngle": 47,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-27T18:30:00-CME-001",
+  "start": "2026-08-27T18:30Z",
+  "speed": 592,
+  "type": "C",
+  "halfAngle": 36,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-27T20:30:00-CME-001",
+  "start": "2026-08-27T20:30Z",
+  "speed": 453,
+  "type": "S",
+  "halfAngle": 40,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-27T21:15:00-CME-001",
+  "start": "2026-08-27T21:15Z",
+  "speed": 422,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-27T21:30:00-CME-001",
+  "start": "2026-08-27T21:30Z",
+  "speed": 317,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-28T00:00:00-CME-001",
+  "start": "2026-08-28T00:00Z",
+  "speed": 358,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-28T00:12:00-CME-001",
+  "start": "2026-08-28T00:12Z",
+  "speed": 317,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-28T00:24:00-CME-001",
+  "start": "2026-08-28T00:24Z",
+  "speed": 838,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-28T05:48:00-CME-001",
+  "start": "2026-08-28T05:48Z",
+  "speed": 302,
+  "type": "S",
+  "halfAngle": 30,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-28T08:48:00-CME-001",
+  "start": "2026-08-28T08:48Z",
+  "speed": 609,
+  "type": "C",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-28T10:09:00-CME-001",
+  "start": "2026-08-28T10:09Z",
+  "speed": 285,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-28T10:45:00-CME-001",
+  "start": "2026-08-28T10:45Z",
+  "speed": 688,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-28T12:15:00-CME-001",
+  "start": "2026-08-28T12:15Z",
+  "speed": 402,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-28T15:12:00-CME-001",
+  "start": "2026-08-28T15:12Z",
+  "speed": 274,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-28T15:36:00-CME-001",
+  "start": "2026-08-28T15:36Z",
+  "speed": 470,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-28T16:45:00-CME-001",
+  "start": "2026-08-28T16:45Z",
+  "speed": 281,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-28T18:30:00-CME-001",
+  "start": "2026-08-28T18:30Z",
+  "speed": 586,
+  "type": "C",
+  "halfAngle": 38,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-08-28T23:12:00-CME-001",
+  "start": "2026-08-28T23:12Z",
+  "speed": 378,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T00:00:00-CME-001",
+  "start": "2026-08-29T00:00Z",
+  "speed": 339,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-29T03:48:00-CME-001",
+  "start": "2026-08-29T03:48Z",
+  "speed": 334,
+  "type": "S",
+  "halfAngle": 35,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T05:00:00-CME-001",
+  "start": "2026-08-29T05:00Z",
+  "speed": 424,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T08:12:00-CME-001",
+  "start": "2026-08-29T08:12Z",
+  "speed": 275,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T11:48:00-CME-001",
+  "start": "2026-08-29T11:48Z",
+  "speed": 319,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T15:38:00-CME-001",
+  "start": "2026-08-29T15:38Z",
+  "speed": 577,
+  "type": "C",
+  "halfAngle": 14,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T18:45:00-CME-001",
+  "start": "2026-08-29T18:45Z",
+  "speed": 470,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-29T20:23:00-CME-001",
+  "start": "2026-08-29T20:23Z",
+  "speed": 342,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-30T00:09:00-CME-001",
+  "start": "2026-08-30T00:09Z",
+  "speed": 374,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-30T01:48:00-CME-001",
+  "start": "2026-08-30T01:48Z",
+  "speed": 513,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-30T03:24:00-CME-001",
+  "start": "2026-08-30T03:24Z",
+  "speed": 350,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-30T04:36:00-CME-001",
+  "start": "2026-08-30T04:36Z",
+  "speed": 345,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-30T09:36:00-CME-001",
+  "start": "2026-08-30T09:36Z",
+  "speed": 338,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-30T10:24:00-CME-001",
+  "start": "2026-08-30T10:24Z",
+  "speed": 464,
+  "type": "S",
+  "halfAngle": 40,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-30T12:09:00-CME-001",
+  "start": "2026-08-30T12:09Z",
+  "speed": 278,
+  "type": "S",
+  "halfAngle": 23,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-08-30T13:38:00-CME-001",
+  "start": "2026-08-30T13:38Z",
+  "speed": 514,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-30T17:09:00-CME-001",
+  "start": "2026-08-30T17:09Z",
+  "speed": 320,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-08-30T17:23:00-CME-001",
+  "start": "2026-08-30T17:23Z",
+  "speed": 462,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-30T18:30:00-CME-001",
+  "start": "2026-08-30T18:30Z",
+  "speed": 397,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-31T01:36:00-CME-001",
+  "start": "2026-08-31T01:36Z",
+  "speed": 411,
+  "type": "S",
+  "halfAngle": 23,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-31T04:12:00-CME-001",
+  "start": "2026-08-31T04:12Z",
+  "speed": 493,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-31T05:24:00-CME-001",
+  "start": "2026-08-31T05:24Z",
+  "speed": 550,
+  "type": "C",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-31T07:24:00-CME-001",
+  "start": "2026-08-31T07:24Z",
+  "speed": 841,
+  "type": "C",
+  "halfAngle": 21,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-08-31T13:36:00-CME-001",
+  "start": "2026-08-31T13:36Z",
+  "speed": 297,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-01T06:00:00-CME-001",
+  "start": "2026-09-01T06:00Z",
+  "speed": 253,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-01T21:24:00-CME-001",
+  "start": "2026-09-01T21:24Z",
+  "speed": 440,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-01T23:00:00-CME-001",
+  "start": "2026-09-01T23:00Z",
+  "speed": 372,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-02T00:08:00-CME-001",
+  "start": "2026-09-02T00:08Z",
+  "speed": 326,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-02T07:24:00-CME-001",
+  "start": "2026-09-02T07:24Z",
+  "speed": 254,
+  "type": "S",
+  "halfAngle": 39,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-02T10:24:00-CME-001",
+  "start": "2026-09-02T10:24Z",
+  "speed": 280,
+  "type": "S",
+  "halfAngle": 38,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-02T15:36:00-CME-001",
+  "start": "2026-09-02T15:36Z",
+  "speed": 648,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-02T19:36:00-CME-001",
+  "start": "2026-09-02T19:36Z",
+  "speed": 1038,
+  "type": "O",
+  "halfAngle": 35,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T01:37:00-CME-001",
+  "start": "2026-09-03T01:37Z",
+  "speed": 523,
+  "type": "C",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T03:12:00-CME-001",
+  "start": "2026-09-03T03:12Z",
+  "speed": 278,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T04:48:00-CME-001",
+  "start": "2026-09-03T04:48Z",
+  "speed": 512,
+  "type": "C",
+  "halfAngle": 33,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T10:15:00-CME-001",
+  "start": "2026-09-03T10:15Z",
+  "speed": 1320,
+  "type": "O",
+  "halfAngle": 27,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-03T11:01:00-CME-001",
+  "start": "2026-09-03T11:01Z",
+  "speed": 568,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T16:36:00-CME-001",
+  "start": "2026-09-03T16:36Z",
+  "speed": 1321,
+  "type": "O",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T18:00:00-CME-001",
+  "start": "2026-09-03T18:00Z",
+  "speed": 317,
+  "type": "S",
+  "halfAngle": 30,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-09-03T19:12:00-CME-001",
+  "start": "2026-09-03T19:12Z",
+  "speed": 373,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T22:24:00-CME-001",
+  "start": "2026-09-03T22:24Z",
+  "speed": 650,
+  "type": "C",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-03T22:36:00-CME-001",
+  "start": "2026-09-03T22:36Z",
+  "speed": 1020,
+  "type": "O",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-04T06:24:00-CME-001",
+  "start": "2026-09-04T06:24Z",
+  "speed": 389,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-04T08:48:00-CME-001",
+  "start": "2026-09-04T08:48Z",
+  "speed": 523,
+  "type": "C",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-04T13:52:00-CME-001",
+  "start": "2026-09-04T13:52Z",
+  "speed": 727,
+  "type": "C",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-04T15:24:00-CME-001",
+  "start": "2026-09-04T15:24Z",
+  "speed": 272,
+  "type": "S",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-04T16:45:00-CME-001",
+  "start": "2026-09-04T16:45Z",
+  "speed": 425,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-04T17:15:00-CME-001",
+  "start": "2026-09-04T17:15Z",
+  "speed": 405,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-04T20:15:00-CME-001",
+  "start": "2026-09-04T20:15Z",
+  "speed": 701,
+  "type": "C",
+  "halfAngle": 24,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-04T21:45:00-CME-001",
+  "start": "2026-09-04T21:45Z",
+  "speed": 799,
+  "type": "C",
+  "halfAngle": 27,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-05T06:38:00-CME-001",
+  "start": "2026-09-05T06:38Z",
+  "speed": 266,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-09-05T11:09:00-CME-001",
+  "start": "2026-09-05T11:09Z",
+  "speed": 873,
+  "type": "C",
+  "halfAngle": 25,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-05T15:36:00-CME-001",
+  "start": "2026-09-05T15:36Z",
+  "speed": 966,
+  "type": "C",
+  "halfAngle": 36,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-05T18:09:00-CME-001",
+  "start": "2026-09-05T18:09Z",
+  "speed": 1110,
+  "type": "O",
+  "halfAngle": 30,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-05T22:00:00-CME-001",
+  "start": "2026-09-05T22:00Z",
+  "speed": 875,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-06T07:38:00-CME-001",
+  "start": "2026-09-06T07:38Z",
+  "speed": 467,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-06T10:53:00-CME-001",
+  "start": "2026-09-06T10:53Z",
+  "speed": 1085,
+  "type": "O",
+  "halfAngle": 37,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-06T21:53:00-CME-001",
+  "start": "2026-09-06T21:53Z",
+  "speed": 285,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-07T01:48:00-CME-001",
+  "start": "2026-09-07T01:48Z",
+  "speed": 668,
+  "type": "C",
+  "halfAngle": 49,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-07T02:48:00-CME-001",
+  "start": "2026-09-07T02:48Z",
+  "speed": 291,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-07T09:23:00-CME-001",
+  "start": "2026-09-07T09:23Z",
+  "speed": 352,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-08T13:59:00-CME-001",
+  "start": "2026-09-08T13:59Z",
+  "speed": 365,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-09T07:24:00-CME-001",
+  "start": "2026-09-09T07:24Z",
+  "speed": 223,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-09T10:23:00-CME-001",
+  "start": "2026-09-09T10:23Z",
+  "speed": 207,
+  "type": "S",
+  "halfAngle": 39,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-09T10:36:00-CME-001",
+  "start": "2026-09-09T10:36Z",
+  "speed": 308,
+  "type": "S",
+  "halfAngle": 34,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-09T16:00:00-CME-001",
+  "start": "2026-09-09T16:00Z",
+  "speed": 282,
+  "type": "S",
+  "halfAngle": 35,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-09T16:09:00-CME-001",
+  "start": "2026-09-09T16:09Z",
+  "speed": 228,
+  "type": "S",
+  "halfAngle": 44,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-09T21:45:00-CME-001",
+  "start": "2026-09-09T21:45Z",
+  "speed": 510,
+  "type": "C",
+  "halfAngle": 36,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-10T05:24:00-CME-001",
+  "start": "2026-09-10T05:24Z",
+  "speed": 231,
+  "type": "S",
+  "halfAngle": 23,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-10T20:12:00-CME-001",
+  "start": "2026-09-10T20:12Z",
+  "speed": 775,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-10T23:30:00-CME-001",
+  "start": "2026-09-10T23:30Z",
+  "speed": 305,
+  "type": "S",
+  "halfAngle": 26,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-10T23:36:00-CME-001",
+  "start": "2026-09-10T23:36Z",
+  "speed": 464,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-11T02:24:00-CME-001",
+  "start": "2026-09-11T02:24Z",
+  "speed": 404,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-11T05:36:00-CME-001",
+  "start": "2026-09-11T05:36Z",
+  "speed": 549,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-11T06:24:00-CME-001",
+  "start": "2026-09-11T06:24Z",
+  "speed": 391,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-11T14:36:00-CME-001",
+  "start": "2026-09-11T14:36Z",
+  "speed": 309,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-11T16:12:00-CME-001",
+  "start": "2026-09-11T16:12Z",
+  "speed": 340,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-11T17:12:00-CME-001",
+  "start": "2026-09-11T17:12Z",
+  "speed": 428,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-11T23:12:00-CME-001",
+  "start": "2026-09-11T23:12Z",
+  "speed": 350,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-09-12T01:26:00-CME-001",
+  "start": "2026-09-12T01:26Z",
+  "speed": 268,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-09-12T08:38:00-CME-001",
+  "start": "2026-09-12T08:38Z",
+  "speed": 337,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-13T01:24:00-CME-001",
+  "start": "2026-09-13T01:24Z",
+  "speed": 403,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-13T07:48:00-CME-001",
+  "start": "2026-09-13T07:48Z",
+  "speed": 319,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-13T10:23:00-CME-001",
+  "start": "2026-09-13T10:23Z",
+  "speed": 295,
+  "type": "S",
+  "halfAngle": 22,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-13T19:48:00-CME-001",
+  "start": "2026-09-13T19:48Z",
+  "speed": 1305,
+  "type": "O",
+  "halfAngle": 23,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-13T21:12:00-CME-001",
+  "start": "2026-09-13T21:12Z",
+  "speed": 645,
+  "type": "C",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-14T11:08:00-CME-001",
+  "start": "2026-09-14T11:08Z",
+  "speed": 744,
+  "type": "C",
+  "halfAngle": 24,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-14T17:24:00-CME-001",
+  "start": "2026-09-14T17:24Z",
+  "speed": 461,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-15T08:36:00-CME-001",
+  "start": "2026-09-15T08:36Z",
+  "speed": 395,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-09-18T03:24:00-CME-001",
+  "start": "2026-09-18T03:24Z",
+  "speed": 371,
+  "type": "S",
+  "halfAngle": 41,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-19T16:38:00-CME-001",
+  "start": "2026-09-19T16:38Z",
+  "speed": 729,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-19T18:48:00-CME-001",
+  "start": "2026-09-19T18:48Z",
+  "speed": 321,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-09-19T22:12:00-CME-001",
+  "start": "2026-09-19T22:12Z",
+  "speed": 331,
+  "type": "S",
+  "halfAngle": 41,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-19T22:24:00-CME-001",
+  "start": "2026-09-19T22:24Z",
+  "speed": 341,
+  "type": "S",
+  "halfAngle": 23,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-20T03:00:00-CME-001",
+  "start": "2026-09-20T03:00Z",
+  "speed": 273,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-20T05:12:00-CME-001",
+  "start": "2026-09-20T05:12Z",
+  "speed": 593,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-20T12:23:00-CME-001",
+  "start": "2026-09-20T12:23Z",
+  "speed": 427,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-20T20:12:00-CME-001",
+  "start": "2026-09-20T20:12Z",
+  "speed": 277,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-20T22:38:00-CME-001",
+  "start": "2026-09-20T22:38Z",
+  "speed": 318,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-21T09:09:00-CME-001",
+  "start": "2026-09-21T09:09Z",
+  "speed": 347,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-24T02:53:00-CME-001",
+  "start": "2026-09-24T02:53Z",
+  "speed": 500,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-24T09:23:00-CME-001",
+  "start": "2026-09-24T09:23Z",
+  "speed": 618,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-24T14:45:00-CME-001",
+  "start": "2026-09-24T14:45Z",
+  "speed": 493,
+  "type": "S",
+  "halfAngle": 29,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-25T11:09:00-CME-001",
+  "start": "2026-09-25T11:09Z",
+  "speed": 754,
+  "type": "C",
+  "halfAngle": 43,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-25T11:23:00-CME-001",
+  "start": "2026-09-25T11:23Z",
+  "speed": 745,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-25T15:12:00-CME-001",
+  "start": "2026-09-25T15:12Z",
+  "speed": 524,
+  "type": "C",
+  "halfAngle": 31,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-25T17:45:00-CME-001",
+  "start": "2026-09-25T17:45Z",
+  "speed": 462,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-25T20:06:00-CME-001",
+  "start": "2026-09-25T20:06Z",
+  "speed": 254,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-25T20:45:00-CME-001",
+  "start": "2026-09-25T20:45Z",
+  "speed": 460,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-25T23:00:00-CME-001",
+  "start": "2026-09-25T23:00Z",
+  "speed": 472,
+  "type": "S",
+  "halfAngle": 44,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-26T00:48:00-CME-001",
+  "start": "2026-09-26T00:48Z",
+  "speed": 478,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-26T02:24:00-CME-001",
+  "start": "2026-09-26T02:24Z",
+  "speed": 417,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-26T15:24:00-CME-001",
+  "start": "2026-09-26T15:24Z",
+  "speed": 449,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-26T19:36:00-CME-001",
+  "start": "2026-09-26T19:36Z",
+  "speed": 427,
+  "type": "S",
+  "halfAngle": 34,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-26T20:00:00-CME-001",
+  "start": "2026-09-26T20:00Z",
+  "speed": 336,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-09-27T06:36:00-CME-001",
+  "start": "2026-09-27T06:36Z",
+  "speed": 399,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-27T07:00:00-CME-001",
+  "start": "2026-09-27T07:00Z",
+  "speed": 606,
+  "type": "C",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-27T09:48:00-CME-001",
+  "start": "2026-09-27T09:48Z",
+  "speed": 352,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-27T14:48:00-CME-001",
+  "start": "2026-09-27T14:48Z",
+  "speed": 283,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-27T17:36:00-CME-001",
+  "start": "2026-09-27T17:36Z",
+  "speed": 403,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-27T21:00:00-CME-001",
+  "start": "2026-09-27T21:00Z",
+  "speed": 362,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-28T01:26:00-CME-001",
+  "start": "2026-09-28T01:26Z",
+  "speed": 435,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-28T04:12:00-CME-001",
+  "start": "2026-09-28T04:12Z",
+  "speed": 403,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-28T04:24:00-CME-001",
+  "start": "2026-09-28T04:24Z",
+  "speed": 430,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-28T14:36:00-CME-001",
+  "start": "2026-09-28T14:36Z",
+  "speed": 447,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-28T16:18:00-CME-001",
+  "start": "2026-09-28T16:18Z",
+  "speed": 581,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-28T21:24:00-CME-001",
+  "start": "2026-09-28T21:24Z",
+  "speed": 386,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-29T04:12:00-CME-001",
+  "start": "2026-09-29T04:12Z",
+  "speed": 655,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-29T07:12:00-CME-001",
+  "start": "2026-09-29T07:12Z",
+  "speed": 958,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-29T18:36:00-CME-001",
+  "start": "2026-09-29T18:36Z",
+  "speed": 511,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-09-30T03:12:00-CME-001",
+  "start": "2026-09-30T03:12Z",
+  "speed": 488,
+  "type": "S",
+  "halfAngle": 36,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-09-30T11:36:00-CME-001",
+  "start": "2026-09-30T11:36Z",
+  "speed": 365,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-01T02:36:00-CME-001",
+  "start": "2026-10-01T02:36Z",
+  "speed": 419,
+  "type": "S",
+  "halfAngle": 7,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-01T03:12:00-CME-001",
+  "start": "2026-10-01T03:12Z",
+  "speed": 511,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-02T00:53:00-CME-001",
+  "start": "2026-10-02T00:53Z",
+  "speed": 255,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-02T06:48:00-CME-001",
+  "start": "2026-10-02T06:48Z",
+  "speed": 356,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-02T08:24:00-CME-001",
+  "start": "2026-10-02T08:24Z",
+  "speed": 270,
+  "type": "S",
+  "halfAngle": 33,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-02T17:36:00-CME-001",
+  "start": "2026-10-02T17:36Z",
+  "speed": 317,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-02T19:48:00-CME-001",
+  "start": "2026-10-02T19:48Z",
+  "speed": 595,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-02T23:36:00-CME-001",
+  "start": "2026-10-02T23:36Z",
+  "speed": 654,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-03T21:24:00-CME-001",
+  "start": "2026-10-03T21:24Z",
+  "speed": 273,
+  "type": "S",
+  "halfAngle": 25,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-04T07:24:00-CME-001",
+  "start": "2026-10-04T07:24Z",
+  "speed": 336,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-04T07:36:00-CME-001",
+  "start": "2026-10-04T07:36Z",
+  "speed": 313,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-04T17:00:00-CME-001",
+  "start": "2026-10-04T17:00Z",
+  "speed": 289,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-10-05T01:26:00-CME-001",
+  "start": "2026-10-05T01:26Z",
+  "speed": 340,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-05T07:48:00-CME-001",
+  "start": "2026-10-05T07:48Z",
+  "speed": 701,
+  "type": "C",
+  "halfAngle": 40,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-05T11:24:00-CME-001",
+  "start": "2026-10-05T11:24Z",
+  "speed": 629,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-05T21:12:00-CME-001",
+  "start": "2026-10-05T21:12Z",
+  "speed": 266,
+  "type": "S",
+  "halfAngle": 35,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-06T00:00:00-CME-001",
+  "start": "2026-10-06T00:00Z",
+  "speed": 325,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-06T06:23:00-CME-001",
+  "start": "2026-10-06T06:23Z",
+  "speed": 570,
+  "type": "C",
+  "halfAngle": 40,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-06T09:53:00-CME-001",
+  "start": "2026-10-06T09:53Z",
+  "speed": 424,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-06T13:08:00-CME-001",
+  "start": "2026-10-06T13:08Z",
+  "speed": 438,
+  "type": "S",
+  "halfAngle": 11,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-07T13:53:00-CME-001",
+  "start": "2026-10-07T13:53Z",
+  "speed": 310,
+  "type": "S",
+  "halfAngle": 36,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-08T16:12:00-CME-001",
+  "start": "2026-10-08T16:12Z",
+  "speed": 449,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-10-08T16:24:00-CME-001",
+  "start": "2026-10-08T16:24Z",
+  "speed": 579,
+  "type": "C",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-08T16:53:00-CME-001",
+  "start": "2026-10-08T16:53Z",
+  "speed": 438,
+  "type": "S",
+  "halfAngle": 35,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-08T18:38:00-CME-001",
+  "start": "2026-10-08T18:38Z",
+  "speed": 868,
+  "type": "C",
+  "halfAngle": 18,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-10-08T20:12:00-CME-001",
+  "start": "2026-10-08T20:12Z",
+  "speed": 453,
+  "type": "S",
+  "halfAngle": 38,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-09T00:45:00-CME-001",
+  "start": "2026-10-09T00:45Z",
+  "speed": 293,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-09T07:15:00-CME-001",
+  "start": "2026-10-09T07:15Z",
+  "speed": 391,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-09T08:00:00-CME-001",
+  "start": "2026-10-09T08:00Z",
+  "speed": 270,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-09T14:36:00-CME-001",
+  "start": "2026-10-09T14:36Z",
+  "speed": 315,
+  "type": "S",
+  "halfAngle": 41,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-10T08:36:00-CME-001",
+  "start": "2026-10-10T08:36Z",
+  "speed": 368,
+  "type": "S",
+  "halfAngle": 40,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-10T12:23:00-CME-001",
+  "start": "2026-10-10T12:23Z",
+  "speed": 763,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-10-10T16:15:00-CME-001",
+  "start": "2026-10-10T16:15Z",
+  "speed": 844,
+  "type": "C",
+  "halfAngle": 43,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-10-10T22:00:00-CME-001",
+  "start": "2026-10-10T22:00Z",
+  "speed": 351,
+  "type": "S",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-11T09:12:00-CME-001",
+  "start": "2026-10-11T09:12Z",
+  "speed": 374,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-11T23:12:00-CME-001",
+  "start": "2026-10-11T23:12Z",
+  "speed": 618,
+  "type": "C",
+  "halfAngle": 36,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-11T23:15:00-CME-001",
+  "start": "2026-10-11T23:15Z",
+  "speed": 457,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-10-12T05:09:00-CME-001",
+  "start": "2026-10-12T05:09Z",
+  "speed": 741,
+  "type": "C",
+  "halfAngle": 27,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-12T10:09:00-CME-001",
+  "start": "2026-10-12T10:09Z",
+  "speed": 351,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-10-12T12:23:00-CME-001",
+  "start": "2026-10-12T12:23Z",
+  "speed": 335,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-10-12T19:36:00-CME-001",
+  "start": "2026-10-12T19:36Z",
+  "speed": 365,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-14T13:36:00-CME-001",
+  "start": "2026-10-14T13:36Z",
+  "speed": 236,
+  "type": "S",
+  "halfAngle": 29,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-14T22:09:00-CME-001",
+  "start": "2026-10-14T22:09Z",
+  "speed": 339,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-10-14T23:12:00-CME-001",
+  "start": "2026-10-14T23:12Z",
+  "speed": 360,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-15T20:24:00-CME-001",
+  "start": "2026-10-15T20:24Z",
+  "speed": 428,
+  "type": "S",
+  "halfAngle": 36,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-16T06:09:00-CME-001",
+  "start": "2026-10-16T06:09Z",
+  "speed": 324,
+  "type": "S",
+  "halfAngle": 45,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-10-16T07:12:00-CME-001",
+  "start": "2026-10-16T07:12Z",
+  "speed": 490,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-16T08:12:00-CME-001",
+  "start": "2026-10-16T08:12Z",
+  "speed": 334,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-16T11:48:00-CME-001",
+  "start": "2026-10-16T11:48Z",
+  "speed": 475,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-16T12:38:00-CME-001",
+  "start": "2026-10-16T12:38Z",
+  "speed": 247,
+  "type": "S",
+  "halfAngle": 29,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-10-16T15:12:00-CME-001",
+  "start": "2026-10-16T15:12Z",
+  "speed": 270,
+  "type": "S",
+  "halfAngle": 30,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-16T17:00:00-CME-001",
+  "start": "2026-10-16T17:00Z",
+  "speed": 479,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-10-16T20:24:00-CME-001",
+  "start": "2026-10-16T20:24Z",
+  "speed": 552,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-17T02:48:00-CME-001",
+  "start": "2026-10-17T02:48Z",
+  "speed": 1048,
+  "type": "O",
+  "halfAngle": 38,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-17T17:00:00-CME-001",
+  "start": "2026-10-17T17:00Z",
+  "speed": 453,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-17T18:12:00-CME-001",
+  "start": "2026-10-17T18:12Z",
+  "speed": 427,
+  "type": "S",
+  "halfAngle": 21,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-18T21:30:00-CME-001",
+  "start": "2026-10-18T21:30Z",
+  "speed": 375,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-18T23:15:00-CME-001",
+  "start": "2026-10-18T23:15Z",
+  "speed": 590,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-19T14:48:00-CME-001",
+  "start": "2026-10-19T14:48Z",
+  "speed": 387,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-19T19:15:00-CME-001",
+  "start": "2026-10-19T19:15Z",
+  "speed": 474,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-20T01:26:00-CME-001",
+  "start": "2026-10-20T01:26Z",
+  "speed": 368,
+  "type": "S",
+  "halfAngle": 28,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-20T07:24:00-CME-001",
+  "start": "2026-10-20T07:24Z",
+  "speed": 748,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-20T09:09:00-CME-001",
+  "start": "2026-10-20T09:09Z",
+  "speed": 568,
+  "type": "C",
+  "halfAngle": 38,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-20T14:23:00-CME-001",
+  "start": "2026-10-20T14:23Z",
+  "speed": 920,
+  "type": "C",
+  "halfAngle": 13,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-21T08:53:00-CME-001",
+  "start": "2026-10-21T08:53Z",
+  "speed": 233,
+  "type": "S",
+  "halfAngle": 33,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-21T13:38:00-CME-001",
+  "start": "2026-10-21T13:38Z",
+  "speed": 547,
+  "type": "C",
+  "halfAngle": 26,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-21T20:36:00-CME-001",
+  "start": "2026-10-21T20:36Z",
+  "speed": 973,
+  "type": "C",
+  "halfAngle": 46,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-22T20:12:00-CME-001",
+  "start": "2026-10-22T20:12Z",
+  "speed": 561,
+  "type": "C",
+  "halfAngle": 13,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-22T22:12:00-CME-001",
+  "start": "2026-10-22T22:12Z",
+  "speed": 381,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-23T04:18:00-CME-001",
+  "start": "2026-10-23T04:18Z",
+  "speed": 597,
+  "type": "C",
+  "halfAngle": 26,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-23T10:24:00-CME-001",
+  "start": "2026-10-23T10:24Z",
+  "speed": 337,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-23T16:36:00-CME-001",
+  "start": "2026-10-23T16:36Z",
+  "speed": 255,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-24T15:12:00-CME-001",
+  "start": "2026-10-24T15:12Z",
+  "speed": 652,
+  "type": "C",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-24T18:00:00-CME-001",
+  "start": "2026-10-24T18:00Z",
+  "speed": 251,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-24T18:08:00-CME-001",
+  "start": "2026-10-24T18:08Z",
+  "speed": 566,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-24T20:36:00-CME-001",
+  "start": "2026-10-24T20:36Z",
+  "speed": 838,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-24T21:48:00-CME-001",
+  "start": "2026-10-24T21:48Z",
+  "speed": 333,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-24T22:24:00-CME-001",
+  "start": "2026-10-24T22:24Z",
+  "speed": 621,
+  "type": "C",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-25T03:12:00-CME-001",
+  "start": "2026-10-25T03:12Z",
+  "speed": 336,
+  "type": "S",
+  "halfAngle": 41,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-25T05:00:00-CME-001",
+  "start": "2026-10-25T05:00Z",
+  "speed": 246,
+  "type": "S",
+  "halfAngle": 30,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-25T09:48:00-CME-001",
+  "start": "2026-10-25T09:48Z",
+  "speed": 360,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-25T19:24:00-CME-001",
+  "start": "2026-10-25T19:24Z",
+  "speed": 275,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-10-26T00:12:00-CME-001",
+  "start": "2026-10-26T00:12Z",
+  "speed": 402,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-26T01:26:00-CME-001",
+  "start": "2026-10-26T01:26Z",
+  "speed": 285,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-26T02:12:00-CME-001",
+  "start": "2026-10-26T02:12Z",
+  "speed": 327,
+  "type": "S",
+  "halfAngle": 20,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-26T09:00:00-CME-001",
+  "start": "2026-10-26T09:00Z",
+  "speed": 873,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-26T09:48:00-CME-001",
+  "start": "2026-10-26T09:48Z",
+  "speed": 681,
+  "type": "C",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-26T18:48:00-CME-001",
+  "start": "2026-10-26T18:48Z",
+  "speed": 616,
+  "type": "C",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-26T20:48:00-CME-001",
+  "start": "2026-10-26T20:48Z",
+  "speed": 280,
+  "type": "S",
+  "halfAngle": 39,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-27T06:48:00-CME-001",
+  "start": "2026-10-27T06:48Z",
+  "speed": 260,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-27T12:53:00-CME-001",
+  "start": "2026-10-27T12:53Z",
+  "speed": 302,
+  "type": "S",
+  "halfAngle": 17,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-10-28T00:00:00-CME-001",
+  "start": "2026-10-28T00:00Z",
+  "speed": 399,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-28T11:12:00-CME-001",
+  "start": "2026-10-28T11:12Z",
+  "speed": 329,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-29T10:36:00-CME-001",
+  "start": "2026-10-29T10:36Z",
+  "speed": 287,
+  "type": "S",
+  "halfAngle": 30,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-30T12:36:00-CME-001",
+  "start": "2026-10-30T12:36Z",
+  "speed": 218,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-10-31T05:00:00-CME-001",
+  "start": "2026-10-31T05:00Z",
+  "speed": 345,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-01T00:00:00-CME-001",
+  "start": "2026-11-01T00:00Z",
+  "speed": 894,
+  "type": "C",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-01T19:00:00-CME-001",
+  "start": "2026-11-01T19:00Z",
+  "speed": 357,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-01T19:48:00-CME-001",
+  "start": "2026-11-01T19:48Z",
+  "speed": 435,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-03T09:36:00-CME-001",
+  "start": "2026-11-03T09:36Z",
+  "speed": 350,
+  "type": "S",
+  "halfAngle": 36,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-04T02:48:00-CME-001",
+  "start": "2026-11-04T02:48Z",
+  "speed": 497,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-11-05T04:24:00-CME-001",
+  "start": "2026-11-05T04:24Z",
+  "speed": 330,
+  "type": "S",
+  "halfAngle": 19,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-05T11:48:00-CME-001",
+  "start": "2026-11-05T11:48Z",
+  "speed": 404,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-11-05T20:00:00-CME-001",
+  "start": "2026-11-05T20:00Z",
+  "speed": 798,
+  "type": "C",
+  "halfAngle": 13,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-11-05T21:24:00-CME-001",
+  "start": "2026-11-05T21:24Z",
+  "speed": 406,
+  "type": "S",
+  "halfAngle": 16,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-06T01:26:00-CME-001",
+  "start": "2026-11-06T01:26Z",
+  "speed": 264,
+  "type": "S",
+  "halfAngle": 14,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-06T10:53:00-CME-001",
+  "start": "2026-11-06T10:53Z",
+  "speed": 368,
+  "type": "S",
+  "halfAngle": 18,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-11-06T13:15:00-CME-001",
+  "start": "2026-11-06T13:15Z",
+  "speed": 530,
+  "type": "C",
+  "halfAngle": 20,
+  "instruments": [
+   "GOES: CCOR-1",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-11-06T16:15:00-CME-001",
+  "start": "2026-11-06T16:15Z",
+  "speed": 476,
+  "type": "S",
+  "halfAngle": 43,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3"
+  ]
+ },
+ {
+  "id": "2026-11-06T20:24:00-CME-001",
+  "start": "2026-11-06T20:24Z",
+  "speed": 319,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-07T06:24:00-CME-001",
+  "start": "2026-11-07T06:24Z",
+  "speed": 245,
+  "type": "S",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-07T09:36:00-CME-001",
+  "start": "2026-11-07T09:36Z",
+  "speed": 507,
+  "type": "C",
+  "halfAngle": 26,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-07T10:24:00-CME-001",
+  "start": "2026-11-07T10:24Z",
+  "speed": 330,
+  "type": "S",
+  "halfAngle": 39,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-07T18:30:00-CME-001",
+  "start": "2026-11-07T18:30Z",
+  "speed": 423,
+  "type": "S",
+  "halfAngle": 13,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2"
+  ]
+ },
+ {
+  "id": "2026-11-08T00:48:00-CME-001",
+  "start": "2026-11-08T00:48Z",
+  "speed": 591,
+  "type": "C",
+  "halfAngle": 22,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-08T08:48:00-CME-001",
+  "start": "2026-11-08T08:48Z",
+  "speed": 367,
+  "type": "S",
+  "halfAngle": 27,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-09T09:12:00-CME-001",
+  "start": "2026-11-09T09:12Z",
+  "speed": 338,
+  "type": "S",
+  "halfAngle": 11,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-09T10:53:00-CME-001",
+  "start": "2026-11-09T10:53Z",
+  "speed": 299,
+  "type": "S",
+  "halfAngle": 35,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-11-09T18:15:00-CME-001",
+  "start": "2026-11-09T18:15Z",
+  "speed": 726,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-10T02:00:00-CME-001",
+  "start": "2026-11-10T02:00Z",
+  "speed": 803,
+  "type": "C",
+  "halfAngle": 10,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-10T02:12:00-CME-001",
+  "start": "2026-11-10T02:12Z",
+  "speed": 346,
+  "type": "S",
+  "halfAngle": 34,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-10T05:30:00-CME-001",
+  "start": "2026-11-10T05:30Z",
+  "speed": 974,
+  "type": "C",
+  "halfAngle": 11,
+  "instruments": [
+   "GOES: CCOR-1",
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-11-11T23:24:00-CME-001",
+  "start": "2026-11-11T23:24Z",
+  "speed": 367,
+  "type": "S",
+  "halfAngle": 29,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-12T01:53:00-CME-001",
+  "start": "2026-11-12T01:53Z",
+  "speed": 327,
+  "type": "S",
+  "halfAngle": 15,
+  "instruments": [
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-11-12T21:12:00-CME-001",
+  "start": "2026-11-12T21:12Z",
+  "speed": 247,
+  "type": "S",
+  "halfAngle": 32,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-13T01:26:00-CME-001",
+  "start": "2026-11-13T01:26Z",
+  "speed": 308,
+  "type": "S",
+  "halfAngle": 38,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-13T03:24:00-CME-001",
+  "start": "2026-11-13T03:24Z",
+  "speed": 525,
+  "type": "C",
+  "halfAngle": 17,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ },
+ {
+  "id": "2026-11-13T09:24:00-CME-001",
+  "start": "2026-11-13T09:24Z",
+  "speed": 302,
+  "type": "S",
+  "halfAngle": 24,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2",
+   "GOES: CCOR-1"
+  ]
+ },
+ {
+  "id": "2026-11-13T21:24:00-CME-001",
+  "start": "2026-11-13T21:24Z",
+  "speed": 474,
+  "type": "S",
+  "halfAngle": 12,
+  "instruments": [
+   "SOHO: LASCO/C2",
+   "SOHO: LASCO/C3",
+   "STEREO A: SECCHI/COR2"
+  ]
+ }
+]
