@@ -3,6 +3,8 @@ import OBJECTIVES from './data/objectives.json' with { type: 'json' }
 import { runMission } from './sim/runMission.js'
 import Dashboard from './ui/Dashboard.jsx'
 import PhaseNav from './ui/PhaseNav.jsx'
+import Landing from './ui/Landing.jsx'
+import SourcesPanel from './ui/SourcesPanel.jsx'
 import ObjectiveScreen from './ui/ObjectiveScreen.jsx'
 import PayloadScreen from './ui/PayloadScreen.jsx'
 import SpacecraftScreen from './ui/SpacecraftScreen.jsx'
@@ -15,7 +17,7 @@ const INITIAL = {
   objectiveId: 'forest_biomass',
   orbitId: 'leo_sso',
   launcherId: 'rideshare',
-  instrumentIds: ['multispectral_imager'],
+  instrumentIds: ['multispectral_imager', 'lidar_altimeter'],
   components: {
     array: 'array_m', battery: 'batt_m', comms: 'comms_x', adcs: 'adcs_wheels',
     propulsion: 'prop_mono', thermal: 'therm_passive', obc: 'obc_basic', structure: 'struct_small',
@@ -27,9 +29,12 @@ const INITIAL = {
 export default function App() {
   const [config, setConfig] = useState(INITIAL)
   const [phase, setPhase] = useState('objective')
+  const [started, setStarted] = useState(false)
   const result = useMemo(() => runMission(config), [config])
   const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
   const props = { config, setConfig, result }
+
+  if (!started) return <Landing onStart={() => setStarted(true)} />
 
 
   return (
@@ -50,6 +55,7 @@ export default function App() {
           {phase === 'spacecraft' && <SpacecraftScreen {...props} />}
           {phase === 'orbit' && <OrbitScreen {...props} />}
           {phase === 'simulate' && <ResultScreen {...props} />}
+          {phase === 'sources' && <SourcesPanel />}
 
 
           <section className="panel checks">

@@ -90,3 +90,6 @@ main { display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:star
 .event-head em { font-style:normal; font-size:11px; color:var(--muted); font-weight:400 }
 .event-out { font-size:12.5px; color:var(--fg); opacity:.9 }
 .analogue { font-size:14px } .analogue a { color:var(--accent) }
+.source { padding:9px 0; border-bottom:1px solid var(--line); display:flex; flex-direction:column; gap:3px }
+.source:last-child { border-bottom:none }
+.source a { color:var(--accent); font-size:13px; word-break:break-all }

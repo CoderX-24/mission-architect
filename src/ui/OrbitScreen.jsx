@@ -1,3 +1,4 @@
+import OrbitCanvas from '../viz/OrbitCanvas.jsx'
 import ORBITS from '../data/orbits.json' with { type: 'json' }
 import LAUNCHERS from '../data/launchers.json' with { type: 'json' }
 import OBJECTIVES from '../data/objectives.json' with { type: 'json' }
@@ -10,6 +11,7 @@ export default function OrbitScreen({ config, setConfig, result }) {
   return (
     <section className="panel">
       <h2>Orbit</h2>
+      <OrbitCanvas orbit={ORBITS.find(o => o.id === config.orbitId)} />
       <p className="hint">
         The orbit sets your sunlight, your eclipse time, your contact time with the ground,
         your radiation dose, and how much propellant you must carry.

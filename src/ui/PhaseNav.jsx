@@ -4,6 +4,7 @@ const PHASES = [
   { id: 'spacecraft', label: 'Spacecraft' },
   { id: 'orbit', label: 'Orbit & Launch' },
   { id: 'simulate', label: 'Simulate' },
+  { id: 'sources', label: 'Sources' },
 ]
 
 
