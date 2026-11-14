@@ -1,3 +1,4 @@
+import SpacecraftView from '../viz/SpacecraftView.jsx'
 import COMPONENTS from '../data/components.json' with { type: 'json' }
 
 
@@ -36,6 +37,7 @@ export default function SpacecraftScreen({ config, setConfig }) {
   return (
     <section className="panel">
       <h2>Spacecraft bus</h2>
+      <SpacecraftView config={config} />
       <p className="hint">
         Every subsystem adds mass, draws power and costs money. Watch the margin bars move
         as you choose.

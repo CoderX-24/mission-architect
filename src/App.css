@@ -153,3 +153,8 @@ main { display:grid; grid-template-columns:1fr 320px; gap:20px; align-items:star
 .wx-event .event-head strong { font-size:10px; letter-spacing:.07em; padding:2px 6px; border-radius:3px }
 .wx-event.pass .event-head strong { background:rgba(61,214,140,.15); color:#3dd68c }
 .wx-event.fail .event-head strong { background:rgba(229,72,77,.15); color:#e5484d }
+.craft { margin:0 0 18px }
+.craft-svg { width:100%; height:auto; display:block; border:1px solid var(--line);
+  border-radius:6px; background:#070910 }
+.craft-cap { font-size:11.5px; color:var(--muted); margin:8px 0 0; line-height:1.5 }
+.craft-cap b { color:var(--fg); font-variant-numeric:tabular-nums }
