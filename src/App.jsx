@@ -1,15 +1,20 @@
 import { useMemo, useState } from 'react'
-import INSTRUMENTS from './data/instruments.json' with { type: 'json' }
 import OBJECTIVES from './data/objectives.json' with { type: 'json' }
 import { runMission } from './sim/runMission.js'
 import Dashboard from './ui/Dashboard.jsx'
+import PhaseNav from './ui/PhaseNav.jsx'
+import ObjectiveScreen from './ui/ObjectiveScreen.jsx'
+import PayloadScreen from './ui/PayloadScreen.jsx'
+import SpacecraftScreen from './ui/SpacecraftScreen.jsx'
+import OrbitScreen from './ui/OrbitScreen.jsx'
+import ResultScreen from './ui/ResultScreen.jsx'
 import './App.css'
 
 
 const INITIAL = {
   objectiveId: 'forest_biomass',
   orbitId: 'leo_sso',
-  launcherId: 'falcon9',
+  launcherId: 'rideshare',
   instrumentIds: ['multispectral_imager'],
   components: {
     array: 'array_m', battery: 'batt_m', comms: 'comms_x', adcs: 'adcs_wheels',
@@ -21,16 +26,10 @@ const INITIAL = {
 
 export default function App() {
   const [config, setConfig] = useState(INITIAL)
+  const [phase, setPhase] = useState('objective')
   const result = useMemo(() => runMission(config), [config])
   const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
-
-
-  const toggle = (id) => setConfig(c => ({
-    ...c,
-    instrumentIds: c.instrumentIds.includes(id)
-      ? c.instrumentIds.filter(x => x !== id)
-      : [...c.instrumentIds, id],
-  }))
+  const props = { config, setConfig, result }
 
 
   return (
@@ -41,41 +40,33 @@ export default function App() {
       </header>
 
 
+      <PhaseNav phase={phase} setPhase={setPhase} />
+
+
       <main>
-        <section className="picker">
-          <h2>Payload</h2>
-          <p className="hint">
-            Requires: {objective.requiredMeasurements.join(', ')}. Anything else scores nothing.
-          </p>
-          {INSTRUMENTS.map(i => {
-            const on = config.instrumentIds.includes(i.id)
-            const useful = objective.requiredMeasurements.includes(i.type)
-            return (
-              <button key={i.id} onClick={() => toggle(i.id)} className={'inst' + (on ? ' on' : '')}>
-                <span className="inst-name">{i.name}{useful && <em> required</em>}</span>
-                <span className="inst-stats">
-                  {i.massKg} kg &middot; {i.powerW} W &middot; ${i.costUsdM}M &middot; {i.dataRateMbps} Mbps
-                </span>
-              </button>
-            )
-          })}
-        </section>
+        <div className="stage">
+          {phase === 'objective' && <ObjectiveScreen {...props} />}
+          {phase === 'payload' && <PayloadScreen {...props} />}
+          {phase === 'spacecraft' && <SpacecraftScreen {...props} />}
+          {phase === 'orbit' && <OrbitScreen {...props} />}
+          {phase === 'simulate' && <ResultScreen {...props} />}
+
+
+          <section className="panel checks">
+            <h2>Engineering review</h2>
+            {result.checks.map(c => (
+              <div key={c.id} className={'check ' + (c.passed ? 'pass' : 'fail')}>
+                <strong>{c.passed ? 'PASS' : 'FAIL'}</strong>
+                <span>{c.message}</span>
+                {!c.passed && <em>{c.fix}</em>}
+              </div>
+            ))}
+          </section>
+        </div>
 
 
         <Dashboard result={result} />
       </main>
-
-
-      <section className="checks">
-        <h2>Engineering review</h2>
-        {result.checks.map(c => (
-          <div key={c.id} className={'check ' + (c.passed ? 'pass' : 'fail')}>
-            <strong>{c.passed ? 'PASS' : 'FAIL'}</strong>
-            <span>{c.message}</span>
-            {!c.passed && <em>{c.fix}</em>}
-          </div>
-        ))}
-      </section>
     </div>
   )
 }
