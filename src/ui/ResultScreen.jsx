@@ -1,4 +1,5 @@
 import OBJECTIVES from '../data/objectives.json' with { type: 'json' }
+import FlightConsole from '../viz/FlightConsole.jsx'
 
 
 export default function ResultScreen({ config, setConfig, result }) {
@@ -33,6 +34,8 @@ export default function ResultScreen({ config, setConfig, result }) {
 
       {result.flies && (
         <>
+          <FlightConsole config={config} result={result} />
+
           <h3>Score breakdown</h3>
           <div className="rows">
             <div><span>Science value per day</span><b>{result.score.sciencePerDay.toFixed(1)}</b></div>

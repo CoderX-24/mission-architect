@@ -14,6 +14,7 @@ import PayloadScreen from './ui/PayloadScreen.jsx'
 import SpacecraftScreen from './ui/SpacecraftScreen.jsx'
 import OrbitScreen from './ui/OrbitScreen.jsx'
 import ResultScreen from './ui/ResultScreen.jsx'
+import TradeScreen from './ui/TradeScreen.jsx'
 import './App.css'
 
 
@@ -62,6 +63,7 @@ export default function App() {
           {phase === 'spacecraft' && <SpacecraftScreen {...props} />}
           {phase === 'orbit' && <OrbitScreen {...props} />}
           {phase === 'simulate' && <ResultScreen {...props} />}
+          {phase === 'trade' && <TradeScreen {...props} />}
           {phase === 'weather' && <SpaceWeatherPanel {...props} />}
           {phase === 'sources' && <SourcesPanel />}
 

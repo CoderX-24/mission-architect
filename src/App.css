@@ -1030,3 +1030,252 @@ main {
   .bar-fill { transition: none; }
   .card, .inst, .cta, .phase { transition: none; }
 }
+
+/* ===========================================================================
+   FLIGHT CONSOLE
+   The mission, running. Every curve is computed from the player's own design
+   by sim/telemetry.js, and integrates back to the margins on the dashboard.
+   =========================================================================== */
+
+.console {
+  margin: 20px 0;
+  background: linear-gradient(180deg, rgba(10,15,23,.96), rgba(4,6,11,.96));
+  border-color: var(--line-strong);
+}
+
+.console-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: stretch;
+  margin-bottom: 14px;
+}
+
+.console-orbit { height: 215px; margin: 0; }
+
+.readouts { display: grid; grid-template-rows: repeat(4, 1fr); gap: 8px; min-width: 0; }
+
+.readout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--line-strong);
+  border-radius: 8px;
+  background: rgba(0,0,0,.3);
+  min-width: 0;
+}
+
+.readout.ok   { border-left-color: var(--ok); }
+.readout.warn { border-left-color: var(--warn); }
+.readout.bad  { border-left-color: var(--bad); }
+.readout.dim  { border-left-color: var(--muted); }
+
+.ro-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted);
+}
+
+.ro-value {
+  font-family: var(--font-mono);
+  font-size: 23px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  color: var(--fg);
+}
+
+.ro-value i { font-size: 12px; font-style: normal; color: var(--muted); margin-left: 2px; }
+
+.readout.ok .ro-value   { color: var(--ok); }
+.readout.warn .ro-value { color: var(--warn); }
+.readout.bad .ro-value  { color: var(--bad); }
+
+.ro-note {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--muted);
+  letter-spacing: .02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.telemetry-canvas {
+  width: 100%;
+  height: 210px;
+  display: block;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+
+.console-ctl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0 0;
+}
+
+.ctl-note { font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); }
+.ctl-note b { color: var(--fg-2); font-variant-numeric: tabular-nums; }
+
+.console-warn {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(244,63,94,.3);
+  border-left: 2px solid var(--bad);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  background: rgba(244,63,94,.07);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--fg-2);
+}
+
+.console-warn b { color: var(--bad); font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.mission-canvas {
+  width: 100%;
+  height: 142px;
+  display: block;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  margin-bottom: 6px;
+}
+
+.scrub { width: 100%; accent-color: var(--accent); margin: 0 0 8px; }
+
+.epoch-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.epoch-row b { color: var(--fg-2); font-variant-numeric: tabular-nums; }
+.epoch-row b.bad { color: var(--bad); }
+.bad-text { color: var(--bad); }
+
+@media (max-width: 720px) {
+  .console-top { grid-template-columns: 1fr; }
+  .readouts { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+  .console-orbit { height: 185px; }
+  .telemetry-canvas { height: 230px; }
+  .ro-value { font-size: 20px; }
+}
+
+/* ===========================================================================
+   TRADE SPACE
+   Every possible spacecraft bus, enumerated and plotted. The efficient
+   frontier is the real output of a mission trade study.
+   =========================================================================== */
+
+.trade-canvas {
+  width: 100%;
+  height: 300px;
+  display: block;
+  background: rgba(0,0,0,.35);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  margin-bottom: 10px;
+}
+
+.trade-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.trade-legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+.sw { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+.sw.fly   { background: rgba(56,189,248,.55); }
+.sw.front { background: var(--ok); }
+.sw.you   { background: transparent; border: 2px solid var(--accent); }
+
+.trade-verdict {
+  padding: 12px 14px;
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  border: 1px solid rgba(52,211,153,.3);
+  border-left: 2px solid var(--ok);
+  background: rgba(52,211,153,.07);
+  line-height: 1.6;
+}
+
+.suggest {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 15px 16px;
+  background: rgba(255,255,255,.02);
+}
+
+.suggest-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.suggest-head h3 { margin: 0; }
+
+.suggest-diff {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.suggest-diff li {
+  display: grid;
+  grid-template-columns: minmax(96px, 1fr) minmax(0, 1.4fr) 14px minmax(0, 1.4fr);
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.suggest-diff li:last-child { border-bottom: none; }
+
+.sd-group {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+}
+
+.sd-from { color: var(--muted); text-decoration: line-through; }
+.sd-arrow { color: var(--accent); text-align: center; }
+.sd-to { color: var(--fg); font-weight: 600; }
+
+@media (max-width: 560px) {
+  .trade-canvas { height: 250px; }
+  .suggest-diff li { grid-template-columns: 1fr; gap: 1px; }
+  .sd-arrow { display: none; }
+  .sd-from { font-size: 11.5px; }
+}
