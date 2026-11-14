@@ -23,7 +23,7 @@ const INITIAL = {
   launcherId: 'rideshare',
   instrumentIds: ['multispectral_imager', 'lidar_altimeter'],
   components: {
-    array: 'array_m', battery: 'batt_m', comms: 'comms_x', adcs: 'adcs_wheels',
+    array: 'array_m', battery: 'batt_m', comms: 'comms_x', adcs: 'adcs_fine',
     propulsion: 'prop_mono', thermal: 'therm_passive', obc: 'obc_basic', structure: 'struct_small',
   },
   lifetimeYears: 5,

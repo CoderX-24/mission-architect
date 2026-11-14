@@ -2,8 +2,8 @@ import { gradeMargin } from '../sim/score.js'
 
 
 const GRADE_COLOR = {
-  FAIL: '#e5484d', RISKY: '#f5a524', NOMINAL: '#3dd68c',
-  GENEROUS: '#2aa3b8', OVERDESIGNED: '#7a8596',
+  FAIL: '#f43f5e', RISKY: '#fbbf24', NOMINAL: '#34d399',
+  GENEROUS: '#38bdf8', OVERDESIGNED: '#7b8798',
 }
 
 
