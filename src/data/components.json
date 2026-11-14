@@ -1,0 +1,84 @@
+{
+  "array": [
+    { "id":"array_s","name":"Body-Mounted Cells, 2 m2","areaM2":2,"efficiency":0.30,"degradationPerYear":0.025,"massKg":18,"costUsdM":3,
+      "blurb":"No deployment mechanism, nothing to fail. Also very little power.",
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"array_m","name":"Deployable Array, 8 m2","areaM2":8,"efficiency":0.30,"degradationPerYear":0.025,"massKg":52,"costUsdM":11,
+      "blurb":"Two wings. The standard choice for a medium Earth-observing spacecraft.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"array_l","name":"Deployable Array, 20 m2","areaM2":20,"efficiency":0.30,"degradationPerYear":0.022,"massKg":115,"costUsdM":26,
+      "blurb":"Large wings with a drive mechanism to track the Sun.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"array_xl","name":"Deployable Array, 45 m2","areaM2":45,"efficiency":0.32,"degradationPerYear":0.020,"massKg":240,"costUsdM":58,
+      "blurb":"What a Mars or deep-space mission needs, because sunlight out there is thin.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ],
+  "battery": [
+    { "id":"batt_s","name":"Li-ion Pack, 400 Wh","capacityWh":400,"depthOfDischarge":0.30,"massKg":9,"costUsdM":1.5,
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"batt_m","name":"Li-ion Pack, 1800 Wh","capacityWh":1800,"depthOfDischarge":0.30,"massKg":34,"costUsdM":5,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"batt_l","name":"Li-ion Pack, 5000 Wh","capacityWh":5000,"depthOfDischarge":0.35,"massKg":88,"costUsdM":13,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ],
+  "comms": [
+    { "id":"comms_s","name":"S-Band Patch Antenna","band":"S","baseRateMbps":150,"txPowerW":12,"antennaM":0.3,"massKg":7,"powerW":25,"costUsdM":2,
+      "blurb":"Reliable low-rate link. Fine for housekeeping, hopeless for imaging.",
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"comms_x","name":"X-Band High-Gain Dish, 1.0 m","band":"X","baseRateMbps":165,"txPowerW":50,"antennaM":1.0,"massKg":32,"powerW":95,"costUsdM":9,
+      "blurb":"The standard science downlink.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"comms_ka","name":"Ka-Band High-Gain Dish, 2.5 m","band":"Ka","baseRateMbps":650,"txPowerW":110,"antennaM":2.5,"massKg":78,"powerW":240,"costUsdM":27,
+      "blurb":"Enormous throughput. Enormous power draw, and a dish that has to fit in the fairing.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"comms_laser","name":"Optical (Laser) Terminal","band":"Optical","baseRateMbps":2200,"txPowerW":85,"antennaM":1.4,"massKg":55,"powerW":190,"costUsdM":48,
+      "blurb":"Highest rate available, but it needs clear skies at the ground station and fine pointing.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ],
+  "adcs": [
+    { "id":"adcs_coarse","name":"Magnetorquers + Sun Sensors","pointingArcsec":600,"redundant":false,"massKg":11,"powerW":15,"costUsdM":1.5,
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"adcs_wheels","name":"Reaction Wheels + Star Tracker","pointingArcsec":20,"redundant":false,"massKg":38,"powerW":65,"costUsdM":12,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"adcs_fine","name":"Precision Wheels + Dual Star Trackers","pointingArcsec":1,"redundant":true,"massKg":72,"powerW":120,"costUsdM":34,
+      "blurb":"Redundant wheels. The only option that survives a wheel failure.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ],
+  "propulsion": [
+    { "id":"prop_cold","name":"Cold Gas Thrusters","ispS":70,"massKg":14,"powerW":5,"costUsdM":1,
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"prop_mono","name":"Monopropellant Hydrazine","ispS":225,"massKg":45,"powerW":20,"costUsdM":7,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"prop_bi","name":"Bipropellant Main Engine","ispS":320,"massKg":95,"powerW":30,"costUsdM":19,
+      "blurb":"High specific impulse. Essential for lunar or Mars orbit insertion.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"prop_ion","name":"Solar Electric Ion Thruster","ispS":3000,"massKg":120,"powerW":450,"costUsdM":42,
+      "blurb":"Ten times the efficiency, but it eats power that your instruments wanted.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ],
+  "thermal": [
+    { "id":"therm_passive","name":"Passive MLI Blankets","massKg":12,"powerW":10,"costUsdM":1,"coolingCapable":false,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"therm_active","name":"Active Loop + Radiator","massKg":46,"powerW":85,"costUsdM":9,"coolingCapable":true,
+      "blurb":"Required by any instrument that needs cooling.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"therm_cryo","name":"Cryocooler + Deployable Radiator","massKg":92,"powerW":210,"costUsdM":31,"coolingCapable":true,
+      "blurb":"Holds detectors near absolute zero. Astrophysics instruments do not work without it.",
+      "source":"https://science.nasa.gov/mission/webb/game-build-it-yourself/" }
+  ],
+  "obc": [
+    { "id":"obc_basic","name":"Single-String Flight Computer","massKg":8,"powerW":22,"costUsdM":2,"redundant":false,"storageGb":128,
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"obc_rad","name":"Radiation-Hardened Computer","massKg":19,"powerW":45,"costUsdM":11,"redundant":true,"storageGb":1024,
+      "blurb":"Survives the Van Allen belts. Slower than your phone, and that is the point.",
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ],
+  "structure": [
+    { "id":"struct_cubesat","name":"12U CubeSat Frame","massKg":16,"maxSupportedKg":60,"costUsdM":0.8,
+      "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" },
+    { "id":"struct_small","name":"Small Satellite Bus Structure","massKg":65,"maxSupportedKg":400,"costUsdM":6,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+    { "id":"struct_large","name":"Flagship Bus Structure","massKg":185,"maxSupportedKg":1800,"costUsdM":24,
+      "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  { "id":"electron","name":"Rocket Lab Electron","costUsdM":8,"fairingDiameterM":1.2,"reliability":0.93,
+    "capacityKg":{ "leo_low":300,"leo_sso":200,"gto":0,"geo":0,"lunar":0,"mars":0 },
+    "notes":"Dedicated small launcher. Cheap, but it cannot lift a large spacecraft or reach beyond low Earth orbit.",
+    "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+  { "id":"falcon9","name":"Falcon 9","costUsdM":67,"fairingDiameterM":5.2,"reliability":0.98,
+    "capacityKg":{ "leo_low":22800,"leo_sso":15600,"gto":8300,"geo":3500,"lunar":4000,"mars":2600 },
+    "notes":"The workhorse. Enough capacity for almost any design, at a price that eats a small mission's budget.",
+    "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+  { "id":"atlas5","name":"Atlas V 401","costUsdM":110,"fairingDiameterM":4.2,"reliability":0.99,
+    "capacityKg":{ "leo_low":9800,"leo_sso":7700,"gto":4750,"geo":2000,"lunar":2250,"mars":1500 },
+    "notes":"Highest reliability on the board. You pay for that reliability twice over.",
+    "source":"https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf" },
+  { "id":"rideshare","name":"Falcon 9 Rideshare Slot","costUsdM":2,"fairingDiameterM":1.0,"reliability":0.97,
+    "capacityKg":{ "leo_low":830,"leo_sso":830,"gto":0,"geo":0,"lunar":0,"mars":0 },
+    "notes":"You share a ride and take the orbit you are given. Extraordinarily cheap if your mission fits the box.",
+    "source":"https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf" }
+]
