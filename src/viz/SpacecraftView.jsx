@@ -106,7 +106,8 @@ export default function SpacecraftView({ config }) {
 
 
         <line x1="24" y1={H - 20} x2={24 + 5 * PXM} y2={H - 20} stroke="#8b95a8" strokeWidth="1.5" />
-        <text x="24" y={H - 26} fill="#8b95a8" fontSize="10" fontFamily="system-ui">5 m</text>
+        <text x="24" y={H - 26} fill="#8b95a8" fontSize="9" letterSpacing="1"
+          fontFamily="ui-monospace, SFMono-Regular, Menlo, monospace">5 m</text>
       </svg>
 
 

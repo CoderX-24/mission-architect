@@ -1,0 +1,291 @@
+# Space Apps 2026 — Mission Architect submission (paste-ready)
+
+Team Doon-Dev · Satna virtual event (IST) · deadline Sun 15 Nov 2026 23:59 IST
+Save Progress AND Submit for Judging are separate buttons. Re-submitting is free;
+only the last click is judged.
+
+---
+
+## Project Name
+
+Mission Architect
+
+## High-Level Project Summary / Tagline
+
+An interactive mission design and validation platform: design a spacecraft,
+fly it, and see every design that beats yours.
+
+## Project link
+
+https://coderx-24.github.io/mission-architect/
+
+## Repository
+
+https://github.com/CoderX-24/mission-architect
+
+## Project Demonstration
+
+[7-slide deck public link — paste once published]
+
+---
+
+## Summary (50–200 words)
+
+Mission Architect is a browser-based platform that puts you in the role of a NASA
+mission designer. Choose a science objective, select instruments, build a
+spacecraft, pick an orbit and a launch vehicle — then fly it. Every choice carries
+real engineering consequences: solar flux falls off with the inverse square of
+distance from the Sun, so an array sized for Earth browns out at Mars, and adding
+an instrument adds data you may not be able to downlink. The platform teaches one lesson no other tool does: real missions are
+not designed to spend 100% of their budget. They hold 10 to 35 percent margin,
+because everything grows between design and launch. Designs are flown as a live
+simulation and validated against real coronal mass ejections recorded in NASA's
+DONKI database. All 10,368 spacecraft configurations are then enumerated to show
+the efficient frontier. The surface segment carries your design down to the body
+it flew to and draws, to scale, the outpost your array, battery and link buy — where landing twenty copies of your
+instruments still leaves one orbiter to carry the data home. Every figure is
+cited to a NASA source inside the app.
+
+---
+
+## Project Details
+
+### What it does
+
+Mission Architect takes you through the phases of a real mission design:
+objective, payload, spacecraft, orbit, launch vehicle, simulation, trade study,
+space-weather validation and the surface segment the design makes possible. You pick from five science objectives, twelve
+instruments, eight subsystem groups, six orbits and four launch vehicles. At
+every step the platform recomputes the whole mission and tells you — in watts,
+kilograms, dollars, gigabytes and arcseconds — whether what you have built can
+actually fly.
+
+### How it works
+
+One engine, `runMission`, owns every number. It takes a configuration object and
+returns the constraint checks, the five margins, the in-flight events and the
+score. No screen in the interface calculates anything; the UI only renders what
+the engine returns. That single-source-of-truth design is why the simulation, the
+space-weather validation and the trade study cannot disagree with each other.
+
+The physics is real and cited. Solar flux is 1361 W/m² scaled by the inverse
+square of solar distance, then reduced for packing and cosine loss, array
+degradation per year against a radiation index, and eclipse fraction. Propellant
+mass comes from the Tsiolkovsky rocket equation against a delta-v budget of
+insertion, station-keeping over the mission lifetime and end-of-life disposal.
+Downlink is a link budget scaled by transmit power, antenna aperture and an
+orbit-specific range term, integrated over ground-contact minutes per day and
+compared against what the instruments generate. Cost is instrument and bus cost
+with a 35% development wrap, plus the launch vehicle and annual operations.
+
+It is a static site. No backend, no database, no accounts, no login — React and
+Vite built to GitHub Pages. The only network call at runtime is to NASA.
+
+### The margin mechanic
+
+This is the heart of it, and we have not seen another entry model it. Real
+missions do not spend 100% of their mass, power, budget or data capacity. They
+hold a reserve, because everything grows between design and launch. So the
+platform grades each of the five margins: below 0% the mission does not fly, 0 to
+10% is RISKY and exposed to in-flight events, 10 to 35% is NOMINAL and rewarded,
+35 to 50% is GENEROUS, and above 50% is OVERDESIGNED and penalised. You cannot
+win by hoarding and you cannot win by spending. The healthy 10–35% band is drawn
+directly into every margin bar in the interface, so the thesis is visible before
+you read a word.
+
+Failure is never "mission failed". It is always the numbers and the way out:
+"Array delivers 1620 W orbit-average at end of life; the spacecraft draws 1652 W
+(-2% margin)."
+
+### Live mission simulation
+
+A design is not a verdict, it is a mission. The flight console flies the
+spacecraft through its real orbit — one lap every twelve seconds, labelled with
+the true time compression — dimming through eclipse, passing behind the planet,
+dropping a link line to the ground station during a contact. Alongside it, a
+telemetry strip chart plots array power, battery state of charge and recorder
+fill on one shared time axis, with eclipse and contact periods shaded across all
+three lanes and the load line crossing the power trace.
+
+A mission timeline then lets you scrub from launch to end of life and re-fly the
+orbit at that array age, watching degradation bite: the default design falls from
+2940 W to 2492 W and its power margin from 65% to 58%.
+
+Every series in the console is a time-domain reconstruction of a number the
+engine already reports — the mean of the array output equals the orbit-average
+power, the data rates integrate to the per-day figures, the time-domain battery
+verdict equals the analytic one. A test suite of 25 assertions enforces exactly
+that, so the animation cannot drift away from the physics.
+
+The reconstruction also produces a figure a static design tool cannot: days to
+fill the recorder. A Mars design on an S-band link fills its onboard recorder in
+2.3 days and then loses 56.3 GB of science per day.
+
+### Space weather validation against real NASA DONKI records
+
+Designs are flown against real coronal mass ejections from NASA's DONKI
+database — 433 actual CME records from 16 July to 13 November 2026, each with its
+measured speed and the spacecraft that observed it. DONKI serves CORS headers, so
+a static site queries the live API directly with no backend.
+
+A storm's stress on a design scales with CME speed and the radiation environment
+of the chosen orbit, and it can break a mission through three independent paths:
+insufficient power margin, insufficient data margin, or a single-event upset with
+no redundant attitude control. Orbit choice changes exposure by roughly five
+times, which is physically correct — Earth's magnetosphere shields low orbits and
+nothing shields a lunar or Mars trajectory.
+
+The live API is wrapped in a snapshot fallback of the same real records, so
+validation still runs if the API rate-limits or the venue network fails. We
+tested that path against a real HTTP 429.
+
+### Exhaustive trade study
+
+`runMission` costs 0.013 milliseconds, which makes something unusual possible:
+instead of sampling the design space, we enumerate all of it. Every one of the
+10,368 possible bus configurations is run in the browser in under 100
+milliseconds, and the result is plotted as science score against cost with the
+Pareto-efficient frontier drawn through it and your design marked on it.
+
+For the default objective, 76 of 10,368 designs fly — 0.7% — and two of those sit
+on the efficient frontier. For a Mars reconnaissance design scoring 41, the
+platform will tell you that 379 configurations dominate it and that 770 points of
+science are reachable for no more money, show you a component-by-component diff,
+and adopt the better bus in one click. Pareto-optimality is defined properly:
+a design is on the frontier when nothing dominates it, which a test asserts.
+
+### The surface segment
+
+An orbiter is the first element of a programme, not the whole of it, and this is the
+part of the platform that no other entry has. The surface segment takes the design
+off the drawing board and puts it on the ground: your array area and cell
+efficiency, your battery capacity and depth of discharge, your antenna, your
+instrument masses, your launch vehicle's capacity to that body and your mission
+lifetime are carried down to the surface of wherever you flew, and the installation
+they buy is drawn to scale — solar farm, pressurised habitats, battery hall, ground
+terminal, radiators, volatiles plant, landing pads, radiation shelter — against a
+1.8 m crew figure for scale, under a day/night cycle with shadows that follow the
+Sun, while the orbiter you designed passes overhead and drops a relay link.
+
+Nothing in that drawing is decoration. Every structure's dimensions come from a
+number the engine already reported, a table under the scene prints the arithmetic
+behind every headline figure, and the eleven figures the mission physics cannot
+supply — crew per module, kilowatts of life support, water extracted per
+kilowatt-hour — are published as declared surface assumptions rather than buried in
+an art asset. A test suite asserts that the farm area is units times array area,
+that available power recomputes from flux, efficiency and dust, that no two
+structures overlap, and that the same design always builds the same outpost.
+
+It produces three findings a design screen cannot:
+
+- **One orbiter, many instrument suites.** Landing more hardware multiplies what the
+  outpost measures and does not multiply the link home. A default Earth programme
+  generates 435 GB/day and gets 145 GB/day back, losing 290 GB/day of science
+  permanently.
+- **Batteries are not a night solution.** The pack that carries an orbiter through a
+  35-minute eclipse is asked to carry a base through 12 to 72 hours of darkness. It
+  lasts under an hour. Riding out the dark on cells alone needs tens of times the
+  bank — which is why surface power studies reach for fission instead.
+- **Overdesign in orbit is capability on the ground.** An array the trade study calls
+  OVERDESIGNED for an orbiter is exactly what supports a crewed base, so the same
+  number is a penalty in one phase and the enabling choice in the next.
+
+### Educational impact
+
+Students learn orbital mechanics, spacecraft design and mission operations as
+three separate subjects and never see them interact. Change the orbit and the
+power budget moves. Add an instrument and the downlink fails. Hold too little
+margin and an ordinary solar storm ends the mission. No textbook shows you that
+coupling; a simulator does, in seconds, as many times as you want to try.
+
+Because every entry in every catalog carries its NASA citation inside the app —
+visible in a sources panel, not buried in a README — a student can follow any
+number back to the document it came from. It runs in any browser with no install,
+no account and no cost, which matters for a classroom.
+
+### How we used NASA data
+
+NASA's own guidance set the engineering frame: "Design and Develop Science
+Missions" and "CubeSat 101" for mission phases, margin practice and subsystem
+sizing. Real missions anchor the catalogs and give each design a flown analogue —
+Landsat 9, Mars Reconnaissance Orbiter (whose aerobraking insertion delta-v we
+use), Lunar Reconnaissance Orbiter, SPHEREx and DSCOVR. NASA DONKI, through NASA
+Open APIs, supplies the 433 real coronal mass ejections every design is validated
+against. NASA Mission Viz and NASA's own "Build It Yourself: Space Telescope"
+game informed how to present mission trade-offs to a learner.
+
+### Tools
+
+React 19, Vite 8, plain CSS, gh-pages for deployment. Three self-hosted open-licence
+typefaces — Space Grotesk, Inter and JetBrains Mono — totalling 111 KB, so the
+site makes zero third-party requests at runtime and nothing external can break it
+while it is being judged. The only runtime dependency beyond the browser is
+NASA's own API.
+
+### Creativity
+
+Two choices we have not seen elsewhere. First, making engineering margin the
+scoring mechanic rather than a hidden constraint — rewarding the 10–35% reserve
+that real programmes hold, and penalising overdesign as well as recklessness.
+Second, exhaustive enumeration instead of advice: the platform does not tell you
+your design is suboptimal, it computes every alternative and shows you exactly
+which ones beat it and by how much.
+
+### AI assistance
+
+We used Claude (Anthropic) as a coding assistant throughout: generating and
+reviewing module implementations, writing the test suites, and reviewing physics
+and copy. All engineering decisions, constants, NASA sources and calibration
+targets were chosen and verified by the team, and the engine is covered by three
+test suites we run before every deploy. AI use is permitted by the submission
+rules and we are declaring it rather than hiding it.
+
+---
+
+## NASA Data (Link Text / URL pairs)
+
+Design and Develop Science Missions
+https://www.nasa.gov/wp-content/uploads/2025/04/250323-design-and-develop-science-mission.pdf
+
+CubeSat 101
+https://www3.nasa.gov/sites/default/files/atoms/files/nasa_csli_cubesat_101_508.pdf
+
+NASA DONKI Space Weather Database
+https://ccmc.gsfc.nasa.gov/tools/DONKI/
+
+NASA Open APIs
+https://api.nasa.gov/
+
+NASA Mission Viz
+https://nasa.github.io/mission-viz/
+
+Build It Yourself: Space Telescope Game
+https://science.nasa.gov/mission/webb/game-build-it-yourself/
+
+Landsat 9
+https://science.nasa.gov/mission/landsat-9/
+
+Mars Reconnaissance Orbiter
+https://science.nasa.gov/mission/mars-reconnaissance-orbiter/
+
+Lunar Reconnaissance Orbiter
+https://science.nasa.gov/mission/lro/
+
+SPHEREx
+https://science.nasa.gov/mission/spherex/
+
+DSCOVR
+https://science.nasa.gov/mission/dscovr/
+
+---
+
+## Space Agency Partner & Other Data
+
+React — https://react.dev/
+Vite — https://vite.dev/
+gh-pages — https://www.npmjs.com/package/gh-pages
+Inter (SIL Open Font License) — https://fonts.google.com/specimen/Inter
+Space Grotesk (SIL Open Font License) — https://fonts.google.com/specimen/Space+Grotesk
+JetBrains Mono (SIL Open Font License) — https://fonts.google.com/specimen/JetBrains+Mono
+Fontsource — https://fontsource.org/
+Claude (AI coding assistant, permitted by the submission form) — https://claude.ai/

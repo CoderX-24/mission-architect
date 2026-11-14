@@ -16,6 +16,7 @@ export default function OrbitScreen({ config, setConfig, result }) {
         The orbit sets your sunlight, your eclipse time, your contact time with the ground,
         your radiation dose, and how much propellant you must carry.
       </p>
+      <div className="card-grid">
       {ORBITS.map(o => {
         const legal = objective.allowedOrbits.includes(o.id)
         return (
@@ -36,10 +37,13 @@ export default function OrbitScreen({ config, setConfig, result }) {
       })}
 
 
-      <h2 style={{ marginTop: 26 }}>Launch vehicle</h2>
+      </div>
+
+      <h2 className="sub-h2">Launch vehicle</h2>
       <p className="hint">
         Your spacecraft currently masses {Math.round(result.mass.wetKg)} kg fuelled.
       </p>
+      <div className="card-grid">
       {LAUNCHERS.map(l => {
         const cap = l.capacityKg[config.orbitId] || 0
         const fits = cap >= result.mass.wetKg
@@ -63,6 +67,7 @@ export default function OrbitScreen({ config, setConfig, result }) {
           </button>
         )
       })}
+      </div>
     </section>
   )
 }

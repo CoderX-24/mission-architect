@@ -46,6 +46,7 @@ export default function SpacecraftScreen({ config, setConfig }) {
         <div key={g.key} className="group">
           <h3>{g.label}</h3>
           <p className="group-hint">{g.hint}</p>
+          <div className="card-grid">
           {COMPONENTS[g.key].map(c => (
             <button key={c.id}
               className={'card' + (config.components[g.key] === c.id ? ' on' : '')}
@@ -55,6 +56,7 @@ export default function SpacecraftScreen({ config, setConfig }) {
               <span className="card-stats">{describe(g.key, c)}</span>
             </button>
           ))}
+          </div>
         </div>
       ))}
     </section>

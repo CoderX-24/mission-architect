@@ -20,6 +20,7 @@ export default function PayloadScreen({ config, setConfig }) {
         {objective.bonusMeasurements.join(' or ')}. Anything else adds mass, power and cost
         for zero science.
       </p>
+      <div className="card-grid">
       {INSTRUMENTS.map(i => {
         const on = config.instrumentIds.includes(i.id)
         const req = objective.requiredMeasurements.includes(i.type)
@@ -40,6 +41,7 @@ export default function PayloadScreen({ config, setConfig }) {
           </button>
         )
       })}
+      </div>
     </section>
   )
 }

@@ -1,6 +1,7 @@
 # Mission Architect — Handover v2
 
 *Supersedes the original HANDOVER.md. Written 14 Nov 2026, late in day one.*
+*Updated 15 Nov 2026, overnight: section 11b adds the surface segment and the UI pass.*
 
 ## 0. Read this first
 
@@ -19,7 +20,9 @@ submitted after that is eligible.
 2. **The 7-slide deck has not been made.** Section 13 has every slide drafted
    and the exact capture list.
 
-Everything else is built. Section 11 lists what changed in the last session.
+Everything else is built. Section 11 lists what the previous session added;
+**section 11b lists what the overnight session added: the surface segment, the
+landing page changes, phase deep links and the option-grid layout.**
 
 ---
 
@@ -161,21 +164,24 @@ src/
     runMission.js   orchestrator: config -> checks, margins, events, score
     telemetry.js    [NEW] time-domain reconstruction (section 11)
     tradeSpace.js   [NEW] exhaustive bus enumeration + Pareto front (section 11)
+    outpost.js      [NEW] surface segment derivation + site plan (section 11b)
   ui/
     Dashboard.jsx        live margin bars, healthy band drawn into the track
-    PhaseNav.jsx         8-phase tab bar
+    PhaseNav.jsx         9-phase tab bar, deep-linkable via ?phase=
     ObjectiveScreen.jsx / PayloadScreen.jsx / SpacecraftScreen.jsx / OrbitScreen.jsx
     ResultScreen.jsx     verdict, FlightConsole, score breakdown, flight log
     TradeScreen.jsx      [NEW] trade space scatter + efficient frontier
+    OutpostScreen.jsx    [NEW] surface segment: scene, readouts, provenance table
     SpaceWeatherPanel.jsx
     SourcesPanel.jsx     every entry + its NASA citation
-    Landing.jsx          hero with live orbit, 3 feature cards, 5 stats
+    Landing.jsx          hero with live orbit, 4 feature cards, 6 stats, demo CTA
     RoleBar.jsx / ShareButton.jsx
   viz/
     OrbitCanvas.jsx      2D animated orbit (used on the landing hero)
     SpacecraftView.jsx   SVG schematic drawn to scale from the design
     FlightConsole.jsx    [NEW] the mission, running (section 11)
-  share/encode.js        mission config <-> URL hash
+    OutpostView.jsx      [NEW] isometric site plan, day/night, to scale (section 11b)
+  share/encode.js        mission config <-> URL hash, + ?phase= deep links
   App.jsx                single config object, useMemo(runMission)
   App.css                all styles + design system
   fonts.css              [NEW] self-hosted @font-face, latin only
@@ -185,6 +191,7 @@ tests/
   sanity.mjs             three-case engine calibration (DO NOT let this change)
   telemetry.mjs          [NEW] 25 assertions, telemetry vs runMission
   tradespace.mjs         [NEW] 8 assertions, exhaustiveness + Pareto correctness
+  outpost.mjs            [NEW] traceability, determinism, no overlaps, 144-config sweep
 ```
 
 ---
@@ -339,6 +346,7 @@ magnetosphere shields low orbits.
 node tests/sanity.mjs       # engine calibration. MUST print 1665 / 15 / 522 / 1687
 node tests/telemetry.mjs    # 25 assertions. MUST print ALL TELEMETRY CHECKS PASS
 node tests/tradespace.mjs   # 8 assertions.  MUST print ALL TRADE SPACE CHECKS PASS
+node tests/outpost.mjs      # surface segment. MUST print ALL OUTPOST CHECKS PASS
 npm run build               # must complete clean
 ```
 
@@ -497,7 +505,108 @@ comfortable.
 
 ---
 
+## 11b. What the overnight session added (14-15 Nov)
+
+**All of it is built, tested and verified against a headless browser.** Four test
+suites pass, `npm run build` is clean, and `tests/sanity.mjs` still prints
+**1665 / 15 / 522 / 1687** — `runMission` was not touched, and neither were the
+catalogs.
+
+### The surface segment — `src/sim/outpost.js`, `src/viz/OutpostView.jsx`, `src/ui/OutpostScreen.jsx`
+
+A ninth phase: **the installation your design builds on the body it flew to**,
+drawn isometrically and to scale, with a day/night cycle, shadows that follow the
+Sun, and your own orbiter passing overhead dropping a relay link.
+
+It adds **no physics to the mission**. `designOutpost({ config, result })` is pure
+and consumes what `runMission` already returned. Three sites — Earth ground
+segment, lunar south pole, Mars — differ only in declared surface conditions
+(transmission, illumination, dust, length of the dark).
+
+The sizing law, which is the whole argument:
+
+```
+cargoMultiple     = floor(launcher capacity to this orbit / spacecraft dry mass)
+modulesPerLanding = min(4, cargoMultiple)
+units             = min(24, modulesPerLanding * lifetimeYears)
+farm area         = units * array.areaM2
+available power   = (1361 / AU^2 * transmission) * farm * efficiency * 0.9
+                    * illumination * dust
+battery bank      = units * battery.capacityWh * depthOfDischarge
+generated         = units * mission generated GB/day
+relay home        = the ONE orbiter's downlink GB/day, deliberately not scaled
+habitats          = min(spare power / 22 kW, ceil(units / 3))
+crew              = min(habitats * 4, spare power / 2.5 kW)
+```
+
+**The three findings it produces that no other screen can:**
+
+1. **One orbiter, many instrument suites.** Landing more hardware multiplies what
+   the outpost measures and does not multiply the link. The default Earth
+   programme generates 435 GB/day, gets 145 GB/day home, and loses 290 GB/day
+   permanently. `tests/outpost.mjs` asserts relay capacity never scales with units
+   — if that assertion ever fails, the outpost has become a fantasy.
+2. **Batteries are not a night solution.** The pack that carries an orbiter through
+   a 35-minute eclipse is asked to carry a base through 12 to 72 hours of dark. It
+   lasts under an hour, and the screen prints the multiple of the bank you would
+   actually need. This is why surface power studies reach for fission.
+3. **Overdesign in orbit is capability on the ground.** An array the trade study
+   grades OVERDESIGNED is exactly what supports a crewed base — the same number is
+   a penalty in one phase and the enabling choice in the next.
+
+**Honesty structure, and the reason it holds up to a judge:** two kinds of number,
+kept apart on screen. Mission numbers come from the design and are cited to NASA
+in the app. The eleven figures the mission physics cannot supply — crew per
+module, kW of life support, kg of water per kWh, pad diameter — are published as
+`SURFACE_ASSUMPTIONS` under the scene with a one-line justification each, plus the
+per-site conditions. The **"What sized this"** table prints the arithmetic behind
+every headline figure. If a dimension is not in that table, it is not on the
+drawing.
+
+Storm grading goes through `assessSpaceWeather`, exactly as section 8 demands. The
+surface does **not** get its own storm model.
+
+### `tests/outpost.mjs`
+
+Asserts flux identity with the mission, farm area, recomputed available power,
+battery bank, generated data, cargo multiple; relay independence from unit count;
+habitat and crew caps; that no two structures overlap after the deterministic
+separation pass; that one config always builds one identical site plan; that an
+undeliverable design builds nothing and says so; and sweeps **144 configurations**
+across every objective, allowed orbit and launch vehicle checking for non-finite
+numbers. 84 of the 144 are deliverable, so the constraint bites.
+
+### UI/UX pass
+
+- **Landing**: a fourth story card (the programme), a **sixth stat** (10,368
+  designs enumerated), and a second CTA — *See what a design builds on the Moon* —
+  that loads a lunar demo config straight onto the surface segment. A judge can
+  reach the differentiator in one click from the first screen.
+- **Deep links**: `?phase=<id>` opens any tab directly and the URL keeps up as you
+  move. `?phase=outpost` is the link to send a judge. `readPhase`/`writePhase` in
+  `src/share/encode.js`.
+- **Option lists are a grid** (`.card-grid`), not a single column. The spacecraft
+  screen is roughly half its old height; payload, orbit and launcher the same.
+- **Schematic frame** capped at 620px and centred, so it hugs the drawing instead
+  of floating in an empty panel. Scale bar set in mono.
+- Mobile verified by CDP device emulation at 390x844: `scrollWidth === viewport`,
+  zero overflowing elements.
+
+### Verification method, so it can be repeated
+
+A dev server plus headless Chrome, screenshotted and read back; a CDP script
+(device metrics override + `Page.captureScreenshot`) for phone widths and for
+measuring overflow. Both night and day states of the scene were captured and
+checked, on all three bodies.
+
+---
+
 ## 12. Pre-written submission content
+
+> **`SUBMISSION.md` in the repo root is the paste-ready version of this section**,
+> including the Project Details prose written out in full under all twelve
+> headings and a Summary measured at 197 words. Paste from there, not from here;
+> what follows is kept as the reference copy.
 
 **Project Name:** Mission Architect
 
@@ -574,6 +683,11 @@ code does not change.
 
 ## 13. The 7-slide deck (drafted, not built)
 
+Revised after the surface segment landed. Seven slides is the hard cap, so the
+old "design" and "failure" slides are merged — failure is more persuasive shown
+inside the design flow than given a slide of its own — and the deck now closes on
+the outpost, which is the image a judge will remember.
+
 **Slide 1 — Title.** Mission Architect · An interactive mission design and
 validation platform · Team Doon-Dev, Satna · live URL.
 
@@ -582,34 +696,42 @@ and operations as three separate subjects and never see them interact. Change
 the orbit and the power budget moves. Add an instrument and the downlink fails.
 No textbook shows you that. A simulator does.
 
-**Slide 3 — Design, with consequences.** *(GIF: margin bars moving)* Five
-phases. Inverse square law, Tsiolkovsky. Every number cited to NASA inside the app.
+**Slide 3 — Design, with consequences.** *(GIF: margin bars moving, ending on a
+constraint going red)* Five phases. Inverse square law, Tsiolkovsky. Never
+"mission failed" — always *"Array delivers 1620 W at end of life; the spacecraft
+draws 1652 W"*, and the way out. Every number cited to NASA inside the app.
 
-**Slide 4 — Failure that teaches.** *(GIF: a constraint failing)*
-*"Array delivers 1620 W at end of life; the spacecraft draws 1652 W."*
-Never "mission failed" — always the numbers and the way out.
-
-**Slide 5 — The margin mechanic.** *(static — this slide is the thesis, and
+**Slide 4 — The margin mechanic.** *(static — this slide is the thesis, and
 motion competes with reading)* 10–35% reserve. Spend it all → RISKY. Hoard it →
 OVERDESIGNED. The healthy band is drawn into every bar.
 
-**Slide 6 — Flown against real NASA data.** *(GIF: flight console + scrubber)*
+**Slide 5 — Flown against real NASA data.** *(GIF: flight console + scrubber)*
 Array collapsing into eclipse, battery draining, recorder filling between ground
 passes. Then flown against real CMEs from NASA DONKI, with observing spacecraft
-named.
+named. 433 records, and a bundled fallback so validation cannot break mid-judging.
 
-**Slide 7 — Not one design. Every design.** *(GIF: trade space)*
+**Slide 6 — Not one design. Every design.** *(GIF: trade space)*
 **10,368 configurations enumerated. 76 fly. 0.7%.** The efficient frontier,
-computed in the browser, your design marked on it. Static site · no backend ·
-NASA DONKI API · live link.
+computed in the browser, your design marked on it.
 
-### Capture list — 5 recordings, ~8 s each, 1280×800, crop browser chrome
+**Slide 7 — What your design builds on the ground.** *(GIF: surface segment,
+dragged from day into night)* The same design, landed. Solar farm sized by your
+array, habitats paid for in spare kilowatts, a 1.8 m crew figure for scale, your
+orbiter overhead with the relay link up. **You can land twenty copies of your
+instrument suite and you still have one orbiter to carry the data home.** Static
+site · no backend · NASA DONKI API · live link.
+
+### Capture list — 6 recordings, ~8 s each, 1280×800, crop browser chrome
 
 1. **Spacecraft tab** — click array S → M → L → XL, margin bars moving
 2. **Orbit tab** — switch SSO → Mars, power check flipping to FAIL with W figures
 3. **Simulate tab** — flight console, one full orbit through eclipse and a pass
 4. **Simulate tab** — drag mission scrubber launch → end of life, wattage falling
 5. **Trade Space tab** — load, scatter and frontier draw, design ringed
+6. **Surface Segment tab** — open on the lunar demo, drag the day slider from
+   noon into night: panels go dark, habitat windows light, the orbiter comes over
+   with the link up. Use the landing page button *See what a design builds on the
+   Moon*, or the direct link `?phase=outpost`.
 
 macOS: **Cmd+Shift+5** → Record Selected Portion. Convert to GIF, or upload the
 `.mov` directly if the slide tool accepts video.
@@ -625,13 +747,14 @@ npm run deploy                       # vite build + publish to gh-pages
 node tests/sanity.mjs                # engine calibration — 1665/15/522/1687
 node tests/telemetry.mjs             # telemetry vs runMission
 node tests/tradespace.mjs            # trade study correctness
+node tests/outpost.mjs               # surface segment traceability
 source .env && node scripts/fetch-spaceweather.mjs   # refresh CME snapshot
 ```
 
 After any change:
 
 ```bash
-node tests/sanity.mjs && node tests/telemetry.mjs && node tests/tradespace.mjs && npm run build
+node tests/sanity.mjs && node tests/telemetry.mjs && node tests/tradespace.mjs && node tests/outpost.mjs && npm run build
 npm run deploy && git add -A && git commit -m "..." && git push
 ```
 
@@ -639,14 +762,30 @@ npm run deploy && git add -A && git commit -m "..." && git push
 
 ## 15. What to do next, in order
 
-1. **File the submission.** Section 12. Ten minutes. Save Progress *and* Submit
-   for Judging. Re-submitting is free.
-2. **Commit and push.** Work has repeatedly been left uncommitted on one laptop.
-3. **`npm run deploy`** and check the live URL on a phone.
-4. **Record the 5 GIFs**, build the 7 slides (section 13), publish publicly.
+1. **File the submission.** Everything is written: paste from **`SUBMISSION.md`**,
+   which has all twelve Project Details headings in full prose and a 197-word
+   summary. Save Progress *and* Submit for Judging — they are two buttons.
+   Re-submitting is free and only the last click is judged, so a rough one banked
+   early is pure insurance. Roughly ten minutes.
+2. **Commit and push.** As of this writing `main` is **4 commits ahead of
+   origin** and the live site is still the build from midday on 14 Nov, which
+   does not contain the visual pass, the flight console, the trade space or the
+   surface segment. A judge following the project link today sees none of it.
+3. **`npm run deploy`**, then open the live URL on a phone. Mobile was verified
+   by emulation, not on glass.
+4. **Record the 6 GIFs**, build the 7 slides (section 13), publish publicly.
 5. **Re-submit** with the deck link.
 6. Only then consider: a personal NASA API key so the badge reads
-   LIVE FROM NASA DONKI during judging; and the `.env` / `VITE_*` note in the README.
+   LIVE FROM NASA DONKI during judging.
 
-**Do not** start new features. The gap to a Global Nominee is now presentation,
-not capability.
+**Do not** start new features. The gap to a Global Nominee is presentation, not
+capability — and the surface segment is the last thing the build needed.
+
+### Still open, deliberately
+
+- The README was rewritten this session and now documents the `.env` / `VITE_*`
+  behaviour, so the section 15 item about it is closed.
+- The array catalog still jumps 2 m² → 8 m² with nothing between (section 11's
+  known limitation). **Do not retune it.** The surface segment gives the storm
+  mechanic a second place to bite, which softens the problem without touching a
+  calibrated catalog.

@@ -5,6 +5,7 @@ const PHASES = [
   { id: 'orbit', label: 'Orbit & Launch' },
   { id: 'simulate', label: 'Simulate' },
   { id: 'trade', label: 'Trade Space' },
+  { id: 'outpost', label: 'Surface Segment' },
   { id: 'weather', label: 'Space Weather' },
   { id: 'sources', label: 'Sources' },
 ]

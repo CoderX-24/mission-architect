@@ -1,16 +1,137 @@
-# React + Vite
+# Mission Architect
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**An interactive mission design and validation platform.**
+Design a spacecraft against real engineering constraints, fly it, validate it against real
+coronal mass ejections from NASA DONKI, enumerate every alternative design, and see what your
+design builds on the surface of the body it went to.
 
-Currently, two official plugins are available:
+**Live:** https://coderx-24.github.io/mission-architect/
+Built for the NASA Space Apps Challenge 2026 — *Space Mission Design Game* — by **Team Doon-Dev**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Nine phases, one engine. Choose a science objective, select instruments, build a spacecraft
+bus, pick an orbit and a launch vehicle. Every choice is recomputed into mass, power, cost,
+data and delta-v, and every failure is reported with the numbers and the way out — never just
+"mission failed":
 
-## Expanding the Oxlint configuration
+> Array delivers 1620 W orbit-average at end of life; the spacecraft draws 1652 W (−2% margin).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### The four things that make it different
+
+1. **Margin is the mechanic.** Real missions do not spend 100% of their budget. They hold
+   10–35% in reserve, because everything grows between design and launch. Designs are graded
+   on that reserve: spend it all and you are RISKY, hoard it and you are OVERDESIGNED. The
+   healthy band is drawn into every margin bar.
+2. **The mission runs.** The flight console flies the spacecraft through its real orbit —
+   array output collapsing into eclipse, battery draining, recorder filling between ground
+   passes — and every series is a time-domain reconstruction of a number the engine already
+   reported, asserted by tests.
+3. **Validated against real NASA data.** 433 real coronal mass ejections from NASA's DONKI
+   database, each with measured speed and observing spacecraft. A storm can end a mission
+   through three independent paths: power margin, data margin, or a single-event upset with no
+   redundant attitude control.
+4. **Not one design — every design.** `runMission` costs 0.013 ms, so all **10,368** bus
+   configurations are enumerated exhaustively in the browser and plotted with the Pareto
+   frontier. For the default objective, 76 of 10,368 fly.
+
+### Surface segment
+
+The newest phase takes the design further than the orbit. Your array, battery, link, launch
+vehicle and instruments are carried down to the body you flew to, and the installation they
+buy is drawn to scale against a 1.8 m crew figure — solar farm, habitats, battery hall, ground
+terminal, radiators, volatiles plant, landing pads — with a day/night cycle and your own
+orbiter passing overhead to take the data home.
+
+Nothing on that drawing is decoration. Every dimension traces to a mission number, the table
+under the scene prints the arithmetic for each one, and the figures the mission cannot supply
+are declared as surface assumptions rather than buried. It is also where the hardest lesson in
+the project lands: **you can land twenty copies of your instrument suite and you still only
+have one orbiter to carry the data home.**
+
+---
+
+## Running it
+
+```bash
+npm install
+npm run dev        # local dev server
+npm run build      # production build
+npm run deploy     # build and publish to GitHub Pages
+```
+
+### Tests
+
+The engine is covered by four suites, all plain Node, no framework:
+
+```bash
+node tests/sanity.mjs      # engine calibration — must print 1665 / 15 / 522 / 1687
+node tests/telemetry.mjs   # 25 assertions: the animation agrees with the physics
+node tests/tradespace.mjs  #  8 assertions: exhaustiveness and Pareto correctness
+node tests/outpost.mjs     # surface segment traces back to mission numbers
+```
+
+`tests/sanity.mjs` is the calibration gate. If those four scores change, something is wrong.
+
+### NASA API key (optional)
+
+The app calls NASA DONKI directly from the browser — the endpoint sends CORS headers, so no
+backend is needed. Without a key it uses `DEMO_KEY`, which is shared globally and will
+rate-limit. A free personal key from https://api.nasa.gov is instant:
+
+```bash
+echo 'VITE_NASA_API_KEY=your_key_here' > .env
+```
+
+`.env` is gitignored. Note that Vite inlines `VITE_*` variables into the client bundle at build
+time, so this is only appropriate for a free public-tier key, never a secret. **If the live
+fetch fails or rate-limits, the app falls back to a bundled snapshot of the same real DONKI
+records, so validation never breaks** — tested against a real HTTP 429.
+
+To refresh the snapshot:
+
+```bash
+source .env && node scripts/fetch-spaceweather.mjs
+```
+
+---
+
+## Architecture
+
+```
+src/sim/      pure engine — runMission() owns every number
+src/ui/       screens — they render what the engine returns, they never calculate
+src/viz/      canvas and SVG views
+src/data/     catalogs, every entry carrying its NASA citation
+src/share/    the whole mission encodes into the URL
+```
+
+`App.jsx` holds one config object and one `useMemo(() => runMission(config))`. No screen
+calculates anything. Everything added since the engine was written is additive: new pure
+modules that *consume* its output, which is why the simulation, the storm validation, the
+trade study and the surface segment cannot disagree with each other.
+
+Static site. No backend, no database, no accounts. The only runtime network call is to NASA.
+
+Missions are shareable: the config encodes into the URL hash, and `?phase=` deep-links any
+tab, e.g. [`?phase=outpost`](https://coderx-24.github.io/mission-architect/?phase=outpost).
+
+---
+
+## Data and credits
+
+Engineering practice and sizing from NASA's *Design and Develop Science Missions* and
+*CubeSat 101*. Space weather from **NASA DONKI** via **NASA Open APIs**. Mission analogues and
+catalog anchors from Landsat 9, Mars Reconnaissance Orbiter, Lunar Reconnaissance Orbiter,
+SPHEREx and DSCOVR. Every entry in every catalog carries its source link inside the app, on
+the Sources tab.
+
+Built with React and Vite. Typefaces: Space Grotesk, Inter and JetBrains Mono (SIL Open Font
+License), self-hosted — the site makes no third-party requests at runtime.
+
+Claude (Anthropic) was used as a coding assistant, which the Space Apps rules permit and we
+declare rather than hide. All engineering decisions, constants, NASA sources and calibration
+targets were chosen and verified by the team, and every change is gated on the four test
+suites above.

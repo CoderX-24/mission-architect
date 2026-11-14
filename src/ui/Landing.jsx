@@ -4,6 +4,18 @@ import OBJECTIVES from '../data/objectives.json' with { type: 'json' }
 import LAUNCHERS from '../data/launchers.json' with { type: 'json' }
 import CMES from '../data/spaceweather-fallback.json' with { type: 'json' }
 import OrbitCanvas from '../viz/OrbitCanvas.jsx'
+import { totalCombinations } from '../sim/tradeSpace.js'
+
+// A design that flies to the lunar south pole and has the power to build
+// something when it gets there. The landing page offers it as a one-click
+// demonstration, so a judge can see the end of the pipeline before the start.
+const LUNAR_DEMO = {
+  objectiveId: 'lunar_south_pole', orbitId: 'lunar', launcherId: 'falcon9',
+  instrumentIds: ['thermal_imager', 'dust_analyzer'],
+  components: { array: 'array_l', battery: 'batt_l', comms: 'comms_x', adcs: 'adcs_fine',
+    propulsion: 'prop_bi', thermal: 'therm_active', obc: 'obc_rad', structure: 'struct_small' },
+  lifetimeYears: 4,
+}
 
 const SSO = ORBITS.find(o => o.id === 'leo_sso')
 
@@ -20,7 +32,10 @@ export default function Landing({ onStart }) {
             real engineering, and every failure explains itself in plain language.
           </p>
           <div className="cta-row">
-            <button className="cta" onClick={onStart}>Start designing</button>
+            <button className="cta" onClick={() => onStart()}>Start designing</button>
+            <button className="cta ghost" onClick={() => onStart(LUNAR_DEMO, 'outpost')}>
+              See what a design builds on the Moon
+            </button>
           </div>
         </div>
 
@@ -62,6 +77,16 @@ export default function Landing({ onStart }) {
             spacecraft that observed them named.
           </p>
         </div>
+        <div className="feature">
+          <span className="feature-n">04 / THE PROGRAMME</span>
+          <h3>What your design builds on the ground</h3>
+          <p>
+            An orbiter is the first element of a programme. The surface segment takes your
+            array, battery, link and launch vehicle down to the body you flew to and draws the
+            installation they buy &mdash; to scale, against a 1.8 m crew figure. An array that
+            is overdesigned in orbit is exactly what powers a crewed base on the surface.
+          </p>
+        </div>
       </div>
 
       <div className="stats">
@@ -70,6 +95,7 @@ export default function Landing({ onStart }) {
         <div><b>{ORBITS.length}</b><span>orbits, Earth to Mars</span></div>
         <div><b>{LAUNCHERS.length}</b><span>launch vehicles</span></div>
         <div><b>{CMES.length}</b><span>real NASA solar storms</span></div>
+        <div><b>{totalCombinations().toLocaleString('en-US')}</b><span>designs enumerated, not sampled</span></div>
       </div>
     </div>
   )

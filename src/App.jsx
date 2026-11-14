@@ -7,7 +7,7 @@ import Landing from './ui/Landing.jsx'
 import ShareButton from './ui/ShareButton.jsx'
 import RoleBar from './ui/RoleBar.jsx'
 import SpaceWeatherPanel from './ui/SpaceWeatherPanel.jsx'
-import { readHash } from './share/encode.js'
+import { readHash, readPhase, writePhase } from './share/encode.js'
 import SourcesPanel from './ui/SourcesPanel.jsx'
 import ObjectiveScreen from './ui/ObjectiveScreen.jsx'
 import PayloadScreen from './ui/PayloadScreen.jsx'
@@ -15,6 +15,7 @@ import SpacecraftScreen from './ui/SpacecraftScreen.jsx'
 import OrbitScreen from './ui/OrbitScreen.jsx'
 import ResultScreen from './ui/ResultScreen.jsx'
 import TradeScreen from './ui/TradeScreen.jsx'
+import OutpostScreen from './ui/OutpostScreen.jsx'
 import './App.css'
 
 
@@ -33,14 +34,20 @@ const INITIAL = {
 
 export default function App() {
   const [config, setConfig] = useState(() => readHash() || INITIAL)
-  const [phase, setPhase] = useState('objective')
-  const [started, setStarted] = useState(() => Boolean(readHash()))
+  const [phase, setPhase] = useState(() => readPhase() || 'objective')
+  const [started, setStarted] = useState(() => Boolean(readHash()) || Boolean(readPhase()))
   const [role, setRole] = useState(null)
   const result = useMemo(() => runMission(config), [config])
   const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
   const props = { config, setConfig, result }
 
-  if (!started) return <Landing onStart={() => setStarted(true)} />
+  if (!started) return (
+    <Landing onStart={(cfg, ph) => {
+      if (cfg) setConfig(cfg)
+      if (ph) { setPhase(ph); writePhase(ph) }
+      setStarted(true)
+    }} />
+  )
 
 
   return (
@@ -53,7 +60,7 @@ export default function App() {
       </header>
 
 
-      <PhaseNav phase={phase} setPhase={setPhase} />
+      <PhaseNav phase={phase} setPhase={p => { setPhase(p); writePhase(p) }} />
 
 
       <main>
@@ -64,6 +71,7 @@ export default function App() {
           {phase === 'orbit' && <OrbitScreen {...props} />}
           {phase === 'simulate' && <ResultScreen {...props} />}
           {phase === 'trade' && <TradeScreen {...props} />}
+          {phase === 'outpost' && <OutpostScreen {...props} />}
           {phase === 'weather' && <SpaceWeatherPanel {...props} />}
           {phase === 'sources' && <SourcesPanel />}
 
