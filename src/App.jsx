@@ -1,122 +1,81 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { useMemo, useState } from 'react'
+import INSTRUMENTS from './data/instruments.json' with { type: 'json' }
+import OBJECTIVES from './data/objectives.json' with { type: 'json' }
+import { runMission } from './sim/runMission.js'
+import Dashboard from './ui/Dashboard.jsx'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+const INITIAL = {
+  objectiveId: 'forest_biomass',
+  orbitId: 'leo_sso',
+  launcherId: 'falcon9',
+  instrumentIds: ['multispectral_imager'],
+  components: {
+    array: 'array_m', battery: 'batt_m', comms: 'comms_x', adcs: 'adcs_wheels',
+    propulsion: 'prop_mono', thermal: 'therm_passive', obc: 'obc_basic', structure: 'struct_small',
+  },
+  lifetimeYears: 5,
 }
 
-export default App
+
+export default function App() {
+  const [config, setConfig] = useState(INITIAL)
+  const result = useMemo(() => runMission(config), [config])
+  const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
+
+
+  const toggle = (id) => setConfig(c => ({
+    ...c,
+    instrumentIds: c.instrumentIds.includes(id)
+      ? c.instrumentIds.filter(x => x !== id)
+      : [...c.instrumentIds, id],
+  }))
+
+
+  return (
+    <div className="app">
+      <header>
+        <h1>Mission Architect</h1>
+        <p>{objective.name} &mdash; {objective.brief}</p>
+      </header>
+
+
+      <main>
+        <section className="picker">
+          <h2>Payload</h2>
+          <p className="hint">
+            Requires: {objective.requiredMeasurements.join(', ')}. Anything else scores nothing.
+          </p>
+          {INSTRUMENTS.map(i => {
+            const on = config.instrumentIds.includes(i.id)
+            const useful = objective.requiredMeasurements.includes(i.type)
+            return (
+              <button key={i.id} onClick={() => toggle(i.id)} className={'inst' + (on ? ' on' : '')}>
+                <span className="inst-name">{i.name}{useful && <em> required</em>}</span>
+                <span className="inst-stats">
+                  {i.massKg} kg &middot; {i.powerW} W &middot; ${i.costUsdM}M &middot; {i.dataRateMbps} Mbps
+                </span>
+              </button>
+            )
+          })}
+        </section>
+
+
+        <Dashboard result={result} />
+      </main>
+
+
+      <section className="checks">
+        <h2>Engineering review</h2>
+        {result.checks.map(c => (
+          <div key={c.id} className={'check ' + (c.passed ? 'pass' : 'fail')}>
+            <strong>{c.passed ? 'PASS' : 'FAIL'}</strong>
+            <span>{c.message}</span>
+            {!c.passed && <em>{c.fix}</em>}
+          </div>
+        ))}
+      </section>
+    </div>
+  )
+}
