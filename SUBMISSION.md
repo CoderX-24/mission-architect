@@ -37,15 +37,15 @@ spacecraft, pick an orbit and a launch vehicle — then fly it. Every choice car
 real engineering consequences: an array sized for Earth browns out at Mars, and
 an added instrument brings data you may not be able to downlink. Up to four
 players can hold four mission roles at once, in real time, each controlling only
-their own subsystem. The platform teaches one lesson no other tool does: real missions are
-not designed to spend 100% of their budget. They hold 10 to 35 percent margin,
+their own subsystem. The platform teaches one lesson: real missions are not designed to spend 100%
+of their budget. They hold 10 to 35 percent margin,
 because everything grows between design and launch. Designs are flown as a live
 simulation and validated against real coronal mass ejections recorded in NASA's
-DONKI database. All 10,368 spacecraft configurations are then enumerated to show
+DONKI database. All 10,368 spacecraft configurations are then enumerated to find
 the efficient frontier. The surface segment draws, to scale, the outpost your
-array, battery and link buy on the body you flew to — where landing twenty copies of your
-instruments still leaves one orbiter to carry the data home. Every figure is
-cited to a NASA source inside the app.
+array, battery and link buy on the body you flew to, where landing twenty copies
+of your instruments still leaves one orbiter to carry the data home. Every number
+is derived from NASA documentation and linked to its source in the app.
 
 ---
 
