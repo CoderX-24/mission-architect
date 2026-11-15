@@ -1,4 +1,5 @@
 // The whole mission lives in the URL. No backend, no accounts, no database.
+import { parseMissionFile } from './missionFile.js'
 export function encodeConfig(config) {
   try { return encodeURIComponent(btoa(JSON.stringify(config))) }
   catch { return '' }
@@ -13,7 +14,18 @@ export function decodeConfig(str) {
 
 export function readHash() {
   const h = window.location.hash.replace(/^#m=/, '')
-  return h ? decodeConfig(h) : null
+  if (!h) return null
+  const raw = decodeConfig(h)
+  if (!raw) return null
+  // A link is as untrusted as a file: it may come from an older build, or be
+  // truncated into something that still decodes. Run it through the same
+  // validator saved missions use rather than handing an unknown id to the
+  // engine, which throws on one.
+  try {
+    return parseMissionFile(JSON.stringify(raw)).config
+  } catch {
+    return null
+  }
 }
 
 
@@ -26,7 +38,7 @@ export function shareUrl(config) {
 // segment, and sharing a mission keeps the tab you were looking at. A judge
 // following a link should land on the thing you wanted to show them.
 const PHASE_IDS = ['objective', 'payload', 'spacecraft', 'orbit', 'simulate',
-  'trade', 'outpost', 'weather', 'sources']
+  'debrief', 'trade', 'outpost', 'weather', 'sources']
 
 export function readPhase() {
   try {

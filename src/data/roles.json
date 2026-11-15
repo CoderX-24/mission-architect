@@ -15,7 +15,7 @@
     "tension":"Needs a bigger array and a stronger structure, and both cost money the Planner is guarding.",
     "metric":"power" },
   { "id":"ops", "tag":"OPS", "name":"Operations", "owns":["simulate"],
-    "decides":"Communications, mission lifetime, and when to simulate.",
+    "decides":"Mission lifetime, when to fly it, and the debrief afterwards.",
     "wants":"Every bit of collected science reaching the ground, for the full mission.",
     "tension":"The one who points out that nobody can downlink any of this.",
     "metric":"mass" }

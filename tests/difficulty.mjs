@@ -95,7 +95,9 @@ console.log('\n=== THE DEBRIEF EXPLAINS THE NUMBER')
   ok(out.margins[0].margin <= out.margins[out.margins.length - 1].margin,
     'margins are listed thinnest first')
   is(out.score, d.score, 'the debrief scores what the dashboard scores')
-  ok(out.trade && out.trade.total === study.total, 'the trade study verdict is carried through')
+  ok(out.trade && out.trade.total === study.evaluated && Number.isFinite(out.trade.total),
+    'the trade study total is a real number carried through (' + study.evaluated + ')')
+  ok(out.trade.total > 10000, 'and it is the whole enumerated space, not a subset')
 
   const broken = { ...BASE, components: { ...BASE.components, array: 'array_s', battery: 'batt_s' } }
   const br = runMission(broken)

@@ -2,8 +2,15 @@ import OBJECTIVES from '../data/objectives.json' with { type: 'json' }
 import FlightConsole from '../viz/FlightConsole.jsx'
 
 
-export default function ResultScreen({ config, setConfig, result }) {
+export default function ResultScreen({ config, setConfig, result, diff = null }) {
   const objective = OBJECTIVES.find(o => o.id === config.objectiveId)
+  const flies = diff ? diff.flies : result.flies
+  const score = diff ? diff.score : result.score.final
+  const groundedByLevel = diff && result.flies && !diff.flies
+  const summary = groundedByLevel
+    ? 'The engine passes this design, but ' + diff.level.name + ' holds it to a higher bar: ' +
+      diff.extraFailed.length + ' level rule(s) are not met, so it does not fly at this level.'
+    : result.summary
 
 
   return (
@@ -25,14 +32,17 @@ export default function ResultScreen({ config, setConfig, result }) {
       </div>
 
 
-      <div className={'big-verdict ' + (result.flies ? 'ok' : 'bad')}>
-        <span className="bv-label">{result.flies ? 'MISSION FLIES' : 'MISSION DOES NOT FLY'}</span>
-        <span className="bv-score">{result.score.final}</span>
+      {/* The difficulty layer can ground a design the engine passed, and
+          multiplies the score. Read it from the same place the dashboard does,
+          or the two halves of the screen contradict each other. */}
+      <div className={'big-verdict ' + (flies ? 'ok' : 'bad')}>
+        <span className="bv-label">{flies ? 'MISSION FLIES' : 'MISSION DOES NOT FLY'}</span>
+        <span className="bv-score">{score}</span>
       </div>
-      <p className="summary">{result.summary}</p>
+      <p className="summary">{summary}</p>
 
 
-      {result.flies && (
+      {flies && (
         <>
           <FlightConsole config={config} result={result} />
 

@@ -20,14 +20,30 @@ function normalise(raw) {
 
 
 // Live where possible, bundled where not. The app must never fail to validate.
-export async function fetchCMEs(days = 60) {
+//
+// Four screens want this data and each used to fetch on mount. With DEMO_KEY
+// that burns the ten-request allowance in a few tab clicks, and the record
+// count would change under the user mid-session as later screens fell back to
+// the snapshot. One promise is shared by every caller for the life of the page,
+// so the whole session agrees on one set of storms.
+let inflight = null
+
+export function fetchCMEs(days = 60) {
+  if (!inflight) inflight = loadCMEs(days)
+  return inflight
+}
+
+async function loadCMEs(days) {
   const key = import.meta.env.VITE_NASA_API_KEY || 'DEMO_KEY'
   const fmt = d => d.toISOString().slice(0, 10)
   const end = new Date()
   const start = new Date(Date.now() - days * 86400000)
+  // A hung endpoint must not leave "Retrieving..." on screen forever.
+  const ctl = typeof AbortController === 'function' ? new AbortController() : null
+  const timer = ctl ? setTimeout(() => ctl.abort(), 6000) : null
   try {
     const res = await fetch(API + '?startDate=' + fmt(start) + '&endDate=' + fmt(end) +
-      '&api_key=' + key)
+      '&api_key=' + key, ctl ? { signal: ctl.signal } : undefined)
     const text = await res.text()
     if (!text.trimStart().startsWith('[')) throw new Error('not json')
     const out = normalise(JSON.parse(text))
@@ -35,6 +51,8 @@ export async function fetchCMEs(days = 60) {
     return { source: 'live', cmes: out }
   } catch {
     return { source: 'bundled', cmes: FALLBACK }
+  } finally {
+    if (timer) clearTimeout(timer)
   }
 }
 

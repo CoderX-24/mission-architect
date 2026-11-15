@@ -84,7 +84,7 @@ export function debrief({ config, result, diff, study = null, wx = null, outpost
       .sort((a, b) => a.cost - b.cost)[0] || null
     const dominating = study.flying.filter(d => d.score > score && d.cost <= cost).length
     trade = {
-      total: study.total, flying: study.flying.length, dominating,
+      total: study.evaluated, flying: study.flying.length, dominating,
       betterSameMoney, cheaperSameScore,
       onFront: dominating === 0,
       headroom: betterSameMoney ? betterSameMoney.score - score : 0,
@@ -125,11 +125,17 @@ export function debrief({ config, result, diff, study = null, wx = null, outpost
   const actions = []
   for (const f of failing) {
     const owner = ROLE_OWNS[f.key]
-    actions.push({
-      severity: 'critical',
-      text: f.label + ' margin is ' + pct(f.margin) + '. The mission does not fly until that is positive.',
-      who: owner ? owner.name : null,
-    })
+    // Only mass, power and budget are hard gates. The downlink check passes
+    // while half the science still reaches the ground, so a flying design can
+    // and often does sit on a negative data margin - saying otherwise in the
+    // debrief would contradict the verdict at the top of the same screen.
+    const text = f.key === 'data'
+      ? f.label + ' margin is ' + pct(f.margin) + ': the instruments generate more than the link ' +
+        'carries home, so that science is simply lost.'
+      : flies
+        ? f.label + ' margin is ' + pct(f.margin) + ', with nothing in reserve.'
+        : f.label + ' margin is ' + pct(f.margin) + '. The mission does not fly until that is positive.'
+    actions.push({ severity: 'critical', text, who: owner ? owner.name : null })
   }
   for (const c of result.checks.filter(c => !c.passed)) {
     actions.push({ severity: 'critical', text: c.message + ' ' + c.fix, who: null })

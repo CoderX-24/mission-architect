@@ -294,7 +294,9 @@ function About() {
       <h3>What it is built on</h3>
       <ul>
         <li>React and Vite. A static site: no backend, no database, no accounts.</li>
-        <li>The only network call at runtime is to NASA&rsquo;s own DONKI API.</li>
+        <li>Solo play makes one network call, to NASA&rsquo;s own DONKI API, with a bundled
+          snapshot of the same records as a fallback. A team session also uses a public
+          broker to introduce players to each other.</li>
         <li>Self-hosted open-licence typefaces, so nothing third party loads while you use it.</li>
         <li>Seven test suites gate every change to the engine.</li>
       </ul>

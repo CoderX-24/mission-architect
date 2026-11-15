@@ -184,9 +184,14 @@ export default function FlightConsole({ config, result }) {
                 <strong>{s.band}</strong>{fmtDate(s.start)}
                 <em>{s.speed} km/s &middot; {s.type}-type</em>
               </span>
+              {/* assessSpaceWeather returns `reasons`, one sentence per path
+                  the storm broke the design. The old code read powerNeeded and
+                  powerHad, which it has never returned - hence NaN on screen,
+                  and 'power' even when the failure was data or attitude. */}
               <span className="event-out">
-                Needed {Math.round(s.powerNeeded * 100)}% power margin, had{' '}
-                {Math.round(s.powerHad * 100)}%.
+                {s.reasons && s.reasons.length
+                  ? s.reasons.join('; ') + '.'
+                  : 'Degraded the mission.'}
                 {s.instruments && s.instruments.length
                   ? ' Observed by ' + s.instruments.join(', ') + '.' : ''}
               </span>

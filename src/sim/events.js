@@ -19,7 +19,12 @@ function mulberry32(a) {
 
 
 export function runEvents({ config, margins, adcsRedundant, difficulty = 'normal' }) {
-  const rng = mulberry32(hashString(JSON.stringify(config)))
+  // Seeded from the DESIGN, not from how it is being played. Difficulty changes
+  // how many events are drawn; it must not change which spacecraft meets which
+  // trial, or a player toggling the level would see the same bus score
+  // differently for no reason they could see.
+  const { level: _lvl, difficulty: _dif, ...design } = config
+  const rng = mulberry32(hashString(JSON.stringify(design)))
   const count = difficulty === 'easy' ? 2 : difficulty === 'hard' ? 5 : 3
   const pool = [...EVENTS].sort(() => rng() - 0.5).slice(0, count)
 

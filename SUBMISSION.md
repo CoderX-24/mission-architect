@@ -64,7 +64,7 @@ actually fly.
 ### How it works
 
 One engine, `runMission`, owns every number. It takes a configuration object and
-returns the constraint checks, the five margins, the in-flight events and the
+returns the constraint checks, the margins, the in-flight events and the
 score. No screen in the interface calculates anything; the UI only renders what
 the engine returns. That single-source-of-truth design is why the simulation, the
 space-weather validation and the trade study cannot disagree with each other.
@@ -80,14 +80,17 @@ compared against what the instruments generate. Cost is instrument and bus cost
 with a 35% development wrap, plus the launch vehicle and annual operations.
 
 It is a static site. No backend, no database, no accounts, no login — React and
-Vite built to GitHub Pages. The only network call at runtime is to NASA.
+Vite built to GitHub Pages. Playing solo, the only call the page makes is to
+NASA's own API; a team session additionally connects to a public WebRTC broker
+to introduce the players to each other.
 
 ### The margin mechanic
 
 This is the heart of it, and we have not seen another entry model it. Real
 missions do not spend 100% of their mass, power, budget or data capacity. They
 hold a reserve, because everything grows between design and launch. So the
-platform grades each of the five margins: below 0% the mission does not fly, 0 to
+platform grades the four margins it computes from your design \u2014 mass, power,
+budget and data: below 0% a mass, power or budget margin grounds the mission, 0 to
 10% is RISKY and exposed to in-flight events, 10 to 35% is NOMINAL and rewarded,
 35 to 50% is GENEROUS, and above 50% is OVERDESIGNED and penalised. You cannot
 win by hoarding and you cannot win by spending. The healthy 10–35% band is drawn
@@ -115,7 +118,7 @@ orbit at that array age, watching degradation bite: the default design falls fro
 Every series in the console is a time-domain reconstruction of a number the
 engine already reports — the mean of the array output equals the orbit-average
 power, the data rates integrate to the per-day figures, the time-domain battery
-verdict equals the analytic one. A test suite of 25 assertions enforces exactly
+verdict equals the analytic one. A dedicated test suite enforces exactly
 that, so the animation cannot drift away from the physics.
 
 The reconstruction also produces a figure a static design tool cannot: days to
@@ -125,7 +128,8 @@ fill the recorder. A Mars design on an S-band link fills its onboard recorder in
 ### Space weather validation against real NASA DONKI records
 
 Designs are flown against real coronal mass ejections from NASA's DONKI
-database — 433 actual CME records from 16 July to 13 November 2026, each with its
+database. The bundled snapshot holds 433 actual CME records from 16 July to 13
+November 2026, and a successful live call returns the most recent 60 days; each carries its
 measured speed and the spacecraft that observed it. DONKI serves CORS headers, so
 a static site queries the live API directly with no backend.
 
@@ -278,8 +282,8 @@ no account and no cost, which matters for a classroom.
 NASA's own guidance set the engineering frame: "Design and Develop Science
 Missions" and "CubeSat 101" for mission phases, margin practice and subsystem
 sizing. Real missions anchor the catalogs and give each design a flown analogue —
-Landsat 9, Mars Reconnaissance Orbiter (whose aerobraking insertion delta-v we
-use), Lunar Reconnaissance Orbiter, SPHEREx and DSCOVR. NASA DONKI, through NASA
+Landsat 9, Mars Reconnaissance Orbiter (whose aerobraking approach to Mars orbit
+insertion the Mars case assumes), Lunar Reconnaissance Orbiter, SPHEREx and DSCOVR. NASA DONKI, through NASA
 Open APIs, supplies the 433 real coronal mass ejections every design is validated
 against. NASA Mission Viz and NASA's own "Build It Yourself: Space Telescope"
 game informed how to present mission trade-offs to a learner.
@@ -288,9 +292,12 @@ game informed how to present mission trade-offs to a learner.
 
 React 19, Vite 8, plain CSS, gh-pages for deployment. Three self-hosted open-licence
 typefaces — Space Grotesk, Inter and JetBrains Mono — totalling 111 KB, so the
-site makes zero third-party requests at runtime and nothing external can break it
-while it is being judged. The only runtime dependency beyond the browser is
-NASA's own API.
+site loads no third-party code at runtime, so nothing external can break how it
+looks or how it computes. Solo play calls one service, NASA's own API, and falls
+back to a bundled snapshot of the same real records if that call fails. A team
+session also uses a public WebRTC broker to introduce players to each other; if
+that broker is unreachable the session continues between tabs on one machine and
+the interface says so.
 
 ### Creativity
 
@@ -309,8 +316,9 @@ labelled as such wherever a user meets it. **During development**, we used Claud
 (Anthropic) as a coding assistant throughout: generating and
 reviewing module implementations, writing the test suites, and reviewing physics
 and copy. All engineering decisions, constants, NASA sources and calibration
-targets were chosen and verified by the team, and the engine is covered by three
-test suites we run before every deploy. AI use is permitted by the submission
+targets were chosen and verified by the team, and the engine is covered by eight
+test suites, which CI runs on every push and which must pass before the site is
+allowed to publish. AI use is permitted by the submission
 rules and we are declaring it rather than hiding it.
 
 ---
@@ -357,6 +365,7 @@ https://science.nasa.gov/mission/dscovr/
 React — https://react.dev/
 Vite — https://vite.dev/
 gh-pages — https://www.npmjs.com/package/gh-pages
+PeerJS (WebRTC peer connections and its public broker, used for team sessions) — https://peerjs.com/
 Inter (SIL Open Font License) — https://fonts.google.com/specimen/Inter
 Space Grotesk (SIL Open Font License) — https://fonts.google.com/specimen/Space+Grotesk
 JetBrains Mono (SIL Open Font License) — https://fonts.google.com/specimen/JetBrains+Mono

@@ -21,6 +21,7 @@ import TradeScreen from './ui/TradeScreen.jsx'
 import OutpostScreen from './ui/OutpostScreen.jsx'
 import DebriefScreen from './ui/DebriefScreen.jsx'
 import Lobby, { ConnectionLine } from './ui/Lobby.jsx'
+import ErrorBoundary from './ui/ErrorBoundary.jsx'
 import { useSession } from './net/useSession.js'
 import { ownerOfPhase } from './net/protocol.js'
 import HelpDrawer from './ui/HelpDrawer.jsx'
@@ -142,6 +143,7 @@ export default function App() {
       <main>
         <div className="stage">
           {(
+            <ErrorBoundary key={shownPhase}>
             <fieldset className={'screen-wrap' + (locked ? ' read-only' : '')} disabled={locked}>
               {locked && <p className="readonly-flag">
                 VIEW ONLY &middot; {ownerOfPhase(shownPhase)
@@ -158,6 +160,7 @@ export default function App() {
               {shownPhase === 'weather' && <SpaceWeatherPanel {...props} />}
               {shownPhase === 'sources' && <SourcesPanel />}
             </fieldset>
+            </ErrorBoundary>
           )}
 
           <section className="panel checks">

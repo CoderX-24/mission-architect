@@ -117,7 +117,7 @@ The engine is covered by eight suites, all plain Node, no framework:
 
 ```bash
 node tests/sanity.mjs      # engine calibration — must print 1665 / 15 / 522 / 1687
-node tests/telemetry.mjs   # 25 assertions: the animation agrees with the physics
+node tests/telemetry.mjs   # the animation agrees with the physics, assertion by assertion
 node tests/tradespace.mjs  #  8 assertions: exhaustiveness and Pareto correctness
 node tests/outpost.mjs     # surface segment traces back to mission numbers
 node tests/difficulty.mjs  # the difficulty layer never modifies the engine
@@ -168,7 +168,8 @@ calculates anything. Everything added since the engine was written is additive: 
 modules that *consume* its output, which is why the simulation, the storm validation, the
 trade study and the surface segment cannot disagree with each other.
 
-Static site. No backend, no database, no accounts. The only runtime network call is to NASA.
+Static site. No backend, no database, no accounts. Solo play makes one network call, to
+NASA's own API; team sessions add a public WebRTC broker for peer introductions.
 
 Missions are shareable three ways: the config encodes into the URL hash, `?phase=` deep-links
 any tab (e.g. [`?phase=outpost`](https://coderx-24.github.io/mission-architect/?phase=outpost)),
@@ -184,10 +185,11 @@ catalog anchors from Landsat 9, Mars Reconnaissance Orbiter, Lunar Reconnaissanc
 SPHEREx and DSCOVR. Every entry in every catalog carries its source link inside the app, on
 the Sources tab.
 
-Built with React and Vite. Typefaces: Space Grotesk, Inter and JetBrains Mono (SIL Open Font
-License), self-hosted — the site makes no third-party requests at runtime.
+Built with React and Vite, with PeerJS for team sessions. Typefaces: Space Grotesk, Inter and
+JetBrains Mono (SIL Open Font
+License), self-hosted — no third-party code loads at runtime.
 
 **Team Doon-Dev** — Ranveer and Vibhor. Claude (Anthropic) was used as a coding assistant, which the Space Apps rules permit and we
 declare rather than hide. All engineering decisions, constants, NASA sources and calibration
-targets were chosen and verified by the team, and every change is gated on the four test
-suites above.
+targets were chosen and verified by the team, and every change is gated on the eight test
+suites above, which CI runs before it will publish the site.

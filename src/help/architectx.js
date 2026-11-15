@@ -100,7 +100,7 @@ export const TOPICS = [
     keywords: ['bars', 'dashboard', 'right', 'sidebar', 'percentage', 'green', 'colour', 'color'],
     answer: () => ({
       lines: [
-        'Those are your five margins: mass, power, budget, data and delta-v. A margin is how much of each resource you have left over after the design is paid for.',
+        'Those are your margins: mass, power, budget and data, plus a delta-v figure the engine holds constant. A margin is how much of each resource you have left over after the design is paid for.',
         'The band drawn into every bar is 10 to 35 percent. Land inside it and you are rewarded; spend it all or hoard it and you are penalised.',
       ],
       bullets: [
@@ -531,7 +531,7 @@ export const TOPICS = [
         'The challenge was Space Mission Design Game, under the theme The Next Frontier.',
       ],
       bullets: [
-        'It is a static site: no backend, no database, no accounts. The only network call it makes is to NASA.',
+        'It is a static site: no backend, no database, no accounts. Playing solo it calls one service, NASA\u2019s own API; a team session also uses a public broker to introduce players to each other.',
         'Claude was used as a coding assistant, which the competition rules permit and which we declare rather than hide. Every constant, source and calibration target was chosen and checked by the team.',
       ],
     }),
