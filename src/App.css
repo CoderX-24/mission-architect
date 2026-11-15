@@ -2373,3 +2373,22 @@ main {
   color: var(--bad);
   word-break: break-word;
 }
+
+.cta-aside {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--fg-2);
+}
+.cta-aside .link-btn { font-size: inherit; }
+
+.cta-row.secondary { margin-top: 10px; gap: 9px; }
+
+.cta.ghost.sm {
+  padding: 10px 15px;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+@media (max-width: 560px) {
+  .cta-row.secondary { flex-direction: column; align-items: stretch; }
+}

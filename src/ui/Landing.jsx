@@ -18,6 +18,24 @@ const DEMO_DIFF = applyDifficulty({ config: INITIAL_CONFIG, result: DEMO_RESULT 
 // A design that flies to the lunar south pole and has the power to build
 // something when it gets there. The landing page offers it as a one-click
 // demonstration, so a judge can see the end of the pipeline before the start.
+// A Mars mission with an array sized for Earth. Exactly one constraint fails -
+// "Array delivers 219 W orbit-average at end of life; the spacecraft draws
+// 430 W (-96% margin)" - and the next array size up makes it fly, scoring 636.
+// It opens on the Spacecraft tab, where the failure is stated in watts and the
+// fix is one click away in the same view.
+//
+// The default mission flies, holds healthy margins, survives every storm and
+// sits on the efficient frontier. That is a terrible first impression: a judge
+// clicking through sees nothing happen. This button is the shortest path to the
+// thing the project is actually about.
+const MARS_FAIL = {
+  objectiveId: 'mars_recon', orbitId: 'mars', launcherId: 'falcon9',
+  instrumentIds: ['terrain_camera'],
+  components: { array: 'array_s', battery: 'batt_l', comms: 'comms_x', adcs: 'adcs_fine',
+    propulsion: 'prop_bi', thermal: 'therm_active', obc: 'obc_rad', structure: 'struct_small' },
+  lifetimeYears: 5,
+}
+
 const LUNAR_DEMO = {
   objectiveId: 'lunar_south_pole', orbitId: 'lunar', launcherId: 'falcon9',
   instrumentIds: ['thermal_imager', 'dust_analyzer'],
@@ -42,13 +60,22 @@ export default function Landing({ onStart, onTeam }) {
           </p>
           <div className="cta-row">
             <button className="cta" onClick={() => onStart()}>Start designing</button>
-            <button className="cta ghost" onClick={() => onStart(LUNAR_DEMO, 'outpost')}>
-              See what a design builds on the Moon
+          </div>
+          {/* Two ways in for someone who would rather be shown than asked to
+              build. Smaller than the primary on purpose: this is a hierarchy,
+              not three equal choices wrapping onto two lines. */}
+          <div className="cta-row secondary">
+            <button className="cta ghost sm" onClick={() => onStart(MARS_FAIL, 'spacecraft')}>
+              Watch a mission fail &mdash; then fix it
             </button>
-            <button className="cta ghost" onClick={onTeam}>
-              Fly it with your team
+            <button className="cta ghost sm" onClick={() => onStart(LUNAR_DEMO, 'outpost')}>
+              See what it builds on the Moon
             </button>
           </div>
+          <p className="cta-aside">
+            Or <button className="link-btn" onClick={onTeam}>fly it with your team</button> &mdash;
+            up to four people, one spacecraft, a role each.
+          </p>
         </div>
 
         <div className="hero-viz">
