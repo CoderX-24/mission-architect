@@ -19,7 +19,7 @@ const LUNAR_DEMO = {
 
 const SSO = ORBITS.find(o => o.id === 'leo_sso')
 
-export default function Landing({ onStart }) {
+export default function Landing({ onStart, onTeam }) {
   return (
     <div className="landing">
       <div className="landing-hero">
@@ -35,6 +35,9 @@ export default function Landing({ onStart }) {
             <button className="cta" onClick={() => onStart()}>Start designing</button>
             <button className="cta ghost" onClick={() => onStart(LUNAR_DEMO, 'outpost')}>
               See what a design builds on the Moon
+            </button>
+            <button className="cta ghost" onClick={onTeam}>
+              Fly it with your team
             </button>
           </div>
         </div>

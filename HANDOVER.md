@@ -1,7 +1,8 @@
 # Mission Architect — Handover v2
 
 *Supersedes the original HANDOVER.md. Written 14 Nov 2026, late in day one.*
-*Updated 15 Nov 2026, overnight: section 11b adds the surface segment and the UI pass.*
+*Updated 15 Nov 2026: section 11b adds the surface segment and the UI pass;*
+*section 11c adds team sessions, difficulty levels, saved missions and the debrief.*
 
 ## 0. Read this first
 
@@ -21,8 +22,9 @@ submitted after that is eligible.
    and the exact capture list.
 
 Everything else is built. Section 11 lists what the previous session added;
-**section 11b lists what the overnight session added: the surface segment, the
-landing page changes, phase deep links and the option-grid layout.**
+**section 11b lists the surface segment and the UI pass. Section 11c lists real
+time multiplayer, difficulty levels, mission files and the post-mission
+debrief.**
 
 ---
 
@@ -165,13 +167,17 @@ src/
     telemetry.js    [NEW] time-domain reconstruction (section 11)
     tradeSpace.js   [NEW] exhaustive bus enumeration + Pareto front (section 11)
     outpost.js      [NEW] surface segment derivation + site plan (section 11b)
+    difficulty.js   [NEW] level rules, score multiplier, guidance (section 11c)
+    debrief.js      [NEW] post-mission analysis + role attribution (section 11c)
   ui/
     Dashboard.jsx        live margin bars, healthy band drawn into the track
-    PhaseNav.jsx         9-phase tab bar, deep-linkable via ?phase=
+    PhaseNav.jsx         10-phase tab bar, scoped per role, ?phase= deep links
     ObjectiveScreen.jsx / PayloadScreen.jsx / SpacecraftScreen.jsx / OrbitScreen.jsx
     ResultScreen.jsx     verdict, FlightConsole, score breakdown, flight log
     TradeScreen.jsx      [NEW] trade space scatter + efficient frontier
     OutpostScreen.jsx    [NEW] surface segment: scene, readouts, provenance table
+    DebriefScreen.jsx    [NEW] debrief, team notes, send-feedback form
+    Lobby.jsx            [NEW] create/join a session, waiting room, roles
     SpaceWeatherPanel.jsx
     SourcesPanel.jsx     every entry + its NASA citation
     Landing.jsx          hero with live orbit, 4 feature cards, 6 stats, demo CTA
@@ -181,7 +187,12 @@ src/
     SpacecraftView.jsx   SVG schematic drawn to scale from the design
     FlightConsole.jsx    [NEW] the mission, running (section 11)
     OutpostView.jsx      [NEW] isometric site plan, day/night, to scale (section 11b)
-  share/encode.js        mission config <-> URL hash, + ?phase= deep links
+  net/
+    protocol.js          [NEW] pure session state machine + role ownership
+    transport.js         [NEW] BroadcastChannel + WebRTC, de-duplicated
+    useSession.js        [NEW] host-authoritative React hook
+  share/encode.js        mission config <-> URL hash, ?phase= and ?join= links
+  share/missionFile.js   [NEW] save to disk, validated load
   App.jsx                single config object, useMemo(runMission)
   App.css                all styles + design system
   fonts.css              [NEW] self-hosted @font-face, latin only
@@ -192,6 +203,9 @@ tests/
   telemetry.mjs          [NEW] 25 assertions, telemetry vs runMission
   tradespace.mjs         [NEW] 8 assertions, exhaustiveness + Pareto correctness
   outpost.mjs            [NEW] traceability, determinism, no overlaps, 144-config sweep
+  difficulty.mjs         [NEW] level layer never touches the engine, debrief sanity
+  session.mjs            [NEW] authority, ownership, scopes, standings
+  missionfile.mjs        [NEW] round trip + 14 hostile files refused
 ```
 
 ---
@@ -347,6 +361,9 @@ node tests/sanity.mjs       # engine calibration. MUST print 1665 / 15 / 522 / 1
 node tests/telemetry.mjs    # 25 assertions. MUST print ALL TELEMETRY CHECKS PASS
 node tests/tradespace.mjs   # 8 assertions.  MUST print ALL TRADE SPACE CHECKS PASS
 node tests/outpost.mjs      # surface segment. MUST print ALL OUTPOST CHECKS PASS
+node tests/difficulty.mjs   # difficulty + debrief. MUST print ALL DIFFICULTY CHECKS PASS
+node tests/session.mjs      # multiplayer protocol. MUST print ALL SESSION CHECKS PASS
+node tests/missionfile.mjs  # save/load. MUST print ALL MISSION FILE CHECKS PASS
 npm run build               # must complete clean
 ```
 
@@ -601,6 +618,106 @@ checked, on all three bodies.
 
 ---
 
+## 11c. Team sessions, difficulty, saved missions, debrief (15 Nov)
+
+Four features, seven test suites, `runMission` still untouched, sanity still
+**1665 / 15 / 522 / 1687**.
+
+### Real-time multiplayer - `src/net/`
+
+```
+net/protocol.js    pure. state machine, role ownership, codes, scopes, standings
+net/transport.js   browser. BroadcastChannel AND WebRTC, both at once
+net/useSession.js  React. host runs reduce(), clients render what arrives
+ui/Lobby.jsx       create / join / waiting room / connection truth
+```
+
+**Host-authoritative.** Clients send intents, the host validates them against
+the sender's role and broadcasts the whole state. State is a few kB, so there
+are no diffs and no merge conflicts to get wrong.
+
+**Two transports run simultaneously and messages are de-duplicated by id.**
+BroadcastChannel covers tabs on one machine and cannot fail. PeerJS covers real
+devices through the free public broker. The fallback is therefore not a decision
+anybody makes: if the broker is down the session still works on this machine and
+the UI says exactly which one you have. `peerjs` is imported lazily, so a solo
+player never downloads it - it is a separate 115 kB chunk.
+
+**Ownership comes from `roles.json`**, the same `owns` array the screens are
+scoped by, so what you can see and what you can change cannot drift apart.
+Planner -> objective + orbit + launcher. Science -> instruments. Engineer -> the
+bus. Operations -> lifetime and the run. A patch touching a field you do not own
+is refused **whole**, never half-applied.
+
+**Two modes.** Collaborative (one mission, four roles) and head to head (a copy
+each, same objective and level, ranked in the debrief - the objective is locked
+in that mode or the scores would not compare).
+
+Session codes are five characters from an alphabet with no O, 0, I or 1,
+because somebody has to read them out across a room. `?join=CODE` opens the
+lobby with the code filled in; the waiting room copies that link.
+
+### Difficulty - `src/sim/difficulty.js`
+
+Three levels: **Cadet** (every hint, forgiving events, x0.85), **Engineer** (the
+calibrated default, x1), **Flight Director** (no hints, five events, every
+margin must clear 10% and budget must hold 15% reserve, x1.25).
+
+It is a layer **on top of** a finished result: extra checks, a score multiplier
+and guidance flags. It never modifies `runMission`. Guidance is applied by one
+class on the app root (`.no-hints`, `.no-fixes`) rather than threaded through
+twelve screens. A config with no `level` key is byte-identical to what the
+engine was calibrated against, which is why `INITIAL` deliberately does not set
+one - adding any key changes the event seed.
+
+### Saved missions - `src/share/missionFile.js`
+
+`Save design` downloads a readable JSON file; `Load design` validates it hard
+and rebuilds the config **field by field from a known list**, so nothing else in
+the file reaches the app. Every unknown id is refused with a sentence naming
+what is wrong, because an unknown id otherwise reaches `mass.js` and throws
+there. The snapshot in the file is for human reading and is never read back -
+editing the score in the file changes nothing. Loading is disabled inside a
+collaborative session, where the mission belongs to the team.
+
+### Debrief - `src/sim/debrief.js` + `src/ui/DebriefScreen.jsx`
+
+A new phase. Why the score is the score, margins thinnest first, what the trade
+study says you left on the table, which real DONKI storm would have ended you,
+what the design builds on the surface, and up to six ranked actions, each
+attributed to the role that answers for it.
+
+All three kinds of feedback live here and are deliberately different things:
+the app critiques the design; the team rates and annotates the mission inside
+the session; and a *Send feedback* form hands the user a prefilled GitHub issue
+or email. With no backend that is the only honest option - **it drafts, the user
+sends.** Nothing is submitted silently.
+
+### Tests - three new suites, seven in total
+
+```
+node tests/difficulty.mjs    difficulty layer + debrief analysis
+node tests/session.mjs       protocol: authority, ownership, scopes, standings
+node tests/missionfile.mjs   round trip + fourteen hostile files refused
+```
+
+`tests/session.mjs` is the one to read first: it asserts that a player cannot
+patch a field they do not own, that a mixed legal/illegal patch is refused
+whole, that only the host starts the session or sets the level, and that what
+`scopeFor` shows matches what `reduce` allows.
+
+### Verified in a real browser, not only in Node
+
+`scratchpad/multi.mjs` drives **two tabs through DevTools**: host creates a
+session, second tab joins by link, both claim roles, host starts. It then
+asserts the nav is scoped per role, that each player lands on a screen they
+control, that an instrument added by Science changes the Planner's score, that
+a peeked screen's controls are genuinely `:disabled`, and that clicking one
+changes nothing. The broker answered during that run, so cross-device play is
+confirmed live, not just in theory.
+
+---
+
 ## 12. Pre-written submission content
 
 > **`SUBMISSION.md` in the repo root is the paste-ready version of this section**,
@@ -696,10 +813,14 @@ and operations as three separate subjects and never see them interact. Change
 the orbit and the power budget moves. Add an instrument and the downlink fails.
 No textbook shows you that. A simulator does.
 
-**Slide 3 — Design, with consequences.** *(GIF: margin bars moving, ending on a
-constraint going red)* Five phases. Inverse square law, Tsiolkovsky. Never
-"mission failed" — always *"Array delivers 1620 W at end of life; the spacecraft
-draws 1652 W"*, and the way out. Every number cited to NASA inside the app.
+**Slide 3 — Design, with consequences — alone or as a crew of four.**
+*(GIF: margin bars moving, ending on a constraint going red; then two windows
+side by side, one player's instrument choice moving the other player's margins)*
+Five phases. Inverse square law, Tsiolkovsky. Never "mission failed" — always
+*"Array delivers 1620 W at end of life; the spacecraft draws 1652 W"*, and the
+way out. Four people can hold the four roles of a real mission team at once:
+you control your own subsystem, everyone shares the margins, nobody can overrule
+anybody. Three difficulty levels, from Cadet to Flight Director.
 
 **Slide 4 — The margin mechanic.** *(static — this slide is the thesis, and
 motion competes with reading)* 10–35% reserve. Spend it all → RISKY. Hoard it →
@@ -721,14 +842,18 @@ orbiter overhead with the relay link up. **You can land twenty copies of your
 instrument suite and you still have one orbiter to carry the data home.** Static
 site · no backend · NASA DONKI API · live link.
 
-### Capture list — 6 recordings, ~8 s each, 1280×800, crop browser chrome
+### Capture list — 7 recordings, ~8 s each, 1280×800, crop browser chrome
 
 1. **Spacecraft tab** — click array S → M → L → XL, margin bars moving
 2. **Orbit tab** — switch SSO → Mars, power check flipping to FAIL with W figures
 3. **Simulate tab** — flight console, one full orbit through eclipse and a pass
 4. **Simulate tab** — drag mission scrubber launch → end of life, wattage falling
 5. **Trade Space tab** — load, scatter and frontier draw, design ringed
-6. **Surface Segment tab** — open on the lunar demo, drag the day slider from
+6. **Two windows side by side** — create a session in one, join with the code in
+   the other, take two roles, and change an instrument in one window while the
+   other window's margin bars move. This is the collaboration evidence; the
+   challenge brief asks for it explicitly.
+7. **Surface Segment tab** — open on the lunar demo, drag the day slider from
    noon into night: panels go dark, habitat windows light, the orbiter comes over
    with the link up. Use the landing page button *See what a design builds on the
    Moon*, or the direct link `?phase=outpost`.
@@ -748,13 +873,16 @@ node tests/sanity.mjs                # engine calibration — 1665/15/522/1687
 node tests/telemetry.mjs             # telemetry vs runMission
 node tests/tradespace.mjs            # trade study correctness
 node tests/outpost.mjs               # surface segment traceability
+node tests/difficulty.mjs            # difficulty layer and debrief
+node tests/session.mjs               # multiplayer protocol
+node tests/missionfile.mjs           # saved mission files
 source .env && node scripts/fetch-spaceweather.mjs   # refresh CME snapshot
 ```
 
 After any change:
 
 ```bash
-node tests/sanity.mjs && node tests/telemetry.mjs && node tests/tradespace.mjs && node tests/outpost.mjs && npm run build
+for t in sanity telemetry tradespace outpost difficulty session missionfile; do node tests/$t.mjs || break; done && npm run build
 npm run deploy && git add -A && git commit -m "..." && git push
 ```
 

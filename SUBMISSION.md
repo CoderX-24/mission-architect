@@ -34,15 +34,16 @@ https://github.com/CoderX-24/mission-architect
 Mission Architect is a browser-based platform that puts you in the role of a NASA
 mission designer. Choose a science objective, select instruments, build a
 spacecraft, pick an orbit and a launch vehicle — then fly it. Every choice carries
-real engineering consequences: solar flux falls off with the inverse square of
-distance from the Sun, so an array sized for Earth browns out at Mars, and adding
-an instrument adds data you may not be able to downlink. The platform teaches one lesson no other tool does: real missions are
+real engineering consequences: an array sized for Earth browns out at Mars, and
+an added instrument brings data you may not be able to downlink. Up to four
+players can hold four mission roles at once, in real time, each controlling only
+their own subsystem. The platform teaches one lesson no other tool does: real missions are
 not designed to spend 100% of their budget. They hold 10 to 35 percent margin,
 because everything grows between design and launch. Designs are flown as a live
 simulation and validated against real coronal mass ejections recorded in NASA's
 DONKI database. All 10,368 spacecraft configurations are then enumerated to show
-the efficient frontier. The surface segment carries your design down to the body
-it flew to and draws, to scale, the outpost your array, battery and link buy — where landing twenty copies of your
+the efficient frontier. The surface segment draws, to scale, the outpost your
+array, battery and link buy on the body you flew to — where landing twenty copies of your
 instruments still leaves one orbiter to carry the data home. Every figure is
 cited to a NASA source inside the app.
 
@@ -153,6 +154,55 @@ platform will tell you that 379 configurations dominate it and that 770 points o
 science are reachable for no more money, show you a component-by-component diff,
 and adopt the better bus in one click. Pareto-optimality is defined properly:
 a design is on the frontier when nothing dominates it, which a test asserts.
+
+### Four people, four roles, one spacecraft
+
+Mission design is an argument between specialists, so the platform lets four people
+have it. A session is created with a five-character code; each player takes one of
+four roles and controls only that part of the spacecraft. The Mission Planner owns
+the objective, orbit and launch vehicle; Science owns the instruments; Engineering
+owns the bus; Operations owns mission lifetime and the decision to fly. You are
+shown the screens you control and the margins everyone shares, and a patch touching
+a field you do not own is refused outright. Nobody can overrule anybody, which is
+exactly the constraint that forces a real trade discussion.
+
+It runs with no backend and no accounts, like the rest of the platform. Two
+transports run at once: other tabs on the same machine sync through the browser's
+own BroadcastChannel, and other devices connect peer-to-peer over WebRTC through a
+free public broker. If the broker cannot be reached the session carries on locally
+and the interface says so rather than hiding it. A head-to-head mode gives every
+player their own copy of the same objective, same budget and same difficulty, and
+ranks them at the end.
+
+### Difficulty for different expertise
+
+Three levels, because a student meeting orbital mechanics for the first time and an
+engineering undergraduate need different things from the same simulator. Cadet
+explains every screen, softens in-flight events and scores at 0.85x. Engineer is the
+calibrated default. Flight Director turns the hints off, draws five in-flight events
+instead of three, and holds the design to a real programme's standard: every margin
+above 10% and a 15% budget reserve, scoring at 1.25x. The physics is identical at
+every level; what changes is how much the platform explains and how much reserve it
+demands.
+
+### Post-mission debrief
+
+A score is a number; a debrief is the reason for it. After a run the platform shows
+where the score came from term by term, the margins thinnest first, what the trade
+study found that you left on the table, which real DONKI coronal mass ejection would
+have ended the mission, what the design builds on the surface, and a ranked list of
+what to do next — each action attributed to the role that answers for it. In a team
+session players also rate and annotate the mission for each other inside the
+session, and a feedback form drafts a GitHub issue or an email for the user to send,
+since a site with no backend should never claim to have submitted anything.
+
+### Saving and loading a mission
+
+Designs save to a readable JSON file on the user's own computer and load back with
+every identifier validated against the catalogs, so a file from an older build or an
+edited file is refused with a sentence explaining what is wrong rather than crashing
+the engine. The result snapshot inside the file is for human reading and is never
+trusted back in: the engine recomputes everything from the configuration.
 
 ### The surface segment
 

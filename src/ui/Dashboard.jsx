@@ -30,8 +30,13 @@ function Bar({ label, margin, detail }) {
 }
 
 
-export default function Dashboard({ result }) {
+export default function Dashboard({ result, diff = null }) {
   const m = result.margins
+  // The difficulty layer can fail a design the engine passed (a level that
+  // demands reserve), and multiplies the score. The dashboard shows the number
+  // the player is actually playing for.
+  const flies = diff ? diff.flies : result.flies
+  const score = diff ? diff.score : result.score.final
   return (
     <aside className="dashboard">
       <h2>Margins</h2>
@@ -40,10 +45,21 @@ export default function Dashboard({ result }) {
       <Bar label="Power"  margin={m.power}  detail={Math.round(result.power.orbitAvgW) + ' / ' + Math.round(result.power.loadW) + ' W'} />
       <Bar label="Budget" margin={m.budget} detail={'$' + result.budget.totalUsdM.toFixed(0) + 'M / $' + result.budget.budgetUsdM + 'M'} />
       <Bar label="Data"   margin={m.data}   detail={Math.round(result.data.returnFraction * 100) + '% returned'} />
-      <div className={'verdict ' + (result.flies ? 'ok' : 'bad')}>
-        {result.flies ? 'FLIES' : 'DOES NOT FLY'}
-        <span className="score">{result.score.final}</span>
+      <div className={'verdict ' + (flies ? 'ok' : 'bad')}>
+        {flies ? 'FLIES' : 'DOES NOT FLY'}
+        <span className="score">{score}</span>
       </div>
+      {diff && diff.multiplier !== 1 && (
+        <p className="level-note">
+          {diff.level.name} &middot; {result.score.final} &times; {diff.multiplier}
+        </p>
+      )}
+      {diff && diff.extraFailed.length > 0 && (
+        <p className="level-note bad-text">
+          {diff.extraFailed.length} {diff.level.name} rule
+          {diff.extraFailed.length > 1 ? 's' : ''} not met
+        </p>
+      )}
     </aside>
   )
 }

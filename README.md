@@ -12,7 +12,7 @@ Built for the NASA Space Apps Challenge 2026 — *Space Mission Design Game* —
 
 ## What it does
 
-Nine phases, one engine. Choose a science objective, select instruments, build a spacecraft
+Ten phases, one engine. Choose a science objective, select instruments, build a spacecraft
 bus, pick an orbit and a launch vehicle. Every choice is recomputed into mass, power, cost,
 data and delta-v, and every failure is reported with the numbers and the way out — never just
 "mission failed":
@@ -36,6 +36,42 @@ data and delta-v, and every failure is reported with the numbers and the way out
 4. **Not one design — every design.** `runMission` costs 0.013 ms, so all **10,368** bus
    configurations are enumerated exhaustively in the browser and plotted with the Pareto
    frontier. For the default objective, 76 of 10,368 fly.
+
+### Four people, four roles, one spacecraft
+
+Up to four players share a mission in real time with a five-character join code. Each holds one
+role from `roles.json` and controls only their own subsystem: the Planner owns the objective,
+orbit and launch vehicle, Science owns the instruments, Engineering owns the bus, Operations
+owns lifetime and the run. **You see the screens you control, everyone sees the margins move,
+and nobody can overrule anybody** — which is how the argument that makes a mission design good
+actually happens.
+
+A session reaches other tabs on the same machine through `BroadcastChannel` and other devices
+through WebRTC over a free public broker. Both run at once, so if the broker is unreachable the
+session keeps working locally and the interface says which one you have rather than pretending.
+There is still no backend and no account. Head-to-head mode gives everyone their own copy of
+the same objective and ranks them at the end.
+
+### Difficulty, for different amounts of expertise
+
+**Cadet** explains every screen, softens the in-flight events and scores at ×0.85.
+**Engineer** is the calibrated default. **Flight Director** turns the hints off, draws five
+events instead of three, requires every margin to clear 10% and the budget to hold 15% reserve,
+and scores at ×1.25. It is a layer on top of the engine, not a change to it.
+
+### Debrief, and three kinds of feedback
+
+After a run: why the score is the score, margins thinnest first, what the trade study says you
+left on the table, which real storm would have ended you, and ranked actions attributed to the
+role that answers for each. In a session your team rates and annotates the mission for each
+other. And a feedback form drafts a GitHub issue or an email for you to send — with no backend,
+nothing is submitted silently.
+
+### Saving a mission
+
+`Save design` writes a readable JSON file to your computer; `Load design` validates it field by
+field and refuses anything it does not recognise with a sentence saying why. A shared link
+carries a mission between people; a file carries it between laptops and years.
 
 ### Surface segment
 
@@ -64,13 +100,16 @@ npm run deploy     # build and publish to GitHub Pages
 
 ### Tests
 
-The engine is covered by four suites, all plain Node, no framework:
+The engine is covered by seven suites, all plain Node, no framework:
 
 ```bash
 node tests/sanity.mjs      # engine calibration — must print 1665 / 15 / 522 / 1687
 node tests/telemetry.mjs   # 25 assertions: the animation agrees with the physics
 node tests/tradespace.mjs  #  8 assertions: exhaustiveness and Pareto correctness
 node tests/outpost.mjs     # surface segment traces back to mission numbers
+node tests/difficulty.mjs  # the difficulty layer never modifies the engine
+node tests/session.mjs     # multiplayer: who may change what, and what they see
+node tests/missionfile.mjs # round trip, and 14 hostile files refused
 ```
 
 `tests/sanity.mjs` is the calibration gate. If those four scores change, something is wrong.
@@ -105,7 +144,8 @@ src/sim/      pure engine — runMission() owns every number
 src/ui/       screens — they render what the engine returns, they never calculate
 src/viz/      canvas and SVG views
 src/data/     catalogs, every entry carrying its NASA citation
-src/share/    the whole mission encodes into the URL
+src/net/      session protocol, transports, host-authoritative hook
+src/share/    the whole mission encodes into a URL, or a file on your disk
 ```
 
 `App.jsx` holds one config object and one `useMemo(() => runMission(config))`. No screen
@@ -115,8 +155,9 @@ trade study and the surface segment cannot disagree with each other.
 
 Static site. No backend, no database, no accounts. The only runtime network call is to NASA.
 
-Missions are shareable: the config encodes into the URL hash, and `?phase=` deep-links any
-tab, e.g. [`?phase=outpost`](https://coderx-24.github.io/mission-architect/?phase=outpost).
+Missions are shareable three ways: the config encodes into the URL hash, `?phase=` deep-links
+any tab (e.g. [`?phase=outpost`](https://coderx-24.github.io/mission-architect/?phase=outpost)),
+and `?join=CODE` opens the lobby for a team session.
 
 ---
 

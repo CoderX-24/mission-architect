@@ -43,3 +43,14 @@ export function writePhase(phase) {
     window.history.replaceState(null, '', u)
   } catch { /* history is not available in every embedding */ }
 }
+
+
+// A session invite is just a link with the code on it, so a host can paste one
+// into a chat instead of reading five characters out over a room.
+export function readJoinCode() {
+  try {
+    const c = new URLSearchParams(window.location.search).get('join')
+    const up = String(c || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 5)
+    return /^[A-Z0-9]{5}$/.test(up) ? up : null
+  } catch { return null }
+}

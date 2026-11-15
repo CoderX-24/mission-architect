@@ -2,7 +2,7 @@
 // because everything grows between design and launch. This function is where that
 // idea becomes a game mechanic.
 export function gradeMargin(m) {
-  if (m < 0)     return { grade: 'FAIL',         label: 'Over budget',                  bonus: 0,  risk: 1.00 }
+  if (m < 0)     return { grade: 'FAIL',         label: 'No margin left',               bonus: 0,  risk: 1.00 }
   if (m < 0.10)  return { grade: 'RISKY',        label: 'No reserve',                   bonus: 0,  risk: 0.55 }
   if (m <= 0.35) return { grade: 'NOMINAL',      label: 'Healthy reserve',              bonus: 10, risk: 0.08 }
   if (m <= 0.50) return { grade: 'GENEROUS',     label: 'Comfortable',                  bonus: 5,  risk: 0.04 }
