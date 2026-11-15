@@ -1,0 +1,27 @@
+# Netlify deploys this repo from the root of a domain, so the Vite base has to
+# be '/' rather than the '/mission-architect/' GitHub Pages needs. Setting it
+# here keeps both hosts working from the same commit.
+#
+# Netlify UI equivalent, if this file is not picked up:
+#   Build command   : VITE_BASE=/ npm run build
+#   Publish directory: dist
+
+[build]
+  command = "VITE_BASE=/ npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Hashed asset filenames never change contents, so they can be cached hard.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The page itself must not be cached, or a deploy does not reach anyone who
+# has already visited.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
