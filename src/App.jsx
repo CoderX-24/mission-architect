@@ -24,6 +24,7 @@ import Lobby, { ConnectionLine } from './ui/Lobby.jsx'
 import { useSession } from './net/useSession.js'
 import { ownerOfPhase } from './net/protocol.js'
 import HelpDrawer from './ui/HelpDrawer.jsx'
+import TopBar from './ui/TopBar.jsx'
 import { INITIAL_CONFIG as INITIAL } from './share/initialConfig.js'
 import ROLES_FOR_HELP from './data/roles.json' with { type: 'json' }
 import './App.css'
@@ -75,20 +76,32 @@ export default function App() {
 
   const goPhase = p => { setPhase(p); writePhase(p) }
 
+  // The wordmark is the way home from anywhere. A running team session is left
+  // running - the hook stays mounted, so the player can walk back into it.
+  const goHome = () => { setScreen('landing'); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+
   if (screen === 'landing') {
     return (
-      <Landing
-        onStart={(cfg, ph) => {
-          if (cfg) setLocalConfig(cfg)
-          if (ph) goPhase(ph)
-          setScreen('app')
-        }}
-        onTeam={() => setScreen('lobby')} />
+      <>
+        <TopBar />
+        <Landing
+          onStart={(cfg, ph) => {
+            if (cfg) setLocalConfig(cfg)
+            if (ph) goPhase(ph)
+            setScreen('app')
+          }}
+          onTeam={() => setScreen('lobby')} />
+      </>
     )
   }
 
   if (screen === 'lobby' && !inSession) {
-    return <Lobby session={session} config={localConfig} onSolo={() => setScreen('app')} />
+    return (
+      <>
+        <TopBar onHome={goHome} />
+        <Lobby session={session} config={localConfig} onSolo={() => setScreen('app')} />
+      </>
+    )
   }
 
   // A tab you do not own is only reachable while peeking. Rather than store a
@@ -101,10 +114,11 @@ export default function App() {
   const locked = notMine && peek
 
   return (
+    <>
+    <TopBar as="h1" onHome={goHome} />
     <div className={'app level-' + levelOf(config).id + (diff.guidance.hints ? '' : ' no-hints') +
       (diff.guidance.fixes ? '' : ' no-fixes')}>
       <header>
-        <h1>Mission Architect</h1>
         <p>{objective.name} &mdash; {objective.brief}</p>
 
         <div className="toolbar">
@@ -166,6 +180,7 @@ export default function App() {
         roleName={inSession && session.me && session.me.roleId
           ? (ROLES_FOR_HELP.find(r => r.id === session.me.roleId) || {}).name : null} />
     </div>
+    </>
   )
 }
 

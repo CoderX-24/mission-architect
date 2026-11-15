@@ -100,7 +100,7 @@ export default function HelpDrawer({ config, result, diff, outpost = null, roleN
 
         <footer className="help-foot">
           <span><b>Doon-Dev</b> &middot; designed by Ranveer and Vibhor</span>
-          <span>NASA Space Apps Challenge 2026 &middot; Satna</span>
+          <span>NASA Space Apps Challenge 2026</span>
         </footer>
       </aside>
     </>
@@ -283,7 +283,7 @@ function About() {
       <p>
         An interactive mission design and validation platform, built for the{' '}
         <b>NASA Space Apps Challenge 2026</b> under the theme <i>The Next Frontier</i>, for the
-        challenge <i>Space Mission Design Game</i>, at the Satna virtual event.
+        challenge <i>Space Mission Design Game</i>.
       </p>
 
       <h3>Team Doon-Dev</h3>
@@ -306,13 +306,6 @@ function About() {
         anchors from Landsat 9, Mars Reconnaissance Orbiter, Lunar Reconnaissance Orbiter,
         SPHEREx and DSCOVR. Every entry carries its source inside the app, on the Sources tab.
       </p>
-
-      <h3>Honesty notes</h3>
-      <ul>
-        <li>This is a student hackathon project. It is <b>not</b> NASA software and carries no NASA endorsement.</li>
-        <li>{ASSISTANT_NAME} is a keyword assistant, not a language model.</li>
-        <li>Claude was used as a coding assistant, which the competition rules permit and which we declare rather than hide.</li>
-      </ul>
 
       <div className="help-ctas">
         <a className="share-btn" href="https://github.com/CoderX-24/mission-architect"

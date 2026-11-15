@@ -3,7 +3,8 @@
 *Supersedes the original HANDOVER.md. Written 14 Nov 2026, late in day one.*
 *Updated 15 Nov 2026: section 11b adds the surface segment and the UI pass;*
 *section 11c adds team sessions, difficulty levels, saved missions and the debrief;*
-*section 11d adds the help drawer and ArchitectX.*
+*section 11d adds the help drawer and ArchitectX;*
+*section 11e adds the animated backdrop, corner lockups and click feedback.*
 
 ## 0. Read this first
 
@@ -733,7 +734,7 @@ the app rather than taking a column from it, so nothing else on the page moved.
   who has never seen it.
 - **FAQ** - all 25 topics, grouped and filterable.
 - **Ask ArchitectX** - a question box.
-- **About** - the team, the stack, the NASA sources, and the honesty notes.
+- **About** - the team, the stack and the NASA sources.
 
 The footer of the drawer and the landing page both carry
 **Doon-Dev - designed by Ranveer and Vibhor**.
@@ -779,6 +780,43 @@ not, this fails.
 The project stays **Mission Architect** everywhere: repo, live URL, submission,
 deck and `<title>` all agree. ArchitectX is the assistant inside it, not a
 second product name.
+
+---
+
+## 11e. Backdrop, corner lockups, click feedback (15 Nov)
+
+The user's note was that the page "is just black" and that the top corners
+looked empty. Three new files, all presentation, none of them touching the
+engine.
+
+- **`src/viz/Backdrop.jsx`** - one fixed layer at `z-index: -1` with
+  `pointer-events: none`, mounted once in `main.jsx` beside `<App />` so it is
+  shared by every screen. Two drifting nebula washes and a floating satellite
+  in CSS; everything else in **one canvas** at 30 fps: 90-320 seeded stars in
+  three parallax depths, four real asterisms (Orion, Cassiopeia, Ursa Major,
+  Crux), five tumbling asteroids and an occasional meteor. The canvas stops on
+  `visibilitychange` and never starts under `prefers-reduced-motion`, which
+  draws a single still frame instead.
+- **`src/ui/TopBar.jsx`** - the wordmark (planet, tilted orbit ring, amber
+  satellite circling it) top left and a `DOON-DEV | NASA SPACE APPS 2026` badge
+  top right. In normal flow, not fixed, so it can never sit on content. On the
+  app screen the wordmark is the `<h1>`, and the old duplicate heading was
+  removed. **It is also the way home**: on every screen but the front page it
+  renders as a button that returns to the landing page, leaving any running
+  team session mounted behind it.
+- **`src/ui/clickFx.js`** - one delegated `pointerdown` listener that spawns a
+  200 ms amber ring at the pointer and removes it on animation end, plus a
+  `:active` scale on every button-ish class. Skips disabled controls and does
+  not spawn under reduced motion.
+
+**Constellations fade toward the middle of the screen** - the first version drew
+Orion straight through the hero headline. They are at full strength in the
+corners, which is where the user wanted something to look at, and gone behind
+the text.
+
+Verified at 1400x1000 and 390x844, landing and app: `scrollWidth` equals the
+viewport on both, the backdrop takes no pointer events, build is clean, sanity
+is unchanged and oxlint still reports its 4 pre-existing warnings.
 
 ---
 
@@ -870,7 +908,7 @@ inside the design flow than given a slide of its own — and the deck now closes
 the outpost, which is the image a judge will remember.
 
 **Slide 1 — Title.** Mission Architect · An interactive mission design and
-validation platform · Team Doon-Dev, Satna · live URL.
+validation platform · Team Doon-Dev · live URL.
 
 **Slide 2 — The problem.** Students learn orbital mechanics, spacecraft design
 and operations as three separate subjects and never see them interact. Change
@@ -909,7 +947,16 @@ site · no backend · NASA DONKI API · live link.
 ### Capture list — 7 recordings, ~8 s each, 1280×800, crop browser chrome
 
 1. **Spacecraft tab** — click array S → M → L → XL, margin bars moving
-2. **Orbit tab** — switch SSO → Mars, power check flipping to FAIL with W figures
+2. **Failure that teaches** — the old recipe here said "switch SSO → Mars",
+   which **cannot be done**: no objective allows both orbits, so Mars is a
+   disabled button on an Earth mission. Use this verified preset instead — a
+   Mars mission with a 2 m² array, where **exactly one** check fails:
+   *"Array delivers 219 W orbit-average at end of life; the spacecraft draws
+   430 W (-96% margin)."* Click up to the 8 m² array and it flies, scoring 636.
+
+   ```
+   ?phase=spacecraft#m=eyJvYmplY3RpdmVJZCI6Im1hcnNfcmVjb24iLCJvcmJpdElkIjoibWFycyIsImxhdW5jaGVySWQiOiJmYWxjb245IiwiaW5zdHJ1bWVudElkcyI6WyJ0ZXJyYWluX2NhbWVyYSJdLCJjb21wb25lbnRzIjp7ImFycmF5IjoiYXJyYXlfcyIsImJhdHRlcnkiOiJiYXR0X2wiLCJjb21tcyI6ImNvbW1zX3giLCJhZGNzIjoiYWRjc19maW5lIiwicHJvcHVsc2lvbiI6InByb3BfYmkiLCJ0aGVybWFsIjoidGhlcm1fYWN0aXZlIiwib2JjIjoib2JjX3JhZCIsInN0cnVjdHVyZSI6InN0cnVjdF9zbWFsbCJ9LCJsaWZldGltZVllYXJzIjo1fQ%3D%3D
+   ```
 3. **Simulate tab** — flight console, one full orbit through eclipse and a pass
 4. **Simulate tab** — drag mission scrubber launch → end of life, wattage falling
 5. **Trade Space tab** — load, scatter and frontier draw, design ringed
@@ -917,10 +964,17 @@ site · no backend · NASA DONKI API · live link.
    the other, take two roles, and change an instrument in one window while the
    other window's margin bars move. This is the collaboration evidence; the
    challenge brief asks for it explicitly.
-7. **Surface Segment tab** — open on the lunar demo, drag the day slider from
+7. **Surface Segment tab** — open on the lunar demo preset below, drag the day slider from
    noon into night: panels go dark, habitat windows light, the orbiter comes over
    with the link up. Use the landing page button *See what a design builds on the
-   Moon*, or the direct link `?phase=outpost`.
+   Moon*, or this preset:
+
+   ```
+   ?phase=outpost#m=eyJvYmplY3RpdmVJZCI6Imx1bmFyX3NvdXRoX3BvbGUiLCJvcmJpdElkIjoibHVuYXIiLCJsYXVuY2hlcklkIjoiZmFsY29uOSIsImluc3RydW1lbnRJZHMiOlsidGhlcm1hbF9pbWFnZXIiLCJkdXN0X2FuYWx5emVyIl0sImNvbXBvbmVudHMiOnsiYXJyYXkiOiJhcnJheV9sIiwiYmF0dGVyeSI6ImJhdHRfbCIsImNvbW1zIjoiY29tbXNfeCIsImFkY3MiOiJhZGNzX2ZpbmUiLCJwcm9wdWxzaW9uIjoicHJvcF9iaSIsInRoZXJtYWwiOiJ0aGVybV9hY3RpdmUiLCJvYmMiOiJvYmNfcmFkIiwic3RydWN0dXJlIjoic3RydWN0X3NtYWxsIn0sImxpZmV0aW1lWWVhcnMiOjR9
+   ```
+
+   **Record the GIFs only after the visual pass is deployed**, or the backdrop
+   and corner lockups will be missing from them.
 
 macOS: **Cmd+Shift+5** → Record Selected Portion. Convert to GIF, or upload the
 `.mov` directly if the slide tool accepts video.

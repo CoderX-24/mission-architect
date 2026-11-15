@@ -527,7 +527,7 @@ export const TOPICS = [
     keywords: ['who', 'made', 'built', 'team', 'credits', 'authors', 'doon', 'dev', 'ranveer', 'vibhor'],
     answer: () => ({
       lines: [
-        'Mission Architect was built by Team Doon-Dev - designed by Ranveer and Vibhor - for the NASA Space Apps Challenge 2026, at the Satna virtual event.',
+        'Mission Architect was built by Team Doon-Dev - designed by Ranveer and Vibhor - for the NASA Space Apps Challenge 2026.',
         'The challenge was Space Mission Design Game, under the theme The Next Frontier.',
       ],
       bullets: [

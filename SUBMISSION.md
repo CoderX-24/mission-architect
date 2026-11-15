@@ -1,6 +1,6 @@
 # Space Apps 2026 — Mission Architect submission (paste-ready)
 
-Team Doon-Dev · Satna virtual event (IST) · deadline Sun 15 Nov 2026 23:59 IST
+Team Doon-Dev · deadline Sun 15 Nov 2026 23:59 IST
 Save Progress AND Submit for Judging are separate buttons. Re-submitting is free;
 only the last click is judged.
 

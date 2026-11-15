@@ -115,7 +115,7 @@ export default function Landing({ onStart, onTeam }) {
 
       <footer className="landing-foot">
         <span><b>Doon-Dev</b> &middot; designed by Ranveer and Vibhor</span>
-        <span>NASA Space Apps Challenge 2026 &middot; Satna &middot; Space Mission Design Game</span>
+        <span>NASA Space Apps Challenge 2026 &middot; Space Mission Design Game</span>
       </footer>
     </div>
   )

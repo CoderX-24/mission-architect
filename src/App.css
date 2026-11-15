@@ -2136,3 +2136,226 @@ main {
 @media (prefers-reduced-motion: reduce) {
   .help-drawer { transition: none; }
 }
+
+/* ===========================================================================
+   BACKDROP, CORNER LOCKUPS, CLICK FEEDBACK
+   The sky behind every screen, the name in the top-left corner, the badge in
+   the top-right. Space is cold: blues, greys and one violet. Amber stays the
+   brand, and status colours stay status.
+   =========================================================================== */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.bd-stars { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+
+.bd-nebula {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.bd-nebula-a {
+  width: 90vmax; height: 62vmax;
+  left: -28vmax; top: -22vmax;
+  background: radial-gradient(closest-side, rgba(64, 118, 214, .20), rgba(64, 118, 214, .07) 55%, transparent);
+  animation: bd-drift-a 70s ease-in-out infinite alternate;
+}
+
+.bd-nebula-b {
+  width: 80vmax; height: 70vmax;
+  right: -30vmax; bottom: -30vmax;
+  background: radial-gradient(closest-side, rgba(124, 96, 220, .22), rgba(70, 110, 200, .06) 58%, transparent);
+  animation: bd-drift-b 90s ease-in-out infinite alternate;
+}
+
+@keyframes bd-drift-a {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(14vmax, 8vmax, 0) scale(1.18); }
+}
+@keyframes bd-drift-b {
+  from { transform: translate3d(0, 0, 0) scale(1.1); }
+  to   { transform: translate3d(-16vmax, -10vmax, 0) scale(.92); }
+}
+
+/* The spacecraft crosses the view once every two minutes on a shallow climb.
+   The negative delay starts it already in frame, so it is there on first paint. */
+.bd-craft-path {
+  position: absolute;
+  left: 0; top: 0;
+  will-change: transform;
+  animation: bd-cross 110s linear -86s infinite;
+}
+
+.bd-craft {
+  display: block;
+  opacity: .55;
+  transform-origin: 50% 50%;
+  animation: bd-bob 11s ease-in-out infinite alternate;
+}
+
+.bd-craft-light { animation: pulse 1.6s steps(2, jump-none) infinite; }
+
+@keyframes bd-cross {
+  from { transform: translate3d(-200px, 80vh, 0); }
+  to   { transform: translate3d(calc(100vw + 40px), 4vh, 0); }
+}
+@keyframes bd-bob {
+  from { transform: translateY(-7px) rotate(-22deg); }
+  to   { transform: translateY(7px) rotate(-14deg); }
+}
+
+/* ------------------------------------------------------------- topbar ---- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px 0;
+}
+
+.wordmark { display: flex; align-items: center; gap: 11px; min-width: 0; }
+
+.wm-glyph { flex: none; overflow: visible; }
+.wm-ring { fill: none; stroke: rgba(169, 181, 199, .5); stroke-width: 1; }
+.wm-sat { fill: var(--accent); }
+.wm-sat-glow { fill: var(--accent); opacity: .22; }
+
+/* Two sine sweeps a quarter-period apart trace the ellipse of the ring. */
+.wm-sat-x { animation: wm-x 3.6s cubic-bezier(.37, 0, .63, 1) infinite alternate; }
+.wm-sat-y { animation: wm-y 3.6s cubic-bezier(.37, 0, .63, 1) -1.8s infinite alternate; }
+@keyframes wm-x { from { transform: translateX(-17px); } to { transform: translateX(17px); } }
+@keyframes wm-y { from { transform: translateY(-7.5px); } to { transform: translateY(7.5px); } }
+
+.wm-text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+
+.wm-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  background: linear-gradient(170deg, #fff 10%, #9fb0c6 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.wm-name span { color: var(--accent); }
+
+.wm-sub {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.mission-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex: none;
+  padding: 7px 13px 7px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 100px;
+  background: rgba(10, 15, 23, .6);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mb-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 10px var(--ok);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+.mb-team { color: var(--fg); }
+.mb-event { color: var(--muted); padding-left: 9px; border-left: 1px solid var(--line-strong); }
+
+.topbar + .landing { padding-top: 48px; }
+.topbar + .lobby { padding-top: 36px; }
+.topbar + .app { padding-top: 22px; }
+
+/* ------------------------------------------------------ click feedback ---- */
+
+.share-btn { transition: border-color .16s ease, color .16s ease, background .16s ease, transform .12s ease; }
+.phase     { transition: color .16s ease, background .16s ease, border-color .16s ease, transform .12s ease; }
+.chip      { transition: border-color .16s ease, color .16s ease, background .16s ease, transform .12s ease; }
+
+.cta:active:not(:disabled),
+.share-btn:active:not(:disabled),
+.card:active:not(:disabled),
+.inst:active,
+.phase:active:not(:disabled),
+.chip:active:not(:disabled) {
+  transform: scale(.965);
+  transition-duration: .06s;
+}
+
+.click-ring {
+  position: fixed;
+  z-index: 70;
+  width: 26px; height: 26px;
+  margin: -13px 0 0 -13px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: click-ring .2s ease-out forwards;
+}
+@keyframes click-ring {
+  from { transform: scale(.3); opacity: .85; }
+  to   { transform: scale(1.9); opacity: 0; }
+}
+
+@media (max-width: 560px) {
+  .topbar { padding: 12px 14px 0; gap: 10px; }
+  .wm-glyph { width: 32px; height: 32px; }
+  .wm-name { font-size: 17px; }
+  .wm-sub, .mb-event { display: none; }
+  .mission-badge { padding: 6px 10px 6px 9px; font-size: 9.5px; }
+  .bd-craft { width: 110px; height: 50px; }
+  .topbar + .landing { padding-top: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bd-nebula, .bd-craft, .bd-craft-light, .wm-sat-x, .wm-sat-y, .mb-dot { animation: none; }
+  .bd-craft-path { animation: none; transform: translate3d(68vw, 14vh, 0); }
+  .wm-sat-x { transform: translateX(12px); }
+  .wm-sat-y { transform: translateY(5.3px); }
+  .bd-craft { transform: rotate(-18deg); }
+  .share-btn, .chip { transition: none; }
+  .click-ring { display: none; }
+}
+
+/* The wordmark doubles as the way home, so as a button it has to lose every
+   button default and keep the lockup's own layout. */
+.wordmark.is-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: opacity .16s ease, transform .16s ease;
+}
+.wordmark.is-link:hover { opacity: .92; transform: translateX(1px); }
+.wordmark.is-link:active { transform: scale(.985); }
+.wordmark.is-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
