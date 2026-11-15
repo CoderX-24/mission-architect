@@ -6,7 +6,8 @@ coronal mass ejections from NASA DONKI, enumerate every alternative design, and 
 design builds on the surface of the body it went to.
 
 **Live:** https://coderx-24.github.io/mission-architect/
-Built for the NASA Space Apps Challenge 2026 — *Space Mission Design Game* — by **Team Doon-Dev**.
+Built for the NASA Space Apps Challenge 2026 — *Space Mission Design Game* — by **Team Doon-Dev**,
+designed and built by **Ranveer** and **Vibhor**.
 
 ---
 
@@ -73,6 +74,18 @@ nothing is submitted silently.
 field and refuses anything it does not recognise with a sentence saying why. A shared link
 carries a mission between people; a file carries it between laptops and years.
 
+### ArchitectX, the built-in assistant
+
+A `?` in the bottom corner opens help: an intro for a first-time visitor, a filterable FAQ of 25
+topics, and **ArchitectX**, which answers questions about *your* mission.
+
+It is deliberately **not a language model**, and the interface says so where you type. It matches
+your question to topics written by the team, then computes the specifics by calling the same
+engine as the rest of the app — so it needs no API key, works offline, and cannot invent a
+number. Ask it *"why doesn't my mission fly?"* and it lists the actual failing checks; ask *"how
+do I get more power?"* and it runs the next array size up and tells you what that costs in mass,
+money and margin.
+
 ### Surface segment
 
 The newest phase takes the design further than the orbit. Your array, battery, link, launch
@@ -100,7 +113,7 @@ npm run deploy     # build and publish to GitHub Pages
 
 ### Tests
 
-The engine is covered by seven suites, all plain Node, no framework:
+The engine is covered by eight suites, all plain Node, no framework:
 
 ```bash
 node tests/sanity.mjs      # engine calibration — must print 1665 / 15 / 522 / 1687
@@ -110,6 +123,7 @@ node tests/outpost.mjs     # surface segment traces back to mission numbers
 node tests/difficulty.mjs  # the difficulty layer never modifies the engine
 node tests/session.mjs     # multiplayer: who may change what, and what they see
 node tests/missionfile.mjs # round trip, and 14 hostile files refused
+node tests/architectx.mjs  # the assistant's answers match a freshly run mission
 ```
 
 `tests/sanity.mjs` is the calibration gate. If those four scores change, something is wrong.
@@ -144,6 +158,7 @@ src/sim/      pure engine — runMission() owns every number
 src/ui/       screens — they render what the engine returns, they never calculate
 src/viz/      canvas and SVG views
 src/data/     catalogs, every entry carrying its NASA citation
+src/help/     the assistant: curated topics and a matcher, both pure
 src/net/      session protocol, transports, host-authoritative hook
 src/share/    the whole mission encodes into a URL, or a file on your disk
 ```
@@ -172,7 +187,7 @@ the Sources tab.
 Built with React and Vite. Typefaces: Space Grotesk, Inter and JetBrains Mono (SIL Open Font
 License), self-hosted — the site makes no third-party requests at runtime.
 
-Claude (Anthropic) was used as a coding assistant, which the Space Apps rules permit and we
+**Team Doon-Dev** — Ranveer and Vibhor. Claude (Anthropic) was used as a coding assistant, which the Space Apps rules permit and we
 declare rather than hide. All engineering decisions, constants, NASA sources and calibration
 targets were chosen and verified by the team, and every change is gated on the four test
 suites above.

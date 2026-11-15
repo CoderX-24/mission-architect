@@ -23,20 +23,10 @@ import DebriefScreen from './ui/DebriefScreen.jsx'
 import Lobby, { ConnectionLine } from './ui/Lobby.jsx'
 import { useSession } from './net/useSession.js'
 import { ownerOfPhase } from './net/protocol.js'
+import HelpDrawer from './ui/HelpDrawer.jsx'
+import { INITIAL_CONFIG as INITIAL } from './share/initialConfig.js'
+import ROLES_FOR_HELP from './data/roles.json' with { type: 'json' }
 import './App.css'
-
-
-const INITIAL = {
-  objectiveId: 'forest_biomass',
-  orbitId: 'leo_sso',
-  launcherId: 'rideshare',
-  instrumentIds: ['multispectral_imager', 'lidar_altimeter'],
-  components: {
-    array: 'array_m', battery: 'batt_m', comms: 'comms_x', adcs: 'adcs_fine',
-    propulsion: 'prop_mono', thermal: 'therm_passive', obc: 'obc_basic', structure: 'struct_small',
-  },
-  lifetimeYears: 5,
-}
 
 
 export default function App() {
@@ -171,6 +161,10 @@ export default function App() {
 
         <Dashboard result={result} diff={diff} />
       </main>
+
+      <HelpDrawer config={config} result={result} diff={diff} onPhase={goPhase}
+        roleName={inSession && session.me && session.me.roleId
+          ? (ROLES_FOR_HELP.find(r => r.id === session.me.roleId) || {}).name : null} />
     </div>
   )
 }

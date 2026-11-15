@@ -155,6 +155,26 @@ science are reachable for no more money, show you a component-by-component diff,
 and adopt the better bus in one click. Pareto-optimality is defined properly:
 a design is on the frontier when nothing dominates it, which a test asserts.
 
+### ArchitectX, and teaching without a language model
+
+A question mark in the corner opens an intro for a first-time visitor, a filterable
+FAQ of twenty-five topics, and ArchitectX, an assistant that answers questions about
+the user's own mission. Asked why a mission does not fly, it lists the actual failing
+constraints in the engine's own words. Asked how to get more power, it runs the next
+array size up through the engine and reports what that upgrade does to power, mass
+and budget, and whether the result flies. Asked whether a design is any good, it
+reads the trade study and says how many of the 10,368 possible buses beat it for the
+same money.
+
+ArchitectX is deliberately **not a language model**, and the interface says so in the
+box where you type rather than in small print. It matches a question against topics
+written by the team and then computes every figure by calling the same engine the
+screens use. That means it needs no API key, works with no network, costs nothing to
+run, and cannot hallucinate a number — a test asserts that the numbers in its answers
+match a freshly run mission, so the prose cannot drift away from the physics. For a
+teaching tool aimed at students, being unable to confidently state something false
+mattered more to us than sounding conversational.
+
 ### Four people, four roles, one spacecraft
 
 Mission design is an argument between specialists, so the platform lets four people
@@ -283,7 +303,10 @@ which ones beat it and by how much.
 
 ### AI assistance
 
-We used Claude (Anthropic) as a coding assistant throughout: generating and
+Two distinct things, kept distinct. **Inside the product**, ArchitectX is a keyword
+assistant, not a language model: no API key, no inference, no network, and it is
+labelled as such wherever a user meets it. **During development**, we used Claude
+(Anthropic) as a coding assistant throughout: generating and
 reviewing module implementations, writing the test suites, and reviewing physics
 and copy. All engineering decisions, constants, NASA sources and calibration
 targets were chosen and verified by the team, and the engine is covered by three

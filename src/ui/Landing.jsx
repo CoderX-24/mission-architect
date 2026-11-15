@@ -5,6 +5,15 @@ import LAUNCHERS from '../data/launchers.json' with { type: 'json' }
 import CMES from '../data/spaceweather-fallback.json' with { type: 'json' }
 import OrbitCanvas from '../viz/OrbitCanvas.jsx'
 import { totalCombinations } from '../sim/tradeSpace.js'
+import HelpDrawer from './HelpDrawer.jsx'
+import { INITIAL_CONFIG } from '../share/initialConfig.js'
+import { runMission } from '../sim/runMission.js'
+import { applyDifficulty } from '../sim/difficulty.js'
+
+// The landing page has no mission of its own, so the assistant answers against
+// the design the app opens on.
+const DEMO_RESULT = runMission(INITIAL_CONFIG)
+const DEMO_DIFF = applyDifficulty({ config: INITIAL_CONFIG, result: DEMO_RESULT })
 
 // A design that flies to the lunar south pole and has the power to build
 // something when it gets there. The landing page offers it as a one-click
@@ -92,6 +101,9 @@ export default function Landing({ onStart, onTeam }) {
         </div>
       </div>
 
+      <HelpDrawer config={INITIAL_CONFIG} result={DEMO_RESULT} diff={DEMO_DIFF}
+        onPhase={phase => onStart(null, phase)} />
+
       <div className="stats">
         <div><b>{OBJECTIVES.length}</b><span>mission objectives</span></div>
         <div><b>{INSTRUMENTS.length}</b><span>science instruments</span></div>
@@ -100,6 +112,11 @@ export default function Landing({ onStart, onTeam }) {
         <div><b>{CMES.length}</b><span>real NASA solar storms</span></div>
         <div><b>{totalCombinations().toLocaleString('en-US')}</b><span>designs enumerated, not sampled</span></div>
       </div>
+
+      <footer className="landing-foot">
+        <span><b>Doon-Dev</b> &middot; designed by Ranveer and Vibhor</span>
+        <span>NASA Space Apps Challenge 2026 &middot; Satna &middot; Space Mission Design Game</span>
+      </footer>
     </div>
   )
 }

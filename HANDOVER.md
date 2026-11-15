@@ -2,7 +2,8 @@
 
 *Supersedes the original HANDOVER.md. Written 14 Nov 2026, late in day one.*
 *Updated 15 Nov 2026: section 11b adds the surface segment and the UI pass;*
-*section 11c adds team sessions, difficulty levels, saved missions and the debrief.*
+*section 11c adds team sessions, difficulty levels, saved missions and the debrief;*
+*section 11d adds the help drawer and ArchitectX.*
 
 ## 0. Read this first
 
@@ -178,6 +179,7 @@ src/
     OutpostScreen.jsx    [NEW] surface segment: scene, readouts, provenance table
     DebriefScreen.jsx    [NEW] debrief, team notes, send-feedback form
     Lobby.jsx            [NEW] create/join a session, waiting room, roles
+    HelpDrawer.jsx       [NEW] ? drawer: intro, FAQ, ArchitectX, about, credits
     SpaceWeatherPanel.jsx
     SourcesPanel.jsx     every entry + its NASA citation
     Landing.jsx          hero with live orbit, 4 feature cards, 6 stats, demo CTA
@@ -193,6 +195,8 @@ src/
     useSession.js        [NEW] host-authoritative React hook
   share/encode.js        mission config <-> URL hash, ?phase= and ?join= links
   share/missionFile.js   [NEW] save to disk, validated load
+  share/initialConfig.js [NEW] the one mission the app opens on
+  help/architectx.js     [NEW] 25 curated topics + matcher, answers from the engine
   App.jsx                single config object, useMemo(runMission)
   App.css                all styles + design system
   fonts.css              [NEW] self-hosted @font-face, latin only
@@ -206,6 +210,7 @@ tests/
   difficulty.mjs         [NEW] level layer never touches the engine, debrief sanity
   session.mjs            [NEW] authority, ownership, scopes, standings
   missionfile.mjs        [NEW] round trip + 14 hostile files refused
+  architectx.mjs         [NEW] routing, no leaked values, answers match the engine
 ```
 
 ---
@@ -364,6 +369,7 @@ node tests/outpost.mjs      # surface segment. MUST print ALL OUTPOST CHECKS PAS
 node tests/difficulty.mjs   # difficulty + debrief. MUST print ALL DIFFICULTY CHECKS PASS
 node tests/session.mjs      # multiplayer protocol. MUST print ALL SESSION CHECKS PASS
 node tests/missionfile.mjs  # save/load. MUST print ALL MISSION FILE CHECKS PASS
+node tests/architectx.mjs   # the assistant. MUST print ALL ARCHITECTX CHECKS PASS
 npm run build               # must complete clean
 ```
 
@@ -718,6 +724,64 @@ confirmed live, not just in theory.
 
 ---
 
+## 11d. Help drawer and ArchitectX (15 Nov)
+
+A floating `?` bottom right opens a slide-over panel with four sections, over
+the app rather than taking a column from it, so nothing else on the page moved.
+
+- **Intro** - what the app is, the five steps, and the margin idea, for someone
+  who has never seen it.
+- **FAQ** - all 25 topics, grouped and filterable.
+- **Ask ArchitectX** - a question box.
+- **About** - the team, the stack, the NASA sources, and the honesty notes.
+
+The footer of the drawer and the landing page both carry
+**Doon-Dev - designed by Ranveer and Vibhor**.
+
+### ArchitectX - `src/help/architectx.js`
+
+**It is not a language model and the UI says so in the box, not in the small
+print.** It matches a question against 25 curated topics by phrase and keyword,
+then builds the answer by calling the same engine every screen uses. That is the
+whole point: it cannot invent a number, it needs no API key, and it works with
+no network.
+
+What makes it worth having rather than a searchable help file is that answers
+are *functions of the live mission*:
+
+- *why does my mission not fly* lists exactly the failing checks, in the
+  engine's own words, however many there are.
+- *how do I get more power* reads your array, runs `runMission` on the next
+  array up, and reports what that upgrade does to power, mass and budget, and
+  whether the result flies.
+- *is my design any good* reads the trade study and names how many of the
+  10,368 buses beat yours for the same money.
+- *why can I not change the spacecraft* knows your role in the current session.
+
+Suggestion chips adapt to the design on screen: a failing mission is offered
+"why does my mission not fly" first.
+
+The trade sweep costs ~100 ms, so it only runs while the Ask tab is open.
+
+### `tests/architectx.mjs`
+
+Asserts every topic is well formed and uniquely identified; that **no answer
+throws or leaks an `undefined`/`NaN` for four very different designs**
+(default, starved cubesat, Mars flagship, maxed GEO); that 20 real questions
+route to the topic a person meant; that nonsense is refused rather than guessed
+at; and - the one that matters - that the numbers in the answers match a freshly
+run mission, including that the recommended upgrade quotes the margin the engine
+computes for it. If somebody edits the prose to say something the engine does
+not, this fails.
+
+### Naming
+
+The project stays **Mission Architect** everywhere: repo, live URL, submission,
+deck and `<title>` all agree. ArchitectX is the assistant inside it, not a
+second product name.
+
+---
+
 ## 12. Pre-written submission content
 
 > **`SUBMISSION.md` in the repo root is the paste-ready version of this section**,
@@ -876,13 +940,14 @@ node tests/outpost.mjs               # surface segment traceability
 node tests/difficulty.mjs            # difficulty layer and debrief
 node tests/session.mjs               # multiplayer protocol
 node tests/missionfile.mjs           # saved mission files
+node tests/architectx.mjs            # the help assistant answers from the engine
 source .env && node scripts/fetch-spaceweather.mjs   # refresh CME snapshot
 ```
 
 After any change:
 
 ```bash
-for t in sanity telemetry tradespace outpost difficulty session missionfile; do node tests/$t.mjs || break; done && npm run build
+for t in sanity telemetry tradespace outpost difficulty session missionfile architectx; do node tests/$t.mjs || break; done && npm run build
 npm run deploy && git add -A && git commit -m "..." && git push
 ```
 
